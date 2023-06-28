@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-[#f1f1f1];
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-[#bbb] rounded;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#aaa];
+}
+
+.hell::-webkit-scrollbar {
+  @apply w-1;
+}
+
+.hell::-webkit-scrollbar-thumb {
+  @apply bg-[#bbb] rounded;
+}
+
+.hell::-webkit-scrollbar-thumb:hover {
+  @apply bg-white;
+}
+
+.hell::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+.bg-radial {
+  background: linear-gradient(76.02deg, #35a6c8 33.32%, #007295 71.55%), radial-gradient(21.29% 87.33% at 50% 50.67%, #7cf2f6 0, #35a6c8 100%);
+}
+
+.bg-supermarket {
+  background: linear-gradient(267.6deg, rgba(#39ae00, .1) 0, rgba(#f2f2f2, 0) 100%);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  background-position: center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  padding: 8px 16px;
+  border-radius: 100%;
+  border: 1px solid gray;
+  color: black;
+}
+
+.swiper-button-prev {
+  background-image: url("/box-arrow-in-left.svg");
+}
+
+.swiper-button-next {
+  background-image: url("/box-arrow-in-right.svg");
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-pagination-bullet{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.card-shadow {
+  -webkit-box-shadow: 0px 0px 14px -3px #000000; 
+  box-shadow: 0px 0px 14px -3px #000000;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Yekan-thin";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanwebthin.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Yekan-regular";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanwebregular.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Yekan-medium";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanwebmedium.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Yekan-light";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanweblight.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Yekan-extraBold";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanwebextrabold.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Yekan-bold";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanwebbold.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Yekan-extraBlack";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanwebextrablack.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Yekan-black";
+    src: local("Yekan"),
+      url("./assets/fonts/iranyekanwebblack.woff") format("woff");
+    font-display: swap;
+  }
+
+  body {
+    @apply font-Yekan-regular;
+  }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade {
+  animation-name: fade;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-hide {
+  animation-name: hide;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}

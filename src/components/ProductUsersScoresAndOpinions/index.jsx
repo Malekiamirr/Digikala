@@ -14,7 +14,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineFlag } from "react-icons/ai";
 
 
-function ProductUserScoresAndOpinions({product, comments}) {
+function ProductUsersScoresAndOpinions({product, comments}) {
     
 
     const [isUseful, setisUseful] = useState({yes: 0, no: 0});
@@ -39,7 +39,7 @@ function ProductUserScoresAndOpinions({product, comments}) {
 
         {/*  */}
         <div className="flex items-start justify-start mt-3">
-            <div className="sticky ml-16 top-[171.031px] w-[260px] min-w-[260px] z-50">
+            <div className="sticky ml-16 top-[191.031px] left-0 w-[260px] min-w-[260px]">
                 {/* rating */}
                 <div className="flex items-center">
                     <p className="ml-1 text-[26px] font-Yekan-medium">{convertToPersianNumber(product.stock)}</p>
@@ -193,4 +193,4 @@ function ProductUserScoresAndOpinions({product, comments}) {
   )
 }
 
-export default ProductUserScoresAndOpinions
+export default ProductUsersScoresAndOpinions

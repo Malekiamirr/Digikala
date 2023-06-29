@@ -30,5 +30,7 @@ export {default as ProductRelatedVideos} from "./ProductRelatedVideos/index";
 export {default as ProductDetailsCategory} from "./ProductDetailsCategory/index";
 export {default as ProductIntroduction} from "./ProductIntroduction/index";
 export {default as ProductSpecifications} from "./ProductSpecifications/index";
-export {default as ProductUserScoresAndOpinions} from "./ProductUserScoresAndOpinions/index";
+export {default as ProductUsersScoresAndOpinions} from "./ProductUsersScoresAndOpinions/index";
+export {default as ProductUsersQuestions} from "./ProductUsersQuestions/index";
 export {default as DigikalaBuyingBenefits} from "./DigikalaBuyingBenefits/index";
+export {default as QuestionCard} from "./QuestionCard/index";

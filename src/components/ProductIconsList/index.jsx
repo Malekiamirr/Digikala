@@ -1,0 +1,40 @@
+import {FiHeart} from "react-icons/fi";
+import {IoShareSocialSharp} from "react-icons/io5";
+import {TbBellRinging} from "react-icons/tb";
+import {AiOutlineLineChart} from "react-icons/ai";
+import {MdCompare} from "react-icons/md";
+import {HiListBullet} from "react-icons/hi2";
+
+function ProductIconsList() {
+  return (
+    <div className="flex flex-col gap-4">
+        <div className="relative group hover:cursor-pointer">
+            <FiHeart className="text-[#3f4064] w-6 h-6 ml-4"/>
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اضافه به لیست علاقه‌مندی</div>
+        </div>
+        <div className="relative group hover:cursor-pointer">
+            <IoShareSocialSharp className="text-[#3f4064] w-6 h-6 ml-4"/>
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اشتراک گذاری</div>
+        </div>
+        <div className="relative group hover:cursor-pointer">
+            <TbBellRinging className="text-[#3f4064] w-6 h-6 ml-4"/>
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اطلاع‌رسانی شگفت‌انگیز</div>
+        </div>
+        <div className="relative group hover:cursor-pointer">
+            <AiOutlineLineChart className="text-[#3f4064] w-6 h-6 ml-4"/>
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">نمودار قیمت</div>
+        </div>
+        <div className="relative group hover:cursor-pointer">
+            <MdCompare className="text-[#3f4064] w-6 h-6 ml-4"/>
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">مقایسه</div>
+        </div>
+        <div className="relative group hover:cursor-pointer">
+            <HiListBullet className="text-[#3f4064] w-6 h-6 ml-4"/>
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اضافه به لیست</div>
+        </div>
+    </div>
+    
+  )
+}
+
+export default ProductIconsList

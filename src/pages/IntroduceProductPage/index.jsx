@@ -2,7 +2,9 @@ import { IntroductionHeader, ProductInformation } from "../../layouts";
 
 import { useGetCustomersCommentQuery } from "../../api/apiSlice";
 
-import {ShowPindo, ProductPhotos, ProductAnotherSellers, DigikalaBuyingBenefits, ProductRelatedVideos, ProductDetailsCategory, ProductIntroduction, ProductSpecifications, ProductUsersScoresAndOpinions, ProductUsersQuestions} from "../../components/index";
+import {ShowPindo, ProductPhotos, ProductAnotherSellers, DigikalaBuyingBenefits, ProductRelatedVideos, ProductDetailsCategory, ProductIntroduction, ProductSpecifications, ProductUsersScoresAndOpinions, ProductUsersQuestions, ProductStickyInfoBox} from "../../components/index";
+
+
 
 function IntroduceProductPage({product}) {
     
@@ -88,8 +90,8 @@ function IntroduceProductPage({product}) {
                     <ProductUsersQuestions/>
                 </div>
 
-                {/* features */}
-                <div className="mr-10"></div>
+                {/* sticky info box */}
+                <ProductStickyInfoBox product={product}/>
             </div>
         </div>
     </div>

@@ -82,6 +82,17 @@
   box-shadow: 0px 0px 14px -3px #000000;
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, auto) minmax(300px, 345px);
+  grid-template-rows: minmax(0, auto) minmax(0, auto) 1fr;
+  gap: 4px;
+}
+
+.product-box-background {
+  background: linear-gradient(0deg, hsla(240, 3%, 94%, 0.5), hsla(240, 3%, 94%, 0.5)), #fff;
+}
+
 @layer base {
   @font-face {
     font-family: "Yekan-thin";

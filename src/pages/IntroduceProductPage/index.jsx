@@ -30,16 +30,6 @@ function IntroduceProductPage({product}) {
                 <div className="min-w-0 grow">
                     <ProductInformation product={product}/>
                 </div>
-
-                {/* Product Sellers */}
-                <div className="bg-[#e0e0e6] mr-3 mb-3 w-max min-w-max">
-                    <div className="border border-[#e0e0e6]">
-                        <div className="flex items-center justify-between px-5 py-3">
-                            <h3 className="font-Yekan-bold text-[#080a38]">فروشنده</h3>
-                            <span className="text-xs text-[#19bfd3]">۱ فروشنده دیگر</span>
-                        </div>
-                     </div>
-                </div>
             </div>
             
              {/* ‌‌Benefits of buying from Digikala */}

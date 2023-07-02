@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProductRelatedVideos({videoUrl}) {
   return (
-    <div className="px-0 Laptop-L:p-4 Laptop-L:pr-5 mt-4 Laptop-L:border border-b-8 Lapto-L:border-b-4 border-[#f1f2f4]">
+    <div className="px-0 Laptop-L:p-4 Laptop-L:pr-5 mt-4 Laptop-L:border border-b-8 Lapto-L:border-b-4 border-[#f1f2f4] px-5 Laptop-L:px-0">
         <p className="text-sm Laptop-L:text-base py-4 font-Yekan-bold text-[#080a38]">ویدئوهای مرتبط</p>
         <div className="overflow-hidden bg-white Laptop-L:rounded-xl">
             <div className="max-w-sm overflow-hidden max-h-96 Laptop-L:rounded-xl">

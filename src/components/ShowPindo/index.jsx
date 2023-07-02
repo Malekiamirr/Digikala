@@ -2,7 +2,7 @@ import {BiArrowBack} from "react-icons/bi";
 
 function ShowPindo() {
   return (
-    <div className="relative pt-3 pb-5 mt-4 border-b-4 border-[#f1f2f4] bg-[#f1f2f4] -z-20">
+    <div className="relative pt-3 pb-5 mt-4 border-b-4 border-[#f1f2f4] bg-[#f1f2f4] -z-20 overflow-hidden">
 
         {/* Background */}
         <div className="absolute top-0 left-0 -z-10">
@@ -36,7 +36,7 @@ function ShowPindo() {
                     <div className="ml-6">
                         <div className="flex items-center ml-3">
                             <div className="ml-3">
-                                <img src={"https://dkstatics-public.digikala.com/digikala-c2c-advertisements/9ab92f5d3ec14b053bf714fcf2ce71e00bc80deb_1685715167.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90/watermark,image_ZGstdy9mODgyZmQ2MjYwZTkwYmNiYmEzYmJkZWE1Mzg0OGRiMDRiNmE1ZmZmXzE2NjczODUyODkucG5n,t_90,g_se,x_15,y_15"} className="w-auto h-[74px] object-fill" alt="pindo product" />
+                                <img src={"https://dkstatics-public.digikala.com/digikala-c2c-advertisements/9ab92f5d3ec14b053bf714fcf2ce71e00bc80deb_1685715167.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90/watermark,image_ZGstdy9mODgyZmQ2MjYwZTkwYmNiYmEzYmJkZWE1Mzg0OGRiMDRiNmE1ZmZmXzE2NjczODUyODkucG5n,t_90,g_se,x_15,y_15"} className="w-auto h-[74px] object-contain aspect-[3/4]" alt="pindo product" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <p className="text-[11px] font-Yekan-bold text-[#9e9fb1]">فروش نقد اقساطی</p>
@@ -49,7 +49,7 @@ function ShowPindo() {
                     <div className="ml-6">
                         <div className="flex items-center ml-3">
                             <div className="ml-3">
-                                <img src={"https://dkstatics-public.digikala.com/digikala-c2c-advertisements/f1c5d2c216b94a05e4f78faeca61d519e68d645a_1684841924.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90/watermark,image_ZGstdy9mODgyZmQ2MjYwZTkwYmNiYmEzYmJkZWE1Mzg0OGRiMDRiNmE1ZmZmXzE2NjczODUyODkucG5n,t_90,g_se,x_15,y_15"} className="w-auto h-[74px] object-fill" alt="pindo product" />
+                                <img src={"https://dkstatics-public.digikala.com/digikala-c2c-advertisements/f1c5d2c216b94a05e4f78faeca61d519e68d645a_1684841924.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90/watermark,image_ZGstdy9mODgyZmQ2MjYwZTkwYmNiYmEzYmJkZWE1Mzg0OGRiMDRiNmE1ZmZmXzE2NjczODUyODkucG5n,t_90,g_se,x_15,y_15"} className="w-auto h-[74px] object-contain aspect-[3/4]" alt="pindo product" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <p className="text-[11px] font-Yekan-bold text-[#9e9fb1]">فروش نقد اقساطی</p>
@@ -62,7 +62,7 @@ function ShowPindo() {
                     <div className="ml-6">
                         <div className="flex items-center ml-3">
                             <div className="ml-3">
-                                <img src={"https://dkstatics-public.digikala.com/digikala-c2c-advertisements/4a064df509a68698948b0eeca1198d6dd112f686_1680281109.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90/watermark,image_ZGstdy9mODgyZmQ2MjYwZTkwYmNiYmEzYmJkZWE1Mzg0OGRiMDRiNmE1ZmZmXzE2NjczODUyODkucG5n,t_90,g_se,x_15,y_15"} className="w-auto h-[74px] object-fill" alt="pindo product" />
+                                <img src={"https://dkstatics-public.digikala.com/digikala-c2c-advertisements/4a064df509a68698948b0eeca1198d6dd112f686_1680281109.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90/watermark,image_ZGstdy9mODgyZmQ2MjYwZTkwYmNiYmEzYmJkZWE1Mzg0OGRiMDRiNmE1ZmZmXzE2NjczODUyODkucG5n,t_90,g_se,x_15,y_15"} className="w-auto h-[74px] object-contain aspect-[3/4]" alt="pindo product" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <p className="text-[11px] font-Yekan-bold text-[#9e9fb1]">فروش نقد اقساطی</p>

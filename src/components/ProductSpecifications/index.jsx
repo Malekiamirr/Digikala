@@ -2,7 +2,7 @@ import { FiInfo } from "react-icons/fi";
 
 function ProductSpecifications({productsValues}) {
   return (
-    <div className="mt-4 pb-4 border-b-4 border-b-[#f1f2f4]">
+    <div className="mt-4 pb-4 border-b-4 border-b-[#f1f2f4] px-5 Laptop-L:px-0">
         <div className="hidden py-3 Laptop-L:block">
             <div className="flex items-center grow">
                 <h2 className="font-Yekan-bold">مشخصات</h2>

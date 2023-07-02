@@ -3,7 +3,7 @@ import {RiStore2Line} from "react-icons/ri";
 
 function IntroductionHeader() {
   return (
-    <div className="flex items-center justify-between mb-8">
+    <div className="flex items-center justify-between px-5 mb-8 Laptop-L:px-0">
                 <nav className="py-2 text-[#767790] text-xs flex items-center gap-2">
                     <span>{"دیجی‌کالا"}</span>
                         / 

@@ -22,6 +22,17 @@
   @apply bg-[#aaa];
 }
 
+.box-container {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide default scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide default scrollbar for IE/Edge */
+}
+
+.box-container::-webkit-scrollbar {
+  display: none; /* Hide default scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+}
+
 .hell::-webkit-scrollbar {
   @apply w-1;
 }

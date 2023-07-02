@@ -1,8 +1,8 @@
 import React from 'react'
 
-function DigikalaBuyingBenefits() {
+function    DigikalaBuyingBenefits() {
   return (
-    <div className="p-3 mt-3 Laptop-L:border-t border-b-8 Laptop-L:border-b-4 pb-7 border-[#f1f2f4] flex items-center Laptop-L:justify-around justify-between">
+    <div className="p-3 mt-3 Laptop-L:border-t gap-2 Laptop-L:gap-0 border-b-8 Laptop-L:border-b-4 pb-7 border-[#f1f2f4] flex items-center Laptop-L:justify-around justify-between">
         <div className="flex hover:cursor-pointer">
             <div className="flex flex-col items-center Laptop-L:flex-row">
                 <img className="w-[42px] h-[42px] ml-2" src={"https://www.digikala.com/statics/img/svg/infosection/express-delivery.svg"} alt="تحویل اکسپرس" />

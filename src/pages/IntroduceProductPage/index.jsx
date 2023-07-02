@@ -16,7 +16,7 @@ function IntroduceProductPage({product}) {
     
   return (
     <div className="max-w-[1676px] w-full mx-auto pt-4">
-        <div className="px-5">
+        <div className="Laptop-L:px-5">
 
             {/* Header */}
             <IntroductionHeader/>
@@ -54,7 +54,7 @@ function IntroduceProductPage({product}) {
             </div>
             
             {/* sub-image in small screen */}
-            <div className="py-4 my-5 overflow-hidden rounded-lg Laptop-L:hidden">
+            <div className="px-5 py-4 my-5 overflow-hidden rounded-lg Laptop-L:hidden Laptop-L:px-0">
                 <a href="https://digikala-service.com/">
                     <img src={"https://dkstatics-public.digikala.com/digikala-admin-landing/025ec5fcc64cd2d1d403ee1bb95061fa26eaa7e3_1678538985.jpg"} alt="sub image" className="h-full rounded-lg" />
                 </a>

@@ -14,13 +14,13 @@ function ProductSeller({price}) {
     <div className="border-t-[#f1f2f4] Laptop-L:mr-3 Laptop-L:border-t-0">
         <div className="mb-3 rounded-lg bg-white product-box-background Laptop-L:border Laptop-L:border-[#e0e0e6] h-min">
             {/* Header */}
-            <div className="py-4 Laptop-L:px-6">
+            <div className="px-5 py-4 Laptop-L:px-6">
                 <h3 className="text-sm Laptop-L:text-base font-Yekan-bold text-[#080a38]">
                     فروشنده 
                 </h3>
             </div>
                     
-            <div className="flex py-3 Laptop-L:px-6">
+            <div className="flex px-5 py-3 Laptop-L:px-6">
                 <div className="relative ml-4">
                     <GrHomeRounded className="w-5 h-5 text-[#3f4064]"/>
                     <TiTick className="h-4 w-4 absolute top-3 left-0 bg-[#00a049] rounded-full text-white border-2 border-white "/>
@@ -38,14 +38,14 @@ function ProductSeller({price}) {
                 </div>
             </div>
 
-            <div className="Laptop-L:px-6">
+            <div className="px-5 Laptop-L:px-6">
                 <div className="py-3 border-t border-t-[#e0e0e6] flex items-center">
                     <LuShieldCheck className="w-6 h-6 text-[#3f4064] ml-4" />
                     <p className="text-xs font-Yekan-bold text-[#3f4064]">گارانتی ۱۸ ماهه هما تلکام</p>
                 </div>
             </div>
 
-            <div className="Laptop-L:px-6">
+            <div className="px-5 Laptop-L:px-6">
                 <div className="flex flex-col py-3 border-t border-t-[#e0e0e6]">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
@@ -69,7 +69,7 @@ function ProductSeller({price}) {
                 </div>
             </div>
 
-            <div className="Laptop-L:px-6">
+            <div className="px-5 Laptop-L:px-6">
                 <div className="flex items-center py-3 border-t border-b border-[#e0e0e6]">
                     <div className="ml-4">
                         <img className="w-6 h-6" src={"https://www.digikala.com/statics/img/svg/club-point.svg"} alt="club-point photo" />
@@ -84,7 +84,7 @@ function ProductSeller({price}) {
                 </div>
             </div>
 
-            <div className="py-3 bg-white product-box-background Laptop-L:px-6">
+            <div className="px-5 py-3 bg-white product-box-background Laptop-L:px-6">
                 <div className="py-4">
                     <div className="grid items-end grid-cols-2 justify-items-end Laptop-L:block">
                         <div className="flex flex-col justify-between gap-6 Laptop-L:gap-0 Laptop-L:flex-row Laptop-L:items-center">
@@ -118,7 +118,7 @@ function ProductSeller({price}) {
             </div>
 
             {/* Better Price? */}
-            <div className="flex items-center justify-end pb-6 mt-4 hover:cursor-pointer Laptop-L:pb-0">
+            <div className="flex items-center justify-end px-5 pb-6 mt-4 hover:cursor-pointer Laptop-L:pb-0 Laptop-L:px-0">
                 <p className="text-[11px] text-[#9e9fb1]">قیمت بهتری سراغ دارید؟</p>
                 <MdOutlineDiscount className="scale-x-[-1] text-[#9e9fb1] mr-2 w-4 h-4"/>
             </div> 

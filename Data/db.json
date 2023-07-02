@@ -2566,6 +2566,47 @@
         "id": 3,
         "buyer": false,
         "isSuggested":false 
+        },
+        {
+            "title": "قیمت مناسب",
+            "name": "علی احمدی",
+            "description": "با این قیمت ارزش خرید داشت",
+            "createdAt": "2023-03-04T10:39:45.769Z",
+            "updatedAt": "2023-03-04T10:39:45.769Z",
+            "positiveComments": [
+                {
+                "id": 521636,
+                "description": "قیمت مناسب"
+                }
+            ],
+            "negativeComments": [],
+            "unknown": false,
+            "slug": "samsung-galaxy-s21-fe-5g",
+            "rate": "3",
+            "productName": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
+            "id": 3,
+            "buyer": true,
+            "isSuggested":true 
+        },
+        {
+            "title": "می‌تونست بهتر از اینا باشه ",
+            "name": "حسین محمدی",
+            "description": "اون چیزی که فکر می‌کردم نبود",
+            "createdAt": "2023-03-04T10:39:45.769Z",
+            "updatedAt": "2023-03-04T10:39:45.769Z",
+            "positiveComments": [
+               
+            ],
+            "negativeComments": [
+                
+            ],
+            "unknown": false,
+            "slug": "samsung-galaxy-s21-fe-5g",
+            "rate": "3",
+            "productName": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
+            "id": 3,
+            "buyer": true,
+            "isSuggested":false 
         }
     ],
 

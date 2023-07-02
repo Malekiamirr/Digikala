@@ -14,7 +14,7 @@ function ProductInformation({product}) {
   return (
     <>
         {/* product name and category */}
-        <div className="flex items-center">
+        <div className="flex items-center px-5 Laptop-L:px-0">
             <div>
                 <nav className="flex items-center gap-2 text-[#c3c3ce]">
                     <span className="text-xs Laptop-L:text-sm font-Yekan-bold text-[#19bfd3]">{"اپل"}</span>
@@ -28,13 +28,13 @@ function ProductInformation({product}) {
         <div className="Laptop-L:grid Laptop-L:grid-cols-[minmax(300px,auto),minmax(300px,345px)] Laptop-L:grid-rows-[minmax(0,auto),minmax(0,auto),1fr] Laptop-L:gap-4 flex flex-col">
             <div className="min-w-[300px] pb-3">
                 {/* product name */}
-                <div className="flex items-center">
+                <div className="flex items-center px-5 Laptop-L:px-0">
                     <span className="ml-2 text-xs text-[#c3c3ce]">{product.latinName}</span>
                     <div className="h-px bg-[#e0e0e6] grow"></div>
                 </div>
                 
                   {/* rating, point of view and questions */}
-                <div className="flex items-center">
+                <div className="flex items-center px-5 Laptop-L:px-0">
                 {/* Product Rating */}
                     <div className="flex items-center mt-2">
                         <img src={"https://www.digikala.com/statics/img/png/star-yellow.png"} className="w-4 h-4" alt="yello star" />
@@ -54,7 +54,7 @@ function ProductInformation({product}) {
                 </div>
 
                 {/* how many buyer offer this product */}
-                <div className="flex items-center mt-2">
+                <div className="flex items-center px-5 mt-2 Laptop-L:px-0">
                     <BiLike className="w-4 h-4 text-[#4caf50] ml-1"/>
                     <p className="ml-2 text-xs text-[#5a5c7a]">{"۸۵"}% (۴۰ نفر) از خریداران، این کالا را پیشنهاد کرده‌اند</p>
                     <div className="relative flex items-center group hover:cursor-pointer">
@@ -65,7 +65,7 @@ function ProductInformation({product}) {
                     </div>
                 </div>
 
-                <div className="min-w-[300px] pb-3">
+                <div className="min-w-[300px] pb-3 px-5 Laptop-L:px-0">
                     {/* Color */}
                     <ProductColors/>
                 </div> 
@@ -77,9 +77,9 @@ function ProductInformation({product}) {
                     <ProductFeatures productValue={product.productsValues}/>   
                             
                     {/* Return description */}
-                    <div className="py-3">
+                    <div className="px-5 py-3 Laptop-L:px-0">
                         <div className="flex">
-                            <AiFillInfoCircle className="w-8 h-8 mt-1 text-[#81858b]"/>
+                            <AiFillInfoCircle className="min-w-[24px] min-h-[24px] mt-1 text-[#81858b]"/>
                             <div className="mr-3 text-[11px] Laptop-L:text-xs text-[#767790] leading-6">
                                     امکان برگشت کالا در گروه موبایل با دلیل "انصراف از خرید" تنها در صورتی مورد قبول است که پلمب کالا باز نشده باشد.
                                     تمام گوشی‌های دیجی‌کالا ضمانت رجیستری دارند. در صورت وجود مشکل رجیستری، می‌توانید بعد از مهلت قانونی ۳۰ روزه، گوشی خریداری‌شده را مرجوع کنید.

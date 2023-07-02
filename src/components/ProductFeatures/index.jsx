@@ -3,7 +3,7 @@ import { RxDotFilled } from "react-icons/rx";
 function ProductFeatures({productValue}) {
   return (
     <>
-        <ul className=" min-w-[300px] pb-3 border-b border-b-[#f1f2f4]">
+        <ul className=" min-w-[300px] pb-3 border-b border-b-[#f1f2f4] px-5 Laptop-L:px-0">
             <div className="text-sm Laptop-L:text-base py-3 font-Yekan-bold text-[#080a38]">
                 ویژگی‌ها
             </div>

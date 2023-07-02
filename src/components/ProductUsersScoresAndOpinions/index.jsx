@@ -11,7 +11,8 @@ import { RxDotFilled } from "react-icons/rx";
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { GoDash } from "react-icons/go";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { AiOutlineFlag } from "react-icons/ai";
+import { AiOutlineFlag,AiOutlineMessage } from "react-icons/ai";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 
 function ProductUsersScoresAndOpinions({product, comments}) {
@@ -28,12 +29,15 @@ function ProductUsersScoresAndOpinions({product, comments}) {
     }
 
     return (
-    <div className="mt-4 pb-4 border-b-4 border-b-[#f1f2f4]">
+    <div className="mt-4 pb-4 border-b-4 border-b-[#f1f2f4] px-5 Laptop-L:px-0">
         {/* Header */}
         <div className="py-3">
             <div className="flex items-center grow">
                 <h2 className="hidden Laptop-L:block font-Yekan-bold">امتیاز و دیدگاه کاربران</h2>
-                <h2 className="text-sm Laptop-L:hidden font-Yekan-bold">دیدگاه‌ها</h2>
+                <div className="flex items-center justify-between w-full Laptop-L:hidden">
+                    <h2 className="text-sm font-Yekan-bold">دیدگاه‌ها</h2> 
+                    <span className="text-[11px] text-[#19bfd3]">{convertToPersianNumber(comments.length)} دیدگاه</span>   
+                </div>
             </div>
             <div className="mt-2 bg-[#ef394e] w-[5rem] h-[0.15rem] hidden Laptop-L:block"></div>
         </div>
@@ -116,16 +120,16 @@ function ProductUsersScoresAndOpinions({product, comments}) {
                     </div>
                 </div>
 
-                <div className="flex gap-4 overflow-x-scroll Laptop-L:overflow-hidden Laptop-L:flex-col Laptop-L:gap-0">
+                <div className="flex gap-4 box-container Laptop-L:overflow-hidden Laptop-L:flex-col Laptop-L:gap-0">
                     {comments.map((comment,i) =>
-                        <article key={i} className="flex py-3 p-4 Laptop-L:px-0 border Laptop-L:border-0 Laptop-L:border-t border-[#e0e0e6] rounded-lg Laptop-L:rounded-none min-w-[33.33%] w-[33.33%] Laptop-L:w-auto">
+                        <article key={i} className="flex py-3 p-4 Laptop-L:px-0 border Laptop-L:border-0 Laptop-L:border-t border-[#e0e0e6] rounded-lg Laptop-L:rounded-none min-w-[270px] w-[270px] Laptop-L:w-auto">
                             <div className="Laptop-L:flex mt-2 ml-2 w-8 h-5 bg-[#00a049] hidden items-center justify-center rounded text-white text-[11px] font-Yekan-bold">
                                 ۵.۰
                             </div>
 
                             <div className="flex flex-col justify-between w-full Laptop-L:flex-row">
                                 <div className="w-full">
-                                    <p className="pb-3 font-Yekan-bold text-[#080a38] text-sm leading-6 Laptop-L:text-base line-clamp-1 h-[10%] Laptop-L:h-auto">{comment.title}</p>
+                                    <p className="pb-3 font-Yekan-bold text-[#080a38] text-sm leading-6 Laptop-L:text-base h-8 Laptop-L:h-auto">{comment.title}</p>
                                     <div className="mt-1">
                                         <div className="items-center hidden pb-3 border-b Laptop-L:flex">
                                             <p className="text-[11px] text-[#9e9fb1]">{convertToPersianTime(comment.createdAt)}</p>
@@ -201,8 +205,21 @@ function ProductUsersScoresAndOpinions({product, comments}) {
                             </div>
                         </article>
                     )}  
-                </div>             
-                         
+                </div>
+
+                 {/* Your thought */}
+                 {/* Fix نظرسنجی اینپوت BUG */}
+                <div className="flex mt-4 Laptop-L:hidden">
+                    <AiOutlineMessage className="w-5 h-5 text-[#3f4064] ml-4" />
+                    <div className="flex flex-col w-full gap-2 pb-2">
+                        <div className="flex items-center justify-between">
+                            <span className="text-[#3f4064] font-Yekan-bold text-[13px]">دیدگاه خود را درباره این کالا بنویسید</span>
+                            <MdKeyboardArrowLeft className="w-6 h-6 text-[#9e9fb1]"/>   
+                        </div>
+                        <p className="text-[#9e9fb1] text-[11px]">۵ امتیاز دیجی‌کلاب</p>
+                        <p className="text-[#9e9fb1] text-[11px]">پس از تایید شدن دیدگاه، با رفتن به صفحه ماموریت‌های دیجی‌کلاب امتیازتان را دریافت کنید.</p>
+                    </div> 
+                </div>  
             </div>
         </div>
     </div>

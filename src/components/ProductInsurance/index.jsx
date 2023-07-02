@@ -2,7 +2,7 @@ import {MdKeyboardArrowLeft} from "react-icons/md";
 
 function ProductInsurance() {
   return (
-    <div className="my-2">
+    <div className="px-5 my-2 Laptop-L:px-0">
         {/* Header Text */}
         <p className="mb-3 font-Yekan-bold">بیمه</p>
                             

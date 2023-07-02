@@ -11,7 +11,7 @@ function IntroductionHeader() {
                         / 
                     <span>{"گوشی موبایل"}</span>
                 </nav>
-                <div className="flex items-center py-2">
+                <div className="items-center hidden py-2 Laptop-L:flex">
                     <button className="ml-8 text-xs text-[#9e9fb1] flex items-center gap-2">
                         <span>ثبت آگهی در پیندو</span>
                         <AiOutlineNotification className="w-[18px] h-[18px]" />

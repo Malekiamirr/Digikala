@@ -6,7 +6,7 @@ import convertToPersianNumber from "../../utils/convertToPersianNumber";
 
 function ProductAnotherSellers({price}) {
   return (
-    <div className="pb-5 mt-4 border-b-4 border-[#f1f2f4]">
+    <div className="pb-5 mt-4 border-b-4 border-[#f1f2f4] hidden Laptop-L:block">
       {/* Header */}
       <div className="py-3">
           <p className="font-Yekan-bold text-[#080a38] ">فروشندگان این کالا</p>
@@ -102,7 +102,7 @@ function ProductAnotherSellers({price}) {
             </div>  
         </div>
       </div>
-  </div>
+    </div>
   )
 }
 

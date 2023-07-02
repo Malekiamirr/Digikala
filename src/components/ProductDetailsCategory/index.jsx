@@ -20,7 +20,7 @@ function ProductDetailsCategory() {
     }, []);
   
   return (
-    <div className={`sticky top-[134px] z-10 mt-5 bg-white ${isScrolledUp && "top-[172px]"}`}>
+    <div className={`hidden Laptop-L:block sticky top-[134px] z-10 mt-5 bg-white ${isScrolledUp && "top-[172px]"}`}>
         <div>
             <ul className="flex relative items-center border-b border-b-[#e0e0e6] text-[#767790] text-xs font-Yekan-bold">
                 <li className="relative px-4 py-3 hover:cursor-pointer text-[#ef4056]">

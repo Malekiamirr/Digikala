@@ -22,7 +22,7 @@ function IntroduceProductPage({product}) {
             <IntroductionHeader/>
             
             {/* Main Part */}
-            <div className="flex">
+            <div className="flex flex-col Laptop-L:flex-row">
                 {/* Photo and Icons */}
                 <ProductPhotos product={product}/>
 
@@ -47,14 +47,21 @@ function IntroduceProductPage({product}) {
             <ShowPindo/>
 
             {/* Sub Image 1 */}
-            <div className="px-5 py-4 my-5 overflow-hidden rounded-lg">
+            <div className="hidden px-5 py-4 my-5 overflow-hidden rounded-lg Laptop-L:block">
                 <a href="https://digikala-service.com/">
                     <img src={"https://dkstatics-public.digikala.com/digikala-admin-landing/6318364ab23fcfc2cfaaa1924ec0ec95172e1022_1678538975.jpg"} alt="sub image" className="rounded-lg" />
                 </a>
             </div>
+            
+            {/* sub-image in small screen */}
+            <div className="py-4 my-5 overflow-hidden rounded-lg Laptop-L:hidden">
+                <a href="https://digikala-service.com/">
+                    <img src={"https://dkstatics-public.digikala.com/digikala-admin-landing/025ec5fcc64cd2d1d403ee1bb95061fa26eaa7e3_1678538985.jpg"} alt="sub image" className="h-full rounded-lg" />
+                </a>
+            </div>
 
             {/* Sub Image 2 */}
-            <div className="px-5 py-4 my-5 overflow-hidden rounded-lg">
+            <div className="hidden px-5 py-4 my-5 overflow-hidden rounded-lg Laptop-L:block">
                 <a href="https://digikala-service.com/">
                     <img src={"https://dkstatics-public.digikala.com/digikala-admin-landing/b00e0cf8908bcb4ea3a16c685b4486a83333a38d_1687621025.jpg"} alt="sub image" className="rounded-lg" />
                 </a>

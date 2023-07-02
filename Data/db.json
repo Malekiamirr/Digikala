@@ -2508,7 +2508,9 @@
         "slug": "samsung-galaxy-s21-fe-5g",
         "rate": "4",
         "productName": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
-        "id": 1
+        "id": 1,
+        "buyer": true,
+        "isSuggested":true 
         },
         {
         "title": "عالی",
@@ -2540,7 +2542,9 @@
         "slug": "samsung-galaxy-s21-fe-5g",
         "rate": "5",
         "productName": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
-        "id": 2
+        "id": 2,
+        "buyer": true,
+        "isSuggested":true 
         },
         {
         "title": "تخفیف خوب",
@@ -2559,7 +2563,9 @@
         "slug": "samsung-galaxy-s21-fe-5g",
         "rate": "3",
         "productName": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
-        "id": 3
+        "id": 3,
+        "buyer": false,
+        "isSuggested":false 
         }
     ],
 

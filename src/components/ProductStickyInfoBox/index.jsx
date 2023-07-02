@@ -5,7 +5,7 @@ import convertToPersian from "../../utils/convertToPersianNumber";
 
 function ProductStickyInfoBox({product}) {
   return (
-    <div className="relative mr-10">
+    <div className="relative hidden mr-10 Laptop-L:blcok">
         <div className="sticky top-[230px]">
             <div className="mt-5 mb-2 p-4 border border-[#e0e0e6] bg-[#f1f2f4] w-[300px] rounded-lg">
                 <div className="flex pb-3 mb-3 border-b border-b-[#e0e0e6]">

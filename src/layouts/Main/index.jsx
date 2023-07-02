@@ -10,11 +10,6 @@ import {TbTargetArrow, TbBuildingCarousel, TbDiscount2} from "react-icons/tb";
 function MainLayout() {
     const {data:stories, isLoading, isError} = useGetStoriesQuery();
     const {data:swipers, isLoading:swipersIsLoading, isError:swipersIsError} = useGetSwipersQuery();
-    const [storyIsOpen, setStoryIsOpen] = useState(false)
-    const handleStoryIsOpen = () => {
-     setStoryIsOpen(!storyIsOpen);
-     console.log(storyIsOpen)
-    }
    
     if (isLoading || isError || swipersIsLoading || swipersIsError) {
         return;
@@ -22,13 +17,13 @@ function MainLayout() {
     else {
      return (
     <main className="">
-        <div className="flex items-center justify-center">{stories.map(story=><Story key={story.id} onClick={handleStoryIsOpen} story={story}/>)}</div>
+        <div className="flex items-center justify-center">{stories.map(story=><Story key={story.id} story={story}/>)}</div>
         <div className="my-2">
             <ShowSwiper sliders={swipers}/>
         </div>
         <div className="px-4 w-full max-w-[83.5rem] mx-auto">
-            <HomeFeatures />
             {/* BUG پیشنهاد شگفت انگیز و اینا */}
+            <HomeFeatures/>
         </div>
 
         {/* super market */}

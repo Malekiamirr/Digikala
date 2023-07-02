@@ -77,8 +77,8 @@
     "swiper" : [
         {
             "id": 1,
-            "title": "برترین برند های تیشرت مردانه",
-            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/d8776d445d4b69a802c2b634822c290529a7bf67_1683472938.jpg?x-oss-process=image/quality,q_95/format,webp"
+            "title": "باشگاه 90 درصدی ها",
+            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/9fd370f2d50b54b3325b33dc86e9b9429101bd16_1688218520.jpg?x-oss-process=image/quality,q_95/format,webp"
         },
         {
             "id": 2,
@@ -87,18 +87,23 @@
         },
         {
             "id": 3,
-            "title": "خرید اعتباری",
-            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/c839b1f18bc20e7b587e5a7b6a722dc932062b0d_1685441171.gif?x-oss-process=image?x-oss-process=image/format,webp"
+            "title": "کولر و پنکه",
+            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/9e9f264b38af101fe1a27312b63e97942ee1e766_1688202606.jpg?x-oss-process=image/quality,q_95/format,webp"
         },
         {
             "id": 4,
-            "title": "بهترین قیمت",
-            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/dc036a195b4b2f4865279f49fd69a2f72e038088_1685649914.jpg?x-oss-process=image/quality,q_95/format,webp"
+            "title": "خرید اقساطی",
+            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/748a21c87cac05cc1d876a7b5a9f6f4c8f740222_1687964990.gif?x-oss-process=image?x-oss-process=image/format,webp"
         },
         {
             "id": 5,
-            "title": "جعبه رو باز کن",
-            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/6904bb88f4978c65ae58f87e4409a7575725799d_1680516760.jpg?x-oss-process=image/quality,q_95/format,webp"
+            "title": "بیشترین تخفیف ساعت",
+            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/c0cabfba852b8e781f0a187399d9148b9aead122_1682838535.jpg?x-oss-process=image/quality,q_95/format,webp"
+        },
+        {
+            "id": 6,
+            "title": "پارتنرشیپ - اکتیو",
+            "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/007db2fdf5077f1206a02a6bcf8910d79194e87b_1687865437.jpg?x-oss-process=image/quality,q_95/format,webp"
         }
    
     ],

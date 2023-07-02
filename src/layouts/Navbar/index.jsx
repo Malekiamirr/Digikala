@@ -30,7 +30,7 @@ function Navbar() {
       >
         {/* Navbar Image */}
          <div className='hidden w-full Laptop-L:block'>
-          <img src={navbar} alt='navbar image' className='h-[60px] w-full' />
+          <img src='https://dkstatics-public.digikala.com/digikala-adservice-banners/f9acfcb34442c69cbcebaf56201c558aaca74914_1688218466.jpg?x-oss-process=image/quality,q_95/format,webp' alt='navbar image' className='h-[60px] w-full aspect-[3/2] object-cover' />
         </div>
 
         {/* Navbar Details */}

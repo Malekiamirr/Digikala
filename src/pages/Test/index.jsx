@@ -1,37 +1,67 @@
-import { useState } from "react"
+import "./style.css";
+import { useState } from "react";
 
 function Test() {
-  const [translate, setTranslate] = useState(0)
-  
-  const handleTranslate = (where) => {
-    if (where === "next") {
-        setTranslate(prevTranslate => prevTranslate + 100);
-    }
-    else {
-        setTranslate(prevTranslate => prevTranslate - 100);
-    }
-    console.log(translate); 
-  }
+
+  const [curSlide, setCurSlide] = useState(0);
+  const slides = [...document.getElementsByClassName("slide")];
+  console.log(slides)
+  const maxSlide = slides.length;
+
+  const createDots = () => {
+    return slides.map((_, i) => (
+      <button
+        key={i}
+        className={`dots__dot ${curSlide === i ? 'dots__dot--active' : ''}`}
+        onClick={() => goToSlide(i)}
+      ></button>
+    ));
+  };
+
+  const activateDot = (slide) => {
+    setCurSlide(slide);
+  };
+
+  const goToSlide = (slide) => {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+    );
+    activateDot(slide);
+  };
+
+  const nextSlide = () => {
+    const newSlide = curSlide === maxSlide - 1 ? 0 : curSlide + 1;
+    goToSlide(newSlide);
+  };
+
+  const prevSlide = () => {
+    const newSlide = curSlide === 0 ? maxSlide - 1 : curSlide - 1;
+    goToSlide(newSlide);
+  };
 
     return (
-    <div className="flex items-center justify-center w-full h-screen">
-        <div className="flex gap-2 p-4 overflow-hidden bg-black w-96 max-w-96">
-            <div className={`relative flex w-full min-w-full translate-x-[]`}>
-                <button onClick={()=> handleTranslate("next")} className="absolute left-0">Next</button>
-                
-                <div className={`w-20 min-w-[100px] h-20 bg-red-500`}></div>
-                <div className={`w-20 min-w-[100px] h-20 bg-blue-500`}></div>
-                <div className={`w-20 min-w-[100px] h-20 bg-green-500`}></div>
-                <div className={`w-20 min-w-[100px] h-20 bg-yellow-500`}></div>
-                <div className={`w-20 min-w-[100px] h-20 bg-pink-500`}></div>
-                <div className={`w-20 min-w-[100px] h-20 bg-orange-500`}></div>
-                <div className={`w-20 min-w-[100px] h-20 bg-slate-500`}></div>
-                
-                <button onClick={()=> handleTranslate("prev")} className="absolute right-0">Prev</button>
-            </div>
+      
+      <div className="slider">
+        <div id="slide" className="slide">
+          <img src="https://dkstatics-public.digikala.com/digikala-adservice-banners/9fd370f2d50b54b3325b33dc86e9b9429101bd16_1688218520.jpg?x-oss-process=image/quality,q_95/format,webp" alt="" />
         </div>
-    </div>
+
+        <div id="slide" className="slide">
+        <img src="https://dkstatics-public.digikala.com/digikala-adservice-banners/9fd370f2d50b54b3325b33dc86e9b9429101bd16_1688218520.jpg?x-oss-process=image/quality,q_95/format,webp" alt="" />
+        </div>
+
+        <div id="slide" className="slide">
+        <img src="https://dkstatics-public.digikala.com/digikala-adservice-banners/9fd370f2d50b54b3325b33dc86e9b9429101bd16_1688218520.jpg?x-oss-process=image/quality,q_95/format,webp" alt="" />
+        </div>
+
+        <button className="slider__btn slider__btn--left" onClick={prevSlide}>&larr;</button>
+        <button className="slider__btn slider__btn--right" onClick={nextSlide}>&rarr;</button>
+        <div className="dots">{createDots()}</div>
+      </div>
+    
   )
 }
 
-export default Test
+export default Test;
+
+

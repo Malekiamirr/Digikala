@@ -61,12 +61,12 @@
 .swiper-button-prev {
   background-color: white;
   background-position: center;
-  background-size: 20px;
+  background-size: 10px;
   background-repeat: no-repeat;
   padding: 8px 16px;
   border-radius: 100%;
   border: 1px solid gray;
-  color: black;
+  color: gray;
 }
 
 .swiper-button-prev {

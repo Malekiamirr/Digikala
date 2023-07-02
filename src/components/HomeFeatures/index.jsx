@@ -7,14 +7,17 @@ import {BiArrowBack} from "react-icons/bi";
 
 function HomeFeatures() {
   const [openModal, setOpenModal] = useState(false);  
-  
   const handleOpen = () => {
     setOpenModal(!openModal);
     const modal = document.querySelector(".modal");
     const modalBg = document.querySelector(".modal-bg");
+    const body = document.body;
     if (!openModal) {
       modal.classList.add('hide');
       modalBg.classList.add('hide');
+      body.classList.add("overflow-hidden");
+    } else {
+      body.classList.remove("overflow-hidden");
     }
   }
   
@@ -26,7 +29,7 @@ function HomeFeatures() {
     console.log(featuresDetails);
     
   return (
-      <div className="grid grid-cols-4 p-2 px-3 mt-6 gap-y-6 Laptop-L:flex Laptop-L:items-center Laptop-L:justify-around">
+      <div className={`grid grid-cols-4 p-2 px-3 mt-6 gap-y-6 Laptop-L:flex Laptop-L:items-center Laptop-L:justify-around`}>
         {features.map(feature=> 
         <div className="flex flex-col items-center text-center hover:cursor-pointer" key={feature.id}>
             {feature.image && <img className="w-[52px] h-[52px]" src={feature.image} alt={feature.title} />}

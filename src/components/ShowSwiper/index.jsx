@@ -21,7 +21,7 @@ const showSwiper = ({sliders}) => {
         className="mySwiper"
       >
         {  sliders.map(swiperItem=> 
-          <SwiperSlide key={swiperItem.id}>
+          <SwiperSlide key={swiperItem.id} className="">
             <img src={swiperItem.image} alt={swiperItem.title} title={swiperItem.title} />
           </SwiperSlide>)
         }

@@ -4,8 +4,16 @@ import {TbBellRinging} from "react-icons/tb";
 import {AiOutlineLineChart} from "react-icons/ai";
 import {MdCompare} from "react-icons/md";
 import {HiListBullet} from "react-icons/hi2";
+import { useState } from "react";
 
 function ProductIconsList() {
+
+  const [showPriceChart, setShowPriceChart] = useState(false);
+  const handleShowPriceChart = () => {
+    setShowPriceChart(!showPriceChart);
+  }
+
+
   return (
     <div className="flex gap-4 Laptop-L:flex-col">
         <div className="relative group hover:cursor-pointer">
@@ -22,7 +30,7 @@ function ProductIconsList() {
         </div>
         <div className="relative group hover:cursor-pointer">
             <AiOutlineLineChart className="text-[#3f4064] w-6 h-6 ml-4"/>
-            <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">نمودار قیمت</div>
+            <div onClick={handleShowPriceChart} className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">نمودار قیمت</div>
         </div>
         <div className="relative group hover:cursor-pointer">
             <MdCompare className="text-[#3f4064] w-6 h-6 ml-4"/>

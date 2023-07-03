@@ -5,7 +5,7 @@ function ProductPhotos({product}) {
   return (
     <div className="ml-4">
         <div className="flex flex-col mb-2 Laptop-L:flex-row">
-                {/* Icons */}
+            {/* Icons */}
             <div className="self-end Laptop-L:self-auto">
                 <ProductIconsList/>
             </div>
@@ -31,7 +31,7 @@ function ProductPhotos({product}) {
                 <span className="text-[#767790] text-xs">گزارش نادرستی مشخصات</span>
             </div>
             <span className="text-[#9e9fb1] text-[11px]">
-                            DKP-10849401
+                DKP-10849401
             </span>
         </div>
     </div>

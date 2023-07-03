@@ -21,6 +21,7 @@
     "react-icons": "^4.9.0",
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2",
+    "recharts": "^2.7.2",
     "swiper": "^9.3.2"
   },
   "devDependencies": {

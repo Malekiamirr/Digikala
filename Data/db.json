@@ -105,7 +105,6 @@
             "title": "پارتنرشیپ - اکتیو",
             "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/007db2fdf5077f1206a02a6bcf8910d79194e87b_1687865437.jpg?x-oss-process=image/quality,q_95/format,webp"
         }
-   
     ],
 
     "features" : [
@@ -247,29 +246,31 @@
         "id": 1,
         "name": "سامان",
         "email": "saman@gmail.com",
+        "password": "Saman123456",
         "createdAt": "2023-03-04T12:29:45.605Z",
-        "updatedAt": "2023-03-04T12:29:45.605Z"
+        "updatedAt": "2023-03-04T12:29:45.605Z",
+        "favoriteProducts":[],
+        "cart": [] 
         },
         {
         "id": 2,
         "name": "کوروش",
         "email": "koroush@gmail.com",
+        "password": "Kourosh123456",
         "createdAt": "2023-03-04T13:13:20.913Z",
-        "updatedAt": "2023-03-04T13:13:20.913Z"
+        "updatedAt": "2023-03-04T13:13:20.913Z",
+        "favoriteProducts":[],
+        "cart": []
         },
         {
         "id": 3,
-        "name": "amir malkei",
-        "email": "realmalekiamir@gmail.com",
-        "createdAt": "2023-05-29T05:36:40.989Z",
-        "updatedAt": "2023-05-29T05:36:40.989Z"
-        },
-        {
-        "id": 4,
         "name": "امیر مالکی",
         "email": "realmalekiamir@gmail.com",
-        "createdAt": "2023-05-29T05:37:00.324Z",
-        "updatedAt": "2023-05-29T05:37:00.324Z"
+        "password": "Amir369852147",
+        "createdAt": "2023-05-29T05:36:40.989Z",
+        "updatedAt": "2023-05-29T05:36:40.989Z",
+        "favoriteProducts":[],
+        "cart": []
         }
     ],
 

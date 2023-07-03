@@ -2,7 +2,7 @@ import { IntroductionHeader, ProductInformation } from "../../layouts";
 
 import { useGetCustomersCommentQuery } from "../../api/apiSlice";
 
-import {ShowPindo, ProductPhotos, ProductAnotherSellers, DigikalaBuyingBenefits, ProductRelatedVideos, ProductDetailsCategory, ProductIntroduction, ProductSpecifications, ProductUsersScoresAndOpinions, ProductUsersQuestions, ProductStickyInfoBox} from "../../components/index";
+import {ShowPindo, ProductPhotos, ProductAnotherSellers, DigikalaBuyingBenefits, ProductRelatedVideos, ProductDetailsCategory, ProductIntroduction, ProductSpecifications, ProductUsersScoresAndOpinions, ProductUsersQuestions, ProductStickyInfoBox ,PriceChart} from "../../components/index";
 
 
 

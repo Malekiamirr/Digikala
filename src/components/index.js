@@ -36,3 +36,4 @@ export {default as ProductStickyInfoBox} from "./ProductStickyInfoBox/index";
 export {default as ProductSeller} from "./ProductSeller/index";
 export {default as DigikalaBuyingBenefits} from "./DigikalaBuyingBenefits/index";
 export {default as QuestionCard} from "./QuestionCard/index";
+export {default as PriceChart} from "./PriceChart/index";

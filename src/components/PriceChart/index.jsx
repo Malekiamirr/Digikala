@@ -1,7 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {IoClose} from "react-icons/io5";
 
-
-function PriceChart() {
+function PriceChart({onClick}) {
 
     const data = [
         {
@@ -82,11 +82,16 @@ function PriceChart() {
       ];
 
   return (
-     <div className='w-full h-auto mx-auto bg-white chart'>
-         <h3 className="chartTitle">فروش روزانه</h3>
+     <div className='w-full h-screen p-10 pl-0 mx-auto bg-white min-[1280px]:rounded-lg min-[1280px]:w-2/3 min-[1280px]:h-auto chart'>
+        <div className='flex items-center justify-between py-3'>
+         <h3 className=" chartTitle">فروش روزانه</h3>
+         <div className='pl-16'>
+         <IoClose onClick={onClick} className='w-6 h-6 text-[#3f4064] hover:cursor-pointer'/>
+         </div>
+        </div>
          <ResponsiveContainer width='99%'  aspect={3} >
             <LineChart data={data} >
-            <CartesianGrid vertical={false} strokeDasharray="3 3" />
+            <CartesianGrid vertical={false} strokeDasharray="3 3"/>
                 <XAxis dataKey="name" type="category" stroke='#515151' allowDuplicatedCategory={false}/>
                 <YAxis dataKey="pv"/>
                 <Line type="monotone" dataKey="قیمت بدون تخفیف" stroke='#00bfd6' activeDot={{ r: 5 }} strokeWidth={4}/>

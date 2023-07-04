@@ -1,7 +1,7 @@
 // import "./style.css";
 // import { useState } from "react";
 
-import { PriceChart } from "../../components"
+import { PriceChart, RegisterComment } from "../../components"
 
 // function Test() {
 
@@ -69,9 +69,10 @@ import { PriceChart } from "../../components"
 
 
 function Test() {
+  
   return (
     <>
-      <PriceChart/>
+      <RegisterComment/>
     </>
   )
 }

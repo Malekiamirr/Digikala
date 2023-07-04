@@ -84,7 +84,7 @@ function ProductSeller({price}) {
                 </div>
             </div>
 
-            <div className="px-5 py-3 bg-white product-box-background Laptop-L:px-6">
+            <div className="fixed bottom-0 left-0 w-full px-5 py-3 Laptop-L:relative Laptop-L:shadow-none Laptop-L:w-auto bg-white shadow-[0px_-2px_3px_0px_#00000024] product-box-background Laptop-L:px-6">
                 <div className="py-4">
                     <div className="grid items-end grid-cols-2 justify-items-end Laptop-L:block">
                         <div className="flex flex-col justify-between gap-6 Laptop-L:gap-0 Laptop-L:flex-row Laptop-L:items-center">
@@ -98,7 +98,7 @@ function ProductSeller({price}) {
                             </div>
                         </div>
 
-                        <button className="py-3 px-4 border border-[#ef4056] bg-[#ef4056] text-white text-xs w-full rounded-lg mt-2 order-first">
+                        <button className="py-3 px-4 border border-[#ef4056] bg-[#ef4056] font-Yekan-bold text-white text-xs w-full rounded-lg mt-2 order-first">
                             افزودن به سبد
                         </button>
                     </div>

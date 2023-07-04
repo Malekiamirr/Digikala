@@ -5,12 +5,13 @@ import {AiOutlineLineChart} from "react-icons/ai";
 import {MdCompare} from "react-icons/md";
 import {HiListBullet} from "react-icons/hi2";
 import { useState } from "react";
-
+import {PriceChart} from "../index";
 function ProductIconsList() {
 
   const [showPriceChart, setShowPriceChart] = useState(false);
   const handleShowPriceChart = () => {
     setShowPriceChart(!showPriceChart);
+    console.log(showPriceChart)
   }
 
 
@@ -28,9 +29,9 @@ function ProductIconsList() {
             <TbBellRinging className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اطلاع‌رسانی شگفت‌انگیز</div>
         </div>
-        <div className="relative group hover:cursor-pointer">
+        <div onClick={handleShowPriceChart} className="relative group hover:cursor-pointer">
             <AiOutlineLineChart className="text-[#3f4064] w-6 h-6 ml-4"/>
-            <div onClick={handleShowPriceChart} className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">نمودار قیمت</div>
+            <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">نمودار قیمت</div>
         </div>
         <div className="relative group hover:cursor-pointer">
             <MdCompare className="text-[#3f4064] w-6 h-6 ml-4"/>
@@ -40,6 +41,11 @@ function ProductIconsList() {
             <HiListBullet className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اضافه به لیست</div>
         </div>
+
+        <div onClick={handleShowPriceChart} className={`absolute top-0 left-0 z-50 flex items-center justify-center w-full h-screen bg-black bg-opacity-25 ${!showPriceChart && "hidden"}`}>
+            <PriceChart onClick={handleShowPriceChart}/>
+        </div>
+
     </div>
     
   )

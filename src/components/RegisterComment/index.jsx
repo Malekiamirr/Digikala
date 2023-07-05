@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import {BiPlus} from "react-icons/bi";
 import {TbTrash} from "react-icons/tb";
 
-function RegisterComment() {
+function RegisterComment({onClose}) {
     const [circlePosition, setCirclePosition] = useState(0);
     const [commentInput, setCommentInput] = useState("");
     const [PositivePointComment, setPositivePointComment] = useState("");
@@ -12,8 +12,7 @@ function RegisterComment() {
     const [negativePoints, setNegativePoints] = useState([]);
     const [textareaValue, setTextareaValue] = useState("");
     const [isChecked, setIsChecked] = useState(false);
-    const [isClose, setIsClose] = useState(false);
-    const [isValidToSubmit, setIsValidToSubmit] = useState({commentInput: false, textareaValue: false})
+    const [isValidToSubmit, setIsValidToSubmit] = useState({commentInput: false, textareaValue: false});
 
   const handleDrag = (event) => {
     const newPosition = event.clientX;
@@ -41,10 +40,6 @@ function RegisterComment() {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-
-  const handleIsClose = () => {
-    setIsClose(!isClose)
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -97,7 +92,7 @@ function RegisterComment() {
 
 
   return (
-    <div className={`${isClose && "hidden"} absolute top-0 left-0 z-50 flex items-center justify-center w-full h-screen bg-black bg-opacity-20`}>
+    <div className={`fixed top-0 left-0 z-50 flex items-center justify-center w-full h-screen bg-black bg-opacity-20`}>
             <div className="bg-white Laptop-L:w-[800px] Laptop-L:rounded-lg h-screen Laptop-L:max-h-[80vh] overflow-y-clip Laptop-L:h-full w-full pb-[70px] Laptop-L:pb-14">
                 <div className='px-5'>
                     <div className='border-b border-b-[#e0e0e6] flex items-center justify-between '>
@@ -107,7 +102,7 @@ function RegisterComment() {
                         </div>
 
                         {/* Close Button */}
-                        <IoClose onClick={handleIsClose} className='w-6 h-6 text-[#3f4064] hover:cursor-pointer'/>
+                        <IoClose onClick={onClose} className='w-6 h-6 text-[#3f4064] hover:cursor-pointer'/>
                     </div>
                     
                 </div>

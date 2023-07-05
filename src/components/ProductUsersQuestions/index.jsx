@@ -1,8 +1,15 @@
-import {QuestionCard} from '../index';
+import {QuestionCard, RegisterQuestion} from '../index';
 import {MdOutlineKeyboardArrowLeft} from "react-icons/md";
 import {BiSave} from "react-icons/bi";
+import { useState } from 'react';
 
 function ProductUsersQuestions() {
+
+  const [showAskQuestion, setShowAskQuestion] = useState(false);
+
+  const toggleAskQuestion = () => {
+    setShowAskQuestion(!showAskQuestion);
+  }
 
   const questions = [
     {
@@ -46,7 +53,7 @@ function ProductUsersQuestions() {
           <p className="mb-5 mt-7 min-w-[240px] text-[10px] text-[#3f4064]">
             شما هم درباره این کالا پرسش ثبت کنید  
           </p>
-          <button className="px-4 py-2 mt-2 border border-[#ef4056] text-xs font-Yekan-bold rounded-lg text-[#ef4056] w-full">
+          <button onClick={toggleAskQuestion} className="px-4 py-2 mt-2 border border-[#ef4056] text-xs font-Yekan-bold rounded-lg text-[#ef4056] w-full">
             ثبت پرسش
           </button>
         </div>
@@ -83,6 +90,8 @@ function ProductUsersQuestions() {
           </p>
         </div>
       </div>
+
+      {showAskQuestion && <RegisterQuestion onClose={toggleAskQuestion}/>}
     </div>
   )
 }

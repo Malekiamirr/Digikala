@@ -13,16 +13,24 @@ import { GoDash } from "react-icons/go";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineFlag,AiOutlineMessage } from "react-icons/ai";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import {RegisterComment} from "../index";
 
 
 function ProductUsersScoresAndOpinions({product, comments}) {
     
 
     const [isUseful, setisUseful] = useState({yes: 0, no: 0});
+    const [showAddComment, setShowAddComment] = useState(false);
+
+    const toggleAddComment = () => {
+      setShowAddComment(!showAddComment);
+        document.body.classList.toggle("overflow-hidden")
+    };
 
     const handleIsUseful = (which) => {
         which === "yes" ? setisUseful({yes: isUseful.yes + 1 , no : isUseful.no}) : setisUseful({yes: isUseful.yes , no : isUseful.no + 1})
     }
+    
 
     const handleReportBox = () => {
         document.getElementById("report").classList.toggle("hidden");
@@ -74,7 +82,7 @@ function ProductUsersScoresAndOpinions({product, comments}) {
                             </div>
                             <ProgresBar progress={view.rate}/>
                         </div>
-                                    )}
+                        )}
 
                     {/* Warning */}
                     <p className="text-[11px] text-[#9e9fb1]">
@@ -89,7 +97,7 @@ function ProductUsersScoresAndOpinions({product, comments}) {
                 </p>
 
                 {/* submit view button */}
-                <button className="px-3 py-3 mt-4 border border-[#ef4056] w-full rounded-lg">
+                <button onClick={toggleAddComment} className="px-3 py-3 mt-4 border border-[#ef4056] w-full rounded-lg">
                     <p className="flex items-center justify-center text-[#ef4056] text-xs font-Yekan-bold">ثبت دیدگاه</p>
                 </button>
 
@@ -211,10 +219,10 @@ function ProductUsersScoresAndOpinions({product, comments}) {
                  {/* Fix نظرسنجی اینپوت BUG */}
                 <div className="flex mt-4 Laptop-L:hidden">
                     <AiOutlineMessage className="w-5 h-5 text-[#3f4064] ml-4" />
-                    <div className="flex flex-col w-full gap-2 pb-2">
+                    <div onClick={toggleAddComment} className="flex flex-col w-full gap-2 pb-2">
                         <div className="flex items-center justify-between">
                             <span className="text-[#3f4064] font-Yekan-bold text-[13px]">دیدگاه خود را درباره این کالا بنویسید</span>
-                            <MdKeyboardArrowLeft className="w-6 h-6 text-[#9e9fb1]"/>   
+                            <MdKeyboardArrowLeft className="w-6 h-6 text-[#9e9fb1] hover:cursor-pointer"/>   
                         </div>
                         <p className="text-[#9e9fb1] text-[11px]">۵ امتیاز دیجی‌کلاب</p>
                         <p className="text-[#9e9fb1] text-[11px]">پس از تایید شدن دیدگاه، با رفتن به صفحه ماموریت‌های دیجی‌کلاب امتیازتان را دریافت کنید.</p>
@@ -222,6 +230,8 @@ function ProductUsersScoresAndOpinions({product, comments}) {
                 </div>  
             </div>
         </div>
+
+       {showAddComment && <RegisterComment onClose={toggleAddComment}/>}
     </div>
   )
 }

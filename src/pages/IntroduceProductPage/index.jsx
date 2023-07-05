@@ -61,7 +61,7 @@ function IntroduceProductPage({product}) {
             </div>
 
             {/* Sub Image 2 */}
-            <div className="hidden px-5 py-4 my-5 overflow-hidden rounded-lg Laptop-L:block">
+            <div id="intro" className="hidden px-5 py-4 my-5 overflow-hidden rounded-lg Laptop-L:block">
                 <a href="https://digikala-service.com/">
                     <img src={"https://dkstatics-public.digikala.com/digikala-admin-landing/b00e0cf8908bcb4ea3a16c685b4486a83333a38d_1687621025.jpg"} alt="sub image" className="rounded-lg" />
                 </a>

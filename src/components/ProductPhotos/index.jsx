@@ -1,3 +1,4 @@
+import ImageMagnify from "../ImageMagnify";
 import {ProductIconsList} from "../index";
 import {FiInfo} from "react-icons/fi";
 
@@ -12,7 +13,7 @@ function ProductPhotos({product}) {
 
                 {/* Photo */}
             <div>
-                <img className="w-auto h-auto mix-blend-color-burn" src={product.productImage[0].image} alt={product.name} />
+                <ImageMagnify product={product}/>
             </div>
         </div>
 

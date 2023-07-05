@@ -9,7 +9,7 @@ function ProductIntroduction({description}) {
   }
 
   return (
-    <article className="mt-4 pb-5 border-b-4 border-b-[#f1f2f4] px-5 Laptop-L:px-0">
+    <article id="specification" className="mt-4 pb-5 border-b-4 border-b-[#f1f2f4] px-5 Laptop-L:px-0">
         <div className="py-3">
             <div className="flex items-center grow">
                 <h2 className="text-sm Laptop-L:text-base font-Yekan-bold">معرفی</h2>

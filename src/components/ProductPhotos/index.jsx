@@ -10,7 +10,11 @@ import {BsThreeDots} from "react-icons/bs";
 
 function ProductPhotos({product}) {
     const [isClose, setIsClose] = useState(true);
+    const [activeIndex, setActiveIndex] = useState(0);
 
+    const handleDotClick = (index) => {
+        setActiveIndex(index);
+    };
     const handleIsClose = ()=> {
         setIsClose(!isClose);
     }
@@ -22,8 +26,34 @@ function ProductPhotos({product}) {
             <div className="self-end Laptop-L:self-auto">
                 <ProductIconsList/>
             </div>
+            {/* Photo Slides */}
+            <div className="relative flex flex-col items-center Laptop-L:hidden">
+                <div className="flex items-center justify-center max-w-3xl overflow-hidden">
+                    <div className="flex w-full transition-transform duration-300 ease-in-out" style={{ transform: `translateX(${activeIndex * 100}%)` }}>
+                    {product.productImage.map((image, index) => (
+                        <img
+                        key={index}
+                        src={image.image}
+                        alt={`Image ${index + 1}`}
+                        className="w-full h-auto mix-blend-multiply"
+                        />
+                    ))}
+                    </div>
+                </div>
 
-                {/* Photo */}
+                <div className="flex items-center justify-end gap-2">
+                    {product.productImage.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => handleDotClick(index)}
+                        className={`bg-[#9e9fb1] rounded-full ${
+                        index === activeIndex ? 'w-2 h-2' : 'w-1 h-1'
+                        }`}
+                    />
+                    ))}
+                </div>
+            </div>
+
             <div>
                 <ImageMagnify product={product}/>
             </div>

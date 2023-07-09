@@ -79,7 +79,7 @@ const ImageMagnify = ({ product }) => {
       {/* thumbnail */}
       <div
         ref={magnify}
-        className="hidden w-full cursor-crosshair h-auto lg:!block relative"
+        className="hidden w-full cursor-crosshair h-auto Laptop-L:!block relative"
       >
         <div className="relative">
           <div

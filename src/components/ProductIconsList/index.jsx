@@ -17,27 +17,27 @@ function ProductIconsList() {
 
   return (
     <div className="flex gap-4 Laptop-L:flex-col">
-        <div className="relative group hover:cursor-pointer z-[50]">
+        <div className="relative group hover:cursor-pointer z-[10]">
             <FiHeart className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اضافه به لیست علاقه‌مندی</div>
         </div>
-        <div className="relative group hover:cursor-pointer z-[50]">
+        <div className="relative group hover:cursor-pointer z-[10]">
             <IoShareSocialSharp className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اشتراک گذاری</div>
         </div>
-        <div className="relative group hover:cursor-pointer z-[50]">
+        <div className="relative group hover:cursor-pointer z-[10]">
             <TbBellRinging className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اطلاع‌رسانی شگفت‌انگیز</div>
         </div>
-        <div onClick={handleShowPriceChart} className="relative group hover:cursor-pointer z-[50]">
+        <div onClick={handleShowPriceChart} className="relative group hover:cursor-pointer z-[10]">
             <AiOutlineLineChart className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">نمودار قیمت</div>
         </div>
-        <div className="relative group hover:cursor-pointer z-[50]">
+        <div className="relative group hover:cursor-pointer z-[10]">
             <MdCompare className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">مقایسه</div>
         </div>
-        <div className="relative group hover:cursor-pointer z-[50]">
+        <div className="relative group hover:cursor-pointer z-[10]">
             <HiListBullet className="text-[#3f4064] w-6 h-6 ml-4"/>
             <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">اضافه به لیست</div>
         </div>

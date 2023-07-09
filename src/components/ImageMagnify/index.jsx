@@ -99,7 +99,7 @@ const ImageMagnify = ({ product }) => {
         ref={zoomWrapper}
         className="bg-white absolute left-[5%] top-48 min-[1280px]:top-[280px] hidden overflow-hidden w-[60%] h-[600px] min-[1280px]:h-[550px]  drop-shadow-2xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-md z-[1]"
       >
-        <div ref={zoomPlace} className="absolute w-full h-full "></div>
+        <div ref={zoomPlace} className="absolute w-full h-full"></div>
       </div>
     </div>
   );

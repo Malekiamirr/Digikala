@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { RootHome, HomePage, PhonePage, Test, SearchPage, IntroduceProductPage } from "./pages";
+import { RootHome, HomePage, PhonePage, Test, SearchPage, IntroduceProductPage, LoginPage } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -111,6 +111,10 @@ const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: "/login",
+    element: <LoginPage/>
+  }
 ]);
 
 function App() {

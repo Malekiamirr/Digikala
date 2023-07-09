@@ -4,3 +4,4 @@ export {default as PhonePage} from "./PhonePage/index";
 export {default as Test} from "./Test/index";
 export {default as SearchPage} from "./SearchPage/index";
 export {default as IntroduceProductPage} from "./IntroduceProductPage/index";
+export {default as LoginPage} from "./LoginPage/index";

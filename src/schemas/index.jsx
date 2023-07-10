@@ -5,5 +5,9 @@ const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 export const basicSchema = yup.object().shape({
     email: yup.string().email("ایمیل وارد شده صحیح نیست").required("لطفا این قسمت را خالی نگذارید"),
-    password: yup.string().min(8).matches(passwordRules, {message: "Please create a stronger password"}).required("لطفا این قسمت را خالی نگذارید")
+    // password: yup.string().min(8).matches(passwordRules, {message: "Please create a stronger password"}).required("لطفا این قسمت را خالی نگذارید")
+});
+
+export const passwordSchema = yup.object().shape({
+    password: yup.string().min(8).matches(passwordRules, {message: "رمز عبور باید شامل حروف بزرگ و کوچک و عدد باشد"}).required("لطفا این قسمت را خالی نگذارید")
 })

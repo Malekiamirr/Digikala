@@ -48,6 +48,16 @@ export const apiSlice = createApi({
         }),
         getCustomersComment: builder.query({
             query: ()=> "/customersComment"
+        }),
+        getUsers: builder.query({
+            query: ()=> "/users"
+        }),
+        createUser: builder.mutation({
+            query: (newUser)=> ({
+                url: "/users",
+                method: "POST",
+                body: newUser
+            })
         })
     })
 })
@@ -68,4 +78,6 @@ export const {
     useGetPopularPhonesQuery,
     useGetPhoneProductsQuery,
     useGetCustomersCommentQuery,
+    useGetUsersQuery,
+    useCreateUserMutation
 } = apiSlice

@@ -116,7 +116,7 @@ function Navbar() {
 
             <div className='flex items-center gap-6'>
               <NavLink
-                to=''
+                to='/supermarket'
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className='flex items-center gap-1'>
@@ -125,7 +125,7 @@ function Navbar() {
                 </div>
               </NavLink>
               <NavLink
-                to=''
+                to='best-selling'
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className='flex items-center gap-1'>
@@ -134,7 +134,7 @@ function Navbar() {
                 </div>
               </NavLink>
               <NavLink
-                to=''
+                to='discounts'
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className='flex items-center gap-1'>
@@ -143,7 +143,7 @@ function Navbar() {
                 </div>
               </NavLink>
               <NavLink
-                to=''
+                to='incredibles'
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className='flex items-center gap-1'>
@@ -156,7 +156,7 @@ function Navbar() {
             <span className='w-px h-4 bg-[#E0E0E6]'></span>
             <div className='flex items-center gap-6'>
               <NavLink
-                to=''
+                to='questions'
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className='flex items-center'>
@@ -164,7 +164,7 @@ function Navbar() {
                 </div>
               </NavLink>
               <NavLink
-                to=''
+                to='sell-in-digikala'
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className='flex items-center'>

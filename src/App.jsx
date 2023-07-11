@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RootHome, HomePage, PhonePage, Test, SearchPage, IntroduceProductPage, LoginPage } from "./pages";
+import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootHome />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         index: true,
@@ -104,6 +106,10 @@ const router = createBrowserRouter([
             "categorySlug": "phone",
             "subCategorySlug": "apple"
             }}/>
+      },
+      {
+        path: "product/:productId",
+        element: <IntroduceProductPage/>
       },
       {
         path: "test",

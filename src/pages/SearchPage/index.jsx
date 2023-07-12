@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {BiSortDown} from "react-icons/bi";
 import {MdKeyboardArrowDown} from "react-icons/md";
 import {RiListSettingsFill} from "react-icons/ri";
@@ -6,9 +6,7 @@ import {IoClose} from "react-icons/io5";
 import { SearchFilter,CheckBox, PhoneCard, ShowPhoneCards } from "../../components";
 import { useGetPhoneProductsQuery } from "../../api/apiSlice";
 
-
 function SerachPage() {
-    
   const [whichDropdownIsOpen, setWhichDropdownIsOpen] = useState(0);
   const [isFliterOpen, setIsFliterOpen] = useState(false);
   const [isSortingOpen, setIsSortingOpen] = useState(false);

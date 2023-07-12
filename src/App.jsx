@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RootHome, HomePage, PhonePage, Test, SearchPage, IntroduceProductPage, LoginPage } from "./pages";
 import ErrorPage from "./pages/Error";
+import { loader as productsLoader } from "./pages/IntroduceProductPage";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
         element: <SearchPage/>,
       },
       {
-        path: "product",
+        path: "search/:productId",
         element: <IntroduceProductPage product={{
             "id": 1,
             "name": "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
@@ -105,11 +106,8 @@ const router = createBrowserRouter([
             "mainCategorySlug": "electronic-devices",
             "categorySlug": "phone",
             "subCategorySlug": "apple"
-            }}/>
-      },
-      {
-        path: "product/:productId",
-        element: <IntroduceProductPage/>
+            }}/>,
+        loader: productsLoader,
       },
       {
         path: "test",

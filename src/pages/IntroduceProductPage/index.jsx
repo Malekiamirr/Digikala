@@ -1,13 +1,16 @@
 import { IntroductionHeader, ProductInformation } from "../../layouts";
 
-import { useGetCustomersCommentQuery } from "../../api/apiSlice";
+import { useGetCustomersCommentQuery, useGetPhoneProductsQuery } from "../../api/apiSlice";
 
 import {ShowPindo, ProductPhotos, ProductAnotherSellers, DigikalaBuyingBenefits, ProductRelatedVideos, ProductDetailsCategory, ProductIntroduction, ProductSpecifications, ProductUsersScoresAndOpinions, ProductUsersQuestions, ProductStickyInfoBox ,PriceChart} from "../../components/index";
 
+import { useParams, useLoaderData } from "react-router-dom";
 
 
-function IntroduceProductPage({product}) {
-    
+function IntroduceProductPage() {
+    const params = useParams();
+    const data = useLoaderData();
+    const product = data.find(product => product.id === parseFloat(params.productId));
     const {data:comments, isLoading, isError} = useGetCustomersCommentQuery();
 
     if (isLoading || isError) {
@@ -96,3 +99,8 @@ function IntroduceProductPage({product}) {
 }
 
 export default IntroduceProductPage;
+
+export async function loader ({request, params}) {
+   const response = await fetch("http://localhost:3000/products");
+    return response;
+}

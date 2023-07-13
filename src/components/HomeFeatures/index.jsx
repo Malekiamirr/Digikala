@@ -37,8 +37,8 @@ function HomeFeatures() {
             <p className="mt-2 text-[11px]">{feature.title}</p>
         </div>
         )}
-      <div onClick={handleOpen} className={`modal-bg absolute z-30 w-full h-screen -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-30 top-1/2 left-1/2 ${!openModal && "hidden"} animate-fade`}></div>
-        <div className={`modal absolute z-50 bg-white Laptop-L:rounded-2xl w-full h-screen Laptop-L:max-w-[80vw] Laptop-L:min-w-[460px] Laptop-L:max-h-[63vh] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip animate-fade ${!openModal && "hidden"}`}>
+      <div onClick={handleOpen} className={`modal-bg fixed z-30 w-full h-screen -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-30 top-1/2 left-1/2 ${!openModal && "hidden"} animate-fade`}></div>
+        <div className={`modal fixed z-50 bg-white Laptop-L:rounded-2xl w-full h-screen Laptop-L:pb-10 Laptop-L:max-w-[55vw] min-[1280px]:max-w-[80vh] Laptop-L:min-w-[460px] Laptop-L:max-h-[63vh] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip animate-fade ${!openModal && "hidden"}`}>
           <div className="flex items-center justify-between py-3 mx-5 border-b">
             <div className="flex items-center">
             <RiUserSmileLine className="w-6 h-6 text-[#ef4056] ml-2"/>
@@ -51,8 +51,8 @@ function HomeFeatures() {
               <div className="grid grid-cols-3 gap-10 Laptop-L:gap-0 Laptop-L:grid-cols-6">
                 {featuresDetails[0].category.map(item=> 
                   <div key={item.id} className="flex flex-col items-center justify-center">
-                    <img src={item.image} alt="icon" className="w-[52px] h-[52px]" />
-                    <span className="text-[10px] Laptop-L:text-[11px] font-Yekan-bold text-[#3f4064] mt-1">{item.text}</span>
+                    <img src={item.image} alt="icon" className="w-[52px] h-[52px] hover:cursor-pointer" />
+                    <span className="text-[10px] Laptop-L:text-[11px] font-Yekan-bold text-[#3f4064] mt-1 hover:cursor-pointer">{item.text}</span>
                   </div>
                 )}
               </div>
@@ -61,7 +61,7 @@ function HomeFeatures() {
 
              <div className="grid grid-cols-1 gap-3 mt-2 Laptop-L:grid-cols-2">
               {featuresDetails[1].services.map((service,i) => 
-                <div className="p-3 border-b Laptop-L:border border-[#e0e0e6] Laptop-L:rounded-2xl flex items-start" key={i}>
+                <div className="p-3 border-b hover:cursor-pointer Laptop-L:border border-[#e0e0e6] Laptop-L:rounded-2xl flex items-start" key={i}>
                   <div className="shrink-0">
                     <img src={service.image} alt="service icon" className="w-[52px] h-[52px]" />
                   </div>

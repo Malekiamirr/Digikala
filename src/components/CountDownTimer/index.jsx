@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import convertToPersian from '../../utils/convertToPersianNumber';
 
 function CountdownTimer({ duration }) {
   const [remainingTime, setRemainingTime] = useState(parseFloat(duration));
@@ -19,7 +20,7 @@ function CountdownTimer({ duration }) {
 
   return (
     <div className='text-xs font-Yekan-bold text-[#ef394e]'>
-    {seconds}: {minutes}: {hours}
+    {convertToPersian(seconds)}: {convertToPersian(minutes)}: {convertToPersian(hours)}
     </div>
   )
 }

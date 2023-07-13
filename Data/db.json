@@ -333,7 +333,7 @@
       "items": [
         {
           "id": 1,
-          "image": "https://dkstatics-public.digikala.com/digikala-products/e4b2145a5e77bdc30aafff78bba4734798ac8d68_1620202335.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
+          "image": "https://dkstatics-public.digikala.com/digikala-products/b31aa035fc6dd64d571d89b727aaf54460539b16_1688377578.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80"
         },
         {
           "id": 2,
@@ -2646,7 +2646,7 @@
       "id": 1,
       "name": "موبایل",
       "icon": "<BsPhone />",
-      "thumbnail": "https://dkstatics-public.digikala.com/digikala-categories/8f80e75e4c2dca42ee0538e100c7a7b05455aa88_1662360265.png?x-oss-process=image/format,webp",
+      "thumbnail": "https://dkstatics-public.digikala.com/digikala-categories/aba1e5dca8958ac1176e25cd194ff8ac622cd383_1662362431.png?x-oss-process=image/format,webp",
       "slug": "electronic-devices",
       "createdAt": "2023-02-22T11:34:32.805Z",
       "updatedAt": "2023-02-22T11:34:32.805Z",
@@ -3114,6 +3114,82 @@
       "icon": "<FaCampground />",
       "thumbnail": "https://dkstatics-public.digikala.com/digikala-categories/1c44d5964f259e0725ec86ca9739de888f1862c7_1656161158.png?x-oss-process=image/format,webp",
       "slug": "sport-entertainment",
+      "createdAt": "2023-02-22T12:27:37.288Z",
+      "updatedAt": "2023-02-22T12:27:37.288Z",
+      "AmazingOfferSliderColor": "#323ea8",
+      "slider": [
+        {
+          "id": 330851,
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/3009ed4fd714a51cea89230dc855e8d2438a1bdd_1644611495.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        }
+      ],
+      "banner": [
+        {
+          "id": 98082,
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/b1002855eb9df49e9d72bda37e485ca376a0b149_1600077930.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        },
+        {
+          "id": "",
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/95e47ed17f182d3ab5cbe20642ce1955703cb981_1600077864.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        },
+        {
+          "id": "",
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/b1002855eb9df49e9d72bda37e485ca376a0b149_1600077930.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        },
+        {
+          "id": "",
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/95e47ed17f182d3ab5cbe20642ce1955703cb981_1600077864.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "خودرو و موتورسیکلت",
+      "thumbnail": "https://dkstatics-public.digikala.com/digikala-categories/4e985adcf61dd54d4d8abe725a62ba3990ea1eb1_1678698550.png?x-oss-process=image/format,webp",
+      "slug": "vehicles-spare-parts",
+      "createdAt": "2023-02-22T12:27:37.288Z",
+      "updatedAt": "2023-02-22T12:27:37.288Z",
+      "AmazingOfferSliderColor": "#323ea8",
+      "slider": [
+        {
+          "id": 330851,
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/3009ed4fd714a51cea89230dc855e8d2438a1bdd_1644611495.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        }
+      ],
+      "banner": [
+        {
+          "id": 98082,
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/b1002855eb9df49e9d72bda37e485ca376a0b149_1600077930.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        },
+        {
+          "id": "",
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/95e47ed17f182d3ab5cbe20642ce1955703cb981_1600077864.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        },
+        {
+          "id": "",
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/b1002855eb9df49e9d72bda37e485ca376a0b149_1600077930.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        },
+        {
+          "id": "",
+          "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/95e47ed17f182d3ab5cbe20642ce1955703cb981_1600077864.jpg?x-oss-process=image/quality,q_95",
+          "slug": ""
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "کتاب، لوازم تحریر و هنر",
+      "thumbnail": "https://dkstatics-public.digikala.com/digikala-categories/3582bbed0a53318c2332d2c79b051b226f02a3bb_1656161134.png?x-oss-process=image/format,webp",
+      "slug": "rural-products",
       "createdAt": "2023-02-22T12:27:37.288Z",
       "updatedAt": "2023-02-22T12:27:37.288Z",
       "AmazingOfferSliderColor": "#323ea8",

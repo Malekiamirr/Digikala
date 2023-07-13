@@ -11,9 +11,9 @@ function DigitalGoods() {
   return (
     <div className="Laptop-L:border Laptop-L:border-[#e0e0e0] rounded-2xl overflow-hidden">
         <div className="flex flex-col justify-between Laptop-L:divide-x Laptop-L:flex-row">
-            {products.map((product,i)=> (
+            {products.map((product)=> (
                 <>
-                    <div key={i} className="w-full px-5 py-3 Laptop-L:w-1/4">
+                    <div key={product.id} className="w-full px-5 py-3 Laptop-L:w-1/4">
                         <div className="mb-2 text-start">
                             <h4 className="text-base font-Yekan-bold text-[#23254e]">{product.name}</h4>
                             <p className="text-[11px] text-[#767790]">بر اساس بازدید های شما</p>
@@ -21,8 +21,8 @@ function DigitalGoods() {
                         
                         <div className="grid grid-cols-2 justify-items-center">
                             {product.items.map((item, i)=> ( 
-                                <div key={item.id} className={`${item.id==1 ? "border-l border-b": ""} ${item.id==2 ? "border-b": ""} ${item.id==3 ? "border-l": ""} p-2 Laptop-L:p-3`}>
-                                    <img className="Laptop-L:w-32 Laptop-L:h-32" src={item.image} alt={product.name} />
+                                <div key={i * 10} className={`${item.id == 1 ? "border-l border-b" : ""} ${item.id == 2 ? "border-b" : ""} ${item.id == 3 ? "border-l" : ""} p-2 Laptop-L:p-3 w-full`}>
+                                    <img className="hover:cursor-pointer" src={item.image} alt={product.name} />
                                     <span className="w-px h-60 bg-slate-400"></span>
                                 </div>
                             ))}

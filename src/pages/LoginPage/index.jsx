@@ -9,6 +9,7 @@ import {CgEye} from "react-icons/cg";
 import {RiEyeCloseLine} from "react-icons/ri";
 import {MdKeyboardArrowLeft} from "react-icons/md";
 import { useGetUsersQuery, useCreateUserMutation } from "../../api/apiSlice";
+import { Link } from "react-router-dom";
 
 
 function LoginPage() {
@@ -142,7 +143,10 @@ function LoginPage() {
                     </div>
 
 
-                    <button disabled={isSubmitting} type="submit" className="px-4 py-3 mt-8 bg-[#ef4056] border border-[#ef4056] text-white w-full rounded-lg text-sm font-Yekan-bold">تایید</button>
+                    <Link to="..">
+                        <button disabled={isSubmitting} type="submit" className="px-4 py-3 mt-8 bg-[#ef4056] border border-[#ef4056] text-white w-full rounded-lg text-sm font-Yekan-bold">تایید</button>
+                    </Link>
+                    
                 </form>
                 <p className='mt-5 text-[10px] Laptop-L:text-[11px] text-[#3f4064]'>
                  ورود شما به معنای پذیرش<a href='https://www.digikala.com/page/terms/' className='text-[#008eb2]'> شرایط دیجی‌کالا</a> و <a href='https://www.digikala.com/page/privacy/' className=' text-[#008eb2]'>قوانین حریم‌خصوصی</a> است

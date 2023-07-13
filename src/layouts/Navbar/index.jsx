@@ -19,11 +19,14 @@ import { AiOutlineFire } from "react-icons/ai";
 
 function Navbar() {
   const [isUserLogin, setIsUserLogin] = useState(false);
+  const [openSearchBox, setOpenSearchBox] = useState(false);
+  const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
   const { y, x, scrollDirection } = useScroll();
 
   return (
     <>
       <div
+        onClick={()=> toggleOpenSearchBox(false)}
         className={`pb-3 bg-white ${
           scrollDirection === "down" ? "" : "shadow-sm shadow-gray-300"
         }`}
@@ -46,7 +49,7 @@ function Navbar() {
 
             {/* Search box && Account Details*/}
             <div className='flex items-center justify-between w-full gap-4 pt-2 pr-3 Laptop-L:pt-0 Laptop-L:px-0 border-b border-b-[#f1f2f4] Laptop-L:border-none pb-2 Laptop-L:pb-0'>
-              <SearchBox />
+              <SearchBox handleClick={() => toggleOpenSearchBox(true)} openSearchBox={openSearchBox}/>
               {/* Shoping && Account */}
               <div className='flex items-center justify-center gap-4 Laptop-L:gap-2 Laptop-L:-mt-2'>
                 <div className='flex items-center justify-center gap-1 p-2 transition-all rounded-md cursor-pointer'>

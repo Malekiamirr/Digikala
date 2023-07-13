@@ -10,7 +10,7 @@ function Blog() {
   return (
     <div className="flex flex-col gap-3 Laptop-L:flex-row">
       {blogs.map(blog=> (
-        <div key={blog.id} className="border border-[#e0e0e0] rounded-2xl overflow-hidden">
+        <div key={blog.id} className="hover:cursor-pointer border border-[#e0e0e0] rounded-2xl overflow-hidden">
           <div>
           <img src={blog.image} alt={blog.title} className="w-full"/>
           </div>

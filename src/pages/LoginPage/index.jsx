@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ function LoginPage() {
   };
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
-    dispatch(loginUser);
+    console.log(loginUser);
     if (isNewUser) {
       passwordFormik.resetForm();
       createUser({
@@ -235,15 +235,15 @@ function LoginPage() {
                 <MdKeyboardArrowLeft className="w-5 h-5" />
               </div>
 
-              <Link to="..">
-                <button
-                  disabled={isSubmitting}
-                  type="submit"
-                  className="px-4 py-3 mt-8 bg-[#ef4056] border border-[#ef4056] text-white w-full rounded-lg text-sm font-Yekan-bold"
-                >
-                  تایید
-                </button>
-              </Link>
+              {/* <Link to=".."> */}
+              <button
+                disabled={isSubmitting}
+                type="submit"
+                className="px-4 py-3 mt-8 bg-[#ef4056] border border-[#ef4056] text-white w-full rounded-lg text-sm font-Yekan-bold"
+              >
+                تایید
+              </button>
+              {/* </Link> */}
             </form>
             <p className="mt-5 text-[10px] Laptop-L:text-[11px] text-[#3f4064]">
               ورود شما به معنای پذیرش

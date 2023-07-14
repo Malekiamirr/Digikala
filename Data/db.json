@@ -254,30 +254,10 @@
     {
       "id": 4,
       "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir2345",
-      "createdAt": "2023-07-10T17:49:52.561Z",
-      "updatedAt": "2023-07-10T17:49:52.561Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 5,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "amir342A",
-      "createdAt": "2023-07-10T17:59:27.005Z",
-      "updatedAt": "2023-07-10T17:59:27.005Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 6,
-      "name": "",
-      "email": "ali@gmail.com",
-      "password": "A137283-847-2314dfsa",
-      "createdAt": "2023-07-11T10:40:07.084Z",
-      "updatedAt": "2023-07-11T10:40:07.084Z",
+      "email": "abbaszade@gmail.com",
+      "password": "eerarA1233",
+      "createdAt": "2023-07-13T14:13:35.814Z",
+      "updatedAt": "2023-07-13T14:13:35.814Z",
       "favoriteProducts": [],
       "cart": []
     }

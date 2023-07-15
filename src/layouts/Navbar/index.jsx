@@ -4,9 +4,11 @@ import logo from '../../assets/imgs/logo.svg';
 import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
+import { useScroll } from '../../hooks/useScroll';
+import { useSelector } from 'react-redux';
+
 import { Category, SearchBox } from '../../components/index';
 import { NavLink } from 'react-router-dom';
-import { useScroll } from '../../hooks/useScroll';
 
 // Icons
 import { LuShoppingCart } from 'react-icons/lu';
@@ -24,7 +26,7 @@ import { BiCaretRight } from 'react-icons/bi';
 import { AiOutlineFire } from 'react-icons/ai';
 
 function Navbar() {
-  const [isUserLogin, setIsUserLogin] = useState(false);
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const [openSearchBox, setOpenSearchBox] = useState(false);
   const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
   const { y, x, scrollDirection } = useScroll();
@@ -55,7 +57,13 @@ function Navbar() {
             <GrCircleQuestion className="w-6 h-6 text-black Laptop-L:hidden" />
           </div>
 
-          <img src={logo} alt="logo" className="hidden mt-2 Laptop-L:block" />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="logo"
+              className="hidden mt-2 Laptop-L:block hover:cursor-pointer"
+            />{' '}
+          </Link>
 
           {/* Search box && Account Details*/}
           <div className="flex items-center justify-between w-full gap-4 pt-2 pr-3 Laptop-L:pt-0 Laptop-L:px-0 border-b border-b-[#f1f2f4] Laptop-L:border-none pb-2 Laptop-L:pb-0">
@@ -66,7 +74,7 @@ function Navbar() {
             {/* Shoping && Account */}
             <div className="flex items-center justify-center gap-4 Laptop-L:gap-2 Laptop-L:-mt-2">
               <div className="flex items-center justify-center gap-1 p-2 transition-all rounded-md cursor-pointer">
-                {isUserLogin ? (
+                {isLoggedIn ? (
                   // Account Icons
                   <>
                     <HiOutlineUser className="w-6 h-6 text-[#3f4064] stroke-2" />
@@ -104,7 +112,7 @@ function Navbar() {
                 <Link to="checkout/cart">
                   <LuShoppingCart className="w-6 h-6 text-[#3f4064]" />
                 </Link>
-                {isUserLogin && (
+                {isLoggedIn && (
                   <p className="flex justify-center items-center w-5 h-5 absolute bottom-0 -right-1 bg-[#EF4056] text-white text-xs text-center font-Yekan-medium rounded-md border-2 border-white">
                     {/* BUG it should be updated with user product buying */}۳
                   </p>

@@ -4,7 +4,7 @@ import {
   HomePage,
   PhonePage,
   Test,
-  SearchPage,
+  ProductListPage,
   IntroduceProductPage,
   LoginPage,
   CartPage,
@@ -23,12 +23,12 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'phones',
+        path: 'search/category-mobile-phone',
         element: <PhonePage />,
       },
       {
-        path: 'search',
-        element: <SearchPage />,
+        path: 'product-list',
+        element: <ProductListPage />,
       },
       {
         path: 'search/:productId',

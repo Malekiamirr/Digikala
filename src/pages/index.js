@@ -2,7 +2,7 @@ export { default as HomePage } from './Home/index';
 export { default as RootPage } from './Root/index';
 export { default as PhonePage } from './Phone/index';
 export { default as Test } from './Test/index';
-export { default as SearchPage } from './Search/index';
+export { default as ProductListPage } from './ProductList/index';
 export { default as IntroduceProductPage } from './IntroduceProduct/index';
 export { default as ErrorPage } from './Error/index';
 export { default as LoginPage } from './Login/index';

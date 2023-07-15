@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Footer, Navbar } from '../../layouts';
 
-function RootHome() {
+function RootPage() {
   return (
     <div className="overflow-hidden">
       <div className="sticky top-0 z-20">
@@ -17,4 +17,4 @@ function RootHome() {
   );
 }
 
-export default RootHome;
+export default RootPage;

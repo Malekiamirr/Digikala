@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { loginUser } from '../../app/slices/loginSlice';
 
@@ -14,11 +13,14 @@ import { CgEye } from 'react-icons/cg';
 import { RiEyeCloseLine } from 'react-icons/ri';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { useGetUsersQuery, useCreateUserMutation } from '../../api/apiSlice';
+import { useSelector } from 'react-redux';
 
 function LoginPage() {
   const { data: users, isLoading, isError } = useGetUsersQuery();
-  const [createUser, { isLoading: isLoadingCreateUser }] =
-    useCreateUserMutation();
+  const [createUser] = useCreateUserMutation();
+
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
 
   const [isNewUser, setisNewUser] = useState({ create: true, password: '' });
   const [showPasswordPage, setShowPasswordPage] = useState(false);
@@ -36,28 +38,30 @@ function LoginPage() {
   };
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
-    console.log(loginUser);
-    if (isNewUser) {
-      passwordFormik.resetForm();
-      createUser({
-        id: users.length + 1,
-        name: '',
-        email: values.email,
-        password: passwordFormik.values.password,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        favoriteProducts: [],
-        cart: [],
-      });
-    }
+    // if (isNewUser) {
+    dispatch(loginUser());
+
+    passwordFormik.resetForm();
+    createUser({
+      id: users.length + 1,
+      name: '',
+      email: values.email,
+      password: passwordFormik.values.password,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      favoriteProducts: [],
+      cart: [],
+    });
+    navigate('/');
+    // }
     // BUG
-    else {
-      if (passwordFormik.values.password === isNewUser.password) {
-        passwordFormik.resetForm();
-      } else {
-        alert('incorrect');
-      }
-    }
+    // else {
+    //   if (passwordFormik.values.password === isNewUser.password) {
+    //     passwordFormik.resetForm();
+    //   } else {
+    //     alert('incorrect');
+    //   }
+    // }
   };
 
   const {
@@ -91,7 +95,6 @@ function LoginPage() {
     if (!errors.email) {
       setShowPasswordPage(!showPasswordPage);
     }
-    console.log(showPasswordPage);
   };
 
   return (
@@ -235,7 +238,6 @@ function LoginPage() {
                 <MdKeyboardArrowLeft className="w-5 h-5" />
               </div>
 
-              {/* <Link to=".."> */}
               <button
                 disabled={isSubmitting}
                 type="submit"
@@ -243,7 +245,6 @@ function LoginPage() {
               >
                 تایید
               </button>
-              {/* </Link> */}
             </form>
             <p className="mt-5 text-[10px] Laptop-L:text-[11px] text-[#3f4064]">
               ورود شما به معنای پذیرش

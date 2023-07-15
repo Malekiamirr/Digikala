@@ -50,11 +50,16 @@
 }
 
 .bg-radial {
-  background: linear-gradient(76.02deg, #35a6c8 33.32%, #007295 71.55%), radial-gradient(21.29% 87.33% at 50% 50.67%, #7cf2f6 0, #35a6c8 100%);
+  background: linear-gradient(76.02deg, #35a6c8 33.32%, #007295 71.55%),
+    radial-gradient(21.29% 87.33% at 50% 50.67%, #7cf2f6 0, #35a6c8 100%);
 }
 
 .bg-supermarket {
-  background: linear-gradient(267.6deg, rgba(#39ae00, .1) 0, rgba(#f2f2f2, 0) 100%);
+  background: linear-gradient(
+    267.6deg,
+    rgba(#39ae00, 0.1) 0,
+    rgba(#f2f2f2, 0) 100%
+  );
 }
 
 .swiper-button-next,
@@ -67,70 +72,75 @@
   margin-left: 10px;
 }
 .card-shadow {
-  -webkit-box-shadow: 0px 0px 14px -3px #000000; 
+  -webkit-box-shadow: 0px 0px 14px -3px #000000;
   box-shadow: 0px 0px 14px -3px #000000;
 }
 
 @media screen and (min-width: 1024px) {
   .product-box-background {
-    background: linear-gradient(0deg, hsla(240, 3%, 94%, 0.5), hsla(240, 3%, 94%, 0.5)), #fff;
+    background: linear-gradient(
+        0deg,
+        hsla(240, 3%, 94%, 0.5),
+        hsla(240, 3%, 94%, 0.5)
+      ),
+      #fff;
   }
 }
 
 @layer base {
   @font-face {
-    font-family: "Yekan-thin";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanwebthin.woff") format("woff");
+    font-family: 'Yekan-thin';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanwebthin.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Yekan-regular";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanwebregular.woff") format("woff");
+    font-family: 'Yekan-regular';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanwebregular.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Yekan-medium";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanwebmedium.woff") format("woff");
+    font-family: 'Yekan-medium';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanwebmedium.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Yekan-light";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanweblight.woff") format("woff");
+    font-family: 'Yekan-light';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanweblight.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Yekan-extraBold";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanwebextrabold.woff") format("woff");
+    font-family: 'Yekan-extraBold';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanwebextrabold.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Yekan-bold";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanwebbold.woff") format("woff");
+    font-family: 'Yekan-bold';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanwebbold.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Yekan-extraBlack";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanwebextrablack.woff") format("woff");
+    font-family: 'Yekan-extraBlack';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanwebextrablack.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Yekan-black";
-    src: local("Yekan"),
-      url("./assets/fonts/iranyekanwebblack.woff") format("woff");
+    font-family: 'Yekan-black';
+    src: local('Yekan'),
+      url('./assets/fonts/iranyekanwebblack.woff') format('woff');
     font-display: swap;
   }
 
@@ -140,8 +150,12 @@
 }
 
 @keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fade {
@@ -163,4 +177,8 @@
   animation-name: hide;
   animation-duration: 200ms;
   animation-timing-function: ease-out;
+}
+
+.custom-box-shadow {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 4px 4px rgba(0, 0, 0, 0.1);
 }

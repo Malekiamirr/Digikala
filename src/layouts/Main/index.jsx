@@ -17,7 +17,6 @@ import { AiOutlineFire } from 'react-icons/ai';
 import { MdOutlineDiscount } from 'react-icons/md';
 import { IoIosArrowBack } from 'react-icons/io';
 import { TbTargetArrow, TbBuildingCarousel, TbDiscount2 } from 'react-icons/tb';
-import { useSelector } from 'react-redux';
 
 function MainLayout() {
   const { data: stories, isLoading, isError } = useGetStoriesQuery();
@@ -26,9 +25,6 @@ function MainLayout() {
     isLoading: swipersIsLoading,
     isError: swipersIsError,
   } = useGetSwipersQuery();
-
-  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
-  console.log(isLoggedIn);
 
   if (isLoading || isError || swipersIsLoading || swipersIsError) {
     return;

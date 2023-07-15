@@ -76,22 +76,22 @@ function Navbar() {
                   // Login icons
                   // For Laptop-L and larger
                   <>
-                    <div className="hidden Laptop-L:flex items-center gap-2 text-[##080a38] px-4 py-2 border rounded-lg border-[#e0e0e6]">
-                      <HiOutlineLogin className="w-6 h-6" />
-                      <Link to="login">
+                    <Link to="login">
+                      <div className="hidden Laptop-L:flex items-center gap-2 text-[##080a38] px-4 py-2 border rounded-lg border-[#e0e0e6]">
+                        <HiOutlineLogin className="w-6 h-6" />
                         <p className="text-xs font-Yekan-bold">
                           ورود | ثبت‌نام
                         </p>
-                      </Link>
-                    </div>
+                      </div>
+                    </Link>
 
                     {/* For Laptop and smaller */}
-                    <div className="flex Laptop-L:hidden items-center gap-2 text-[##080a38]">
-                      <HiOutlineLogin className="w-6 h-6" />
-                      <Link to="login">
+                    <Link to="login">
+                      <div className="flex Laptop-L:hidden items-center gap-2 text-[##080a38]">
+                        <HiOutlineLogin className="w-6 h-6" />
                         <p className="text-xs font-Yekan-bold">ورود</p>
-                      </Link>
-                    </div>
+                      </div>
+                    </Link>
                   </>
                 )}
               </div>
@@ -101,7 +101,9 @@ function Navbar() {
 
               {/* Shop Basket icons */}
               <div className="relative p-3 rounded-md Laptop-L:hover:bg-[#FDEBED] transition-all cursor-pointer">
-                <LuShoppingCart className="w-6 h-6 text-[#3f4064]" />
+                <Link to="checkout/cart">
+                  <LuShoppingCart className="w-6 h-6 text-[#3f4064]" />
+                </Link>
                 {isUserLogin && (
                   <p className="flex justify-center items-center w-5 h-5 absolute bottom-0 -right-1 bg-[#EF4056] text-white text-xs text-center font-Yekan-medium rounded-md border-2 border-white">
                     {/* BUG it should be updated with user product buying */}۳

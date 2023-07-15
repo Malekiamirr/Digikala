@@ -254,10 +254,90 @@
     {
       "id": 4,
       "name": "",
-      "email": "abbaszade@gmail.com",
-      "password": "eerarA1233",
-      "createdAt": "2023-07-13T14:13:35.814Z",
-      "updatedAt": "2023-07-13T14:13:35.814Z",
+      "email": "realmalekiamir@gmail.com",
+      "password": "realAmir123",
+      "createdAt": "2023-07-14T13:29:05.316Z",
+      "updatedAt": "2023-07-14T13:29:05.316Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 5,
+      "name": "",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Aqwedfsdsa212",
+      "createdAt": "2023-07-14T13:33:03.460Z",
+      "updatedAt": "2023-07-14T13:33:03.460Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 6,
+      "name": "",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir1234",
+      "createdAt": "2023-07-14T13:36:07.617Z",
+      "updatedAt": "2023-07-14T13:36:07.617Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 7,
+      "name": "",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir12344",
+      "createdAt": "2023-07-14T13:38:38.740Z",
+      "updatedAt": "2023-07-14T13:38:38.740Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 8,
+      "name": "",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir1234",
+      "createdAt": "2023-07-14T13:54:32.309Z",
+      "updatedAt": "2023-07-14T13:54:32.309Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 9,
+      "name": "",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir12345",
+      "createdAt": "2023-07-14T13:57:16.900Z",
+      "updatedAt": "2023-07-14T13:57:16.900Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 10,
+      "name": "",
+      "email": "shaya@gmail.com",
+      "password": "realmalei123A",
+      "createdAt": "2023-07-14T13:58:44.963Z",
+      "updatedAt": "2023-07-14T13:58:44.963Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 11,
+      "name": "",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir369753",
+      "createdAt": "2023-07-15T03:50:25.230Z",
+      "updatedAt": "2023-07-15T03:50:25.230Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 12,
+      "name": "",
+      "email": "realmalekiamir@gmail.com",
+      "password": "reamasds!223",
+      "createdAt": "2023-07-15T03:52:43.874Z",
+      "updatedAt": "2023-07-15T03:52:43.874Z",
       "favoriteProducts": [],
       "cart": []
     }

@@ -754,7 +754,7 @@
   "products": [
     {
       "id": 1,
-      "name": "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
+      "name": "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 16 گیگابایت",
       "latinName": "Apple iPhone 13 CH Dual SIM 128GB And 4GB RAM Mobile Phone",
       "slug": "apple-iphone13-ch-dual-sim",
       "mainCategory": "کالای دیجیتال",
@@ -838,7 +838,7 @@
     },
     {
       "id": 2,
-      "name": "گوشی موبایل اپل مدل iPhone 13 Pro Max JP تک سیم‌ کارت ظرفیت 256 گیگابایت و رم 6 گیگابایت",
+      "name": "گوشی موبایل اپل مدل iPhone 13 Pro Max JP تک سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت",
       "latinName": "Apple iPhone 13 Pro Max JP Single SIM 256GB And 6GB RAM Mobile Phone",
       "slug": "apple-iphone13-pro-max-jp",
       "mainCategory": "کالای دیجیتال",
@@ -869,7 +869,7 @@
         {
           "id": 846024,
           "filter": "مقدار RAM",
-          "value": "دو گیگابایت",
+          "value": "چهار گیگابایت",
           "isSpecifications": false
         }
       ],
@@ -1008,7 +1008,7 @@
     },
     {
       "id": 4,
-      "name": "گوشی موبایل اپل مدل iPhone 13 Pro ZDA تک سیم کارت ظرفیت یک ترابایت و رم 6 گیگابایت",
+      "name": "گوشی موبایل اپل مدل iPhone 13 Pro ZDA تک سیم کارت ظرفیت یک ترابایت و رم 16 گیگابایت",
       "latinName": "Apple iPhone 13 Pro ZDA Single SIM 1TB And 6GB RAM Mobile Phone",
       "slug": "apple-iphone13-pro-zda-single-sim",
       "mainCategory": "کالای دیجیتال",
@@ -1038,7 +1038,7 @@
         {
           "id": 846024,
           "filter": "مقدار RAM",
-          "value": "دو گیگابایت",
+          "value": "شانزده گیگابایت",
           "isSpecifications": false
         }
       ],
@@ -1176,7 +1176,7 @@
     },
     {
       "id": 6,
-      "name": "گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 6 گیگابایت",
+      "name": "گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت",
       "latinName": "Apple iPhone 13 Pro Max A2644 Dual SIM 256GB And 6GB RAM Mobile Phone",
       "slug": "apple-iphone13-pro-max-a2644",
       "mainCategory": "کالای دیجیتال",
@@ -1260,7 +1260,7 @@
     },
     {
       "id": 7,
-      "name": "گوشی موبایل اپل مدل iPhone 12 Pro Max BA تک سیم‌ کارت ظرفیت 256 گیگابایت و رم 6 گیگابایت",
+      "name": "گوشی موبایل اپل مدل iPhone 12 Pro Max BA تک سیم‌ کارت ظرفیت 256 گیگابایت و رم 16 گیگابایت",
       "latinName": "Apple iPhone 12 Pro Max BA Single SIM 256GB AND 6GB RAM Mobile Phone",
       "slug": "apple-iphone12-pro-max-ba",
       "mainCategory": "کالای دیجیتال",
@@ -1291,7 +1291,7 @@
         {
           "id": 846024,
           "filter": "مقدار RAM",
-          "value": "دو گیگابایت",
+          "value": "شانزده گیگابایت",
           "isSpecifications": false
         }
       ],
@@ -1345,7 +1345,7 @@
     },
     {
       "id": 8,
-      "name": "گوشی موبایل اپل مدل iPhone SE 2022 JA تک سیم کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت ",
+      "name": "گوشی موبایل اپل مدل iPhone SE 2022 JA تک سیم کارت ظرفیت 128 گیگابایت و رم 16 گیگابایت ",
       "latinName": "Apple iPhone SE 2022 JA Single SIM 128GB And 4GB RAM Mobile Phone",
       "slug": "apple-iphone-se-2022",
       "mainCategory": "کالای دیجیتال",
@@ -1597,7 +1597,7 @@
     },
     {
       "id": 11,
-      "name": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
+      "name": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت",
       "latinName": "Samsung Galaxy S21 FE 5G Dual SIM 256GB And 8GB RAM Mobile Phone",
       "slug": "samsung-galaxy-s21-fe-5g",
       "mainCategory": "کالای دیجیتال",
@@ -1682,7 +1682,7 @@
     },
     {
       "id": 12,
-      "name": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
+      "name": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 16 گیگابایت",
       "latinName": "Samsung Galaxy S22 Ultra 5G Dual SIM 512GB With 12GB RAM Mobile Phone Snapdragon version",
       "slug": "samsung-galaxy-s21-ultra-6g",
       "mainCategory": "کالای دیجیتال",
@@ -1850,7 +1850,7 @@
     },
     {
       "id": 14,
-      "name": "گوشی موبایل سامسونگ مدل GALAXY A53 5G دو سیم کارت ظرفیت 128 گیگابایت و رم 8 گیگابایت",
+      "name": "گوشی موبایل سامسونگ مدل GALAXY A53 5G دو سیم کارت ظرفیت 128 گیگابایت و رم 2 گیگابایت",
       "latinName": "Samsung Galaxy A53 5G Dual SIM 128GB And 8GB RAM Mobile Phone",
       "slug": "samsung-galaxy-a53-ultra-8",
       "mainCategory": "کالای دیجیتال",
@@ -2183,7 +2183,7 @@
     },
     {
       "id": 19,
-      "name": "گوشی موبایل اپل مدل iPhone SE 2022 JA تک سیم کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت      ",
+      "name": "گوشی موبایل اپل مدل iPhone SE 2022 JA تک سیم کارت ظرفیت 128 گیگابایت و رم 16 گیگابایت      ",
       "latinName": "Apple iPhone SE 2022 JA Single SIM 128GB And 4GB RAM Mobile Phone",
       "slug": "iphone-ja-2022",
       "mainCategory": "کالای دیجیتال",
@@ -2620,7 +2620,7 @@
       "unknown": true,
       "slug": "samsung-galaxy-s21-fe-5g",
       "rate": "5",
-      "productName": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
+      "productName": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 16 گیگابایت",
       "id": 2,
       "buyer": true,
       "isSuggested": true
@@ -7937,7 +7937,7 @@
       "products": [
         {
           "id": 21,
-          "name": "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
+          "name": "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 16 گیگابایت",
           "latinName": "Apple iPhone 13 CH Dual SIM 128GB And 4GB RAM Mobile Phone",
           "slug": "apple-iphone13-ch-dual-sim",
           "mainCategory": "کالای دیجیتال",
@@ -8022,7 +8022,7 @@
         },
         {
           "id": 22,
-          "name": "گوشی موبایل اپل مدل iPhone 13 Pro Max JP تک سیم‌ کارت ظرفیت 256 گیگابایت و رم 6 گیگابایت",
+          "name": "گوشی موبایل اپل مدل iPhone 13 Pro Max JP تک سیم‌ کارت ظرفیت 256 گیگابایت و رم 16 گیگابایت",
           "latinName": "Apple iPhone 13 Pro Max JP Single SIM 256GB And 6GB RAM Mobile Phone",
           "slug": "apple-iphone13-pro-max-jp",
           "mainCategory": "کالای دیجیتال",
@@ -8053,7 +8053,7 @@
             {
               "id": 846024,
               "filter": "مقدار RAM",
-              "value": "دو گیگابایت",
+              "value": "شانزده گیگابایت",
               "isSpecifications": false
             }
           ],

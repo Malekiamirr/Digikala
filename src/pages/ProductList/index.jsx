@@ -5,6 +5,7 @@ import { RiListSettingsFill } from 'react-icons/ri';
 import { IoClose } from 'react-icons/io5';
 import { SearchFilter, CheckBox, ShowPhoneCards } from '../../components';
 import { useGetPhoneProductsQuery } from '../../api/apiSlice';
+import convertToPersian from '../../utils/convertToPersianNumber';
 
 function ProductListPage() {
   const [whichDropdownIsOpen, setWhichDropdownIsOpen] = useState(0);
@@ -14,32 +15,224 @@ function ProductListPage() {
   const [isMostExpensive, setIsMostExpensive] = useState(false);
   const [isCheapest, setIsCheapest] = useState(false);
   const [isNewest, setIsNewest] = useState(false);
+  const [isApple, setIsApple] = useState(false);
+  const [isSamsung, setIsSamsung] = useState(false);
+  const [isNokia, setIsNokia] = useState(false);
+  const [isOneSIMcard, setIsOneSIMcard] = useState(false);
+  const [isTwoSIMcard, setIsTwoSIMcard] = useState(false);
+  const [isThreeSIMcard, setIsThreeSIMcard] = useState(false);
+  const [is2G, setIs2G] = useState(false);
+  const [is3G, setIs3G] = useState(false);
+  const [is4G, setIs4G] = useState(false);
+  const [is5G, setIs5G] = useState(false);
+  const [isRAM2, setIsRAM2] = useState(false);
+  const [isRAM4, setIsRAM4] = useState(false);
+  const [isRAM16, setIsRAM16] = useState(false);
 
   const { data: phones, isLoading, isError } = useGetPhoneProductsQuery();
   if (isError || isLoading) {
     return;
   }
 
-  const brands = phones.map((phone) => phone.subCategorySlug);
-  const uniqueBrands = [...new Set(brands)];
-  const brandsName = phones.map((phone) => phone.subCategory);
-  const uniqueBrandsName = [...new Set(brandsName)];
-
   let filteredPhones = phones;
+  console.log(phones[0].productsValues[2].value === 'شانزده گیگابایت');
   if (isJustDiscount) {
-    filteredPhones = phones.filter((phone) => phone.offer);
+    filteredPhones = filteredPhones.filter((phone) => phone.offer);
   }
   if (isMostExpensive) {
-    filteredPhones = [...phones].sort((a, b) => b.price - a.price);
+    if (isJustDiscount) {
+      filteredPhones = [...phones].sort((a, b) => b.price - a.price);
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = [...phones].sort((a, b) => b.price - a.price);
+    }
   }
   if (isCheapest) {
-    filteredPhones = [...phones].sort((a, b) => a.price - b.price);
+    if (isJustDiscount) {
+      filteredPhones = [...phones].sort((a, b) => a.price - b.price);
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = [...phones].sort((a, b) => a.price - b.price);
+    }
   }
   if (isNewest) {
-    filteredPhones = [...phones].sort(
-      (a, b) =>
-        new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
-    );
+    if (isJustDiscount) {
+      filteredPhones = [...phones].sort(
+        (a, b) =>
+          new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = [...phones].sort(
+        (a, b) =>
+          new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
+      );
+    }
+  }
+
+  if (isApple) {
+    if (isJustDiscount) {
+      filteredPhones = phones.filter((phone) => phone.brand === 'اپل');
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = phones.filter((phone) => phone.brand === 'اپل');
+    }
+  }
+
+  if (isSamsung) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.brand === 'سامسونگ'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.brand === 'سامسونگ'
+      );
+    }
+  }
+
+  if (isNokia) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.brand === 'نوکیا'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.brand === 'نوکیا'
+      );
+    }
+  }
+
+  if (isOneSIMcard) {
+    if (isJustDiscount) {
+      filteredPhones = phones.filter(
+        (phone) => phone.productsValues[0].value === 'یک عدد'
+      );
+      filteredPhones = phones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = phones.filter(
+        (phone) => phone.productsValues[0].value === 'یک عدد'
+      );
+    }
+  }
+
+  if (isTwoSIMcard) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[0].value === 'دو عدد'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[0].value === 'دو عدد'
+      );
+    }
+  }
+
+  if (isThreeSIMcard) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[0].value === 'سه عدد'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[0].value === 'سه عدد'
+      );
+    }
+  }
+
+  if (is2G) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '2G'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '2G'
+      );
+    }
+  }
+
+  if (is3G) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '3G'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '3G'
+      );
+    }
+  }
+
+  if (is4G) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '4G'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '4G'
+      );
+    }
+  }
+
+  if (is5G) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '5G'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[1].value === '5G'
+      );
+    }
+  }
+
+  if (isRAM2) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[2]?.value === 'دو گیگابایت'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[2]?.value === 'دو گیگابایت'
+      );
+    }
+  }
+
+  if (isRAM4) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[2]?.value === 'چهار گیگابایت'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[2]?.value === 'چهار گیگابایت'
+      );
+    }
+  }
+
+  if (isRAM16) {
+    if (isJustDiscount) {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[2]?.value === 'شانزده گیگابایت'
+      );
+      filteredPhones = filteredPhones.filter((phone) => phone.offer);
+    } else {
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.productsValues[2]?.value === 'شانزده گیگابایت'
+      );
+    }
   }
 
   const handleWhichDropdownIsOpen = (whichOne) => {
@@ -92,6 +285,23 @@ function ProductListPage() {
     setIsMostExpensive(false);
   };
 
+  const handleRemoveFilters = () => {
+    setIsJustDiscount(false);
+    setIsApple(false);
+    setIsSamsung(false);
+    setIsNokia(false);
+    setIsOneSIMcard(false);
+    setIsTwoSIMcard(false);
+    setIsThreeSIMcard(false);
+    setIs2G(false);
+    setIs3G(false);
+    setIs4G(false);
+    setIs5G(false);
+    setIsRAM2(false);
+    setIsRAM4(false);
+    setIsRAM16(false);
+  };
+
   return (
     <div className="w-full max-w-[1676px] mx-auto">
       <div className="w-full px-5">
@@ -111,7 +321,10 @@ function ProductListPage() {
                 <p className="text-[#3f4064] text-[19px] font-Yekan-bold">
                   فیلترها
                 </p>
-                <button className="text-[#19bfd3] text-xs font-Yekan-bold">
+                <button
+                  onClick={handleRemoveFilters}
+                  className="text-[#19bfd3] text-xs font-Yekan-bold"
+                >
                   حذف فیلتر ها
                 </button>
               </div>
@@ -132,12 +345,18 @@ function ProductListPage() {
                       } pt-2`}
                     >
                       <SearchFilter placeholder={'جستوجو در برند'} />
-                      {uniqueBrands.map((brand, i) => (
-                        <CheckBox
-                          key={brand}
-                          text={{ main: brand, sub: uniqueBrandsName[i] }}
-                        />
-                      ))}
+                      <CheckBox
+                        text={{ main: 'apple', sub: 'اپل' }}
+                        handleChecked={setIsApple}
+                      />
+                      <CheckBox
+                        text={{ main: 'samsung', sub: 'سامسونگ' }}
+                        handleChecked={setIsSamsung}
+                      />
+                      <CheckBox
+                        text={{ main: 'pgone-nokia', sub: 'نوکیا' }}
+                        handleChecked={setIsNokia}
+                      />
                     </div>
                   </div>
                   {/* just discount products filter */}
@@ -185,9 +404,18 @@ function ProductListPage() {
                         whichDropdownIsOpen !== 2 && 'hidden'
                       } pt-2`}
                     >
-                      <CheckBox text={{ main: 'یک عدد' }} />
-                      <CheckBox text={{ main: 'دو عدد' }} />
-                      <CheckBox text={{ main: 'سه عدد' }} />
+                      <CheckBox
+                        handleChecked={setIsOneSIMcard}
+                        text={{ main: 'یک عدد' }}
+                      />
+                      <CheckBox
+                        handleChecked={setIsTwoSIMcard}
+                        text={{ main: 'دو عدد' }}
+                      />
+                      <CheckBox
+                        handleChecked={setIsThreeSIMcard}
+                        text={{ main: 'سه عدد' }}
+                      />
                     </div>
                   </div>
 
@@ -205,10 +433,10 @@ function ProductListPage() {
                         whichDropdownIsOpen !== 3 && 'hidden'
                       } pt-2`}
                     >
-                      <CheckBox text={{ main: '۲G' }} />
-                      <CheckBox text={{ main: '۳G' }} />
-                      <CheckBox text={{ main: '۴G' }} />
-                      <CheckBox text={{ main: '۵G' }} />
+                      <CheckBox handleChecked={setIs2G} text={{ main: '۲G' }} />
+                      <CheckBox handleChecked={setIs3G} text={{ main: '۳G' }} />
+                      <CheckBox handleChecked={setIs4G} text={{ main: '۴G' }} />
+                      <CheckBox handleChecked={setIs5G} text={{ main: '۵G' }} />
                     </div>
                   </div>
 
@@ -227,37 +455,18 @@ function ProductListPage() {
                       } pt-2`}
                     >
                       <SearchFilter placeholder={'جستوجو مقدار RAM'} />
-                      <CheckBox text={{ main: 'چهار گیگابایت' }} />
-                      <CheckBox text={{ main: 'دو گیگابایت' }} />
-                      <CheckBox text={{ main: 'یک گیگابایت' }} />
-                      <CheckBox text={{ main: 'شش گیگابایت' }} />
-                      <CheckBox text={{ main: 'سه گیگابایت' }} />
-                      <CheckBox text={{ main: 'هشت گیگابایت' }} />
-                      <CheckBox text={{ main: '۱۲ گیگابایت' }} />
-                      <CheckBox text={{ main: '۱۶ گیگابایت' }} />
-                    </div>
-                  </div>
-
-                  {/* RAM memory filter */}
-                  <div className="py-5 border-b border-b-[#f1f2f4] hover:cursor-pointer">
-                    <div
-                      onClick={() => handleWhichDropdownIsOpen(5)}
-                      className="flex items-center justify-between"
-                    >
-                      <p>{'حافظه داخلی'}</p>
-                      <MdKeyboardArrowDown className="w-6 h-6 text-[#9e9fb1]" />
-                    </div>
-                    <div
-                      className={`${
-                        whichDropdownIsOpen !== 5 && 'hidden'
-                      } pt-2`}
-                    >
-                      <SearchFilter placeholder={'جستوجو حافظه داخلی...'} />
-                      <CheckBox text={{ main: '۶۴ گیگابایت' }} />
-                      <CheckBox text={{ main: '۱۶ گیگابایت' }} />
-                      <CheckBox text={{ main: '۳۲ گیگابایت' }} />
-                      <CheckBox text={{ main: 'هشت گیگابایت' }} />
-                      <CheckBox text={{ main: 'چهار گیگابایت' }} />
+                      <CheckBox
+                        handleChecked={setIsRAM4}
+                        text={{ main: 'چهار گیگابایت' }}
+                      />
+                      <CheckBox
+                        handleChecked={setIsRAM2}
+                        text={{ main: 'دو گیگابایت' }}
+                      />
+                      <CheckBox
+                        handleChecked={setIsRAM16}
+                        text={{ main: '۱۶ گیگابایت' }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -267,65 +476,69 @@ function ProductListPage() {
 
           <section className="grow">
             <div className="flex flex-col">
-              <div className="flex border-b">
-                <div
-                  onClick={handleIsFilterOpen}
-                  className="flex items-center py-3 ml-6 Laptop-L:hidden hover:cursor-pointer"
-                >
-                  <RiListSettingsFill className="w-6 h-6 ml-2" />
-                  <p className="text-xs font-Yekan-bold">فیلتر</p>
-                </div>
-                <div
-                  onClick={handleIsSortingOpen}
-                  className="flex items-center py-3 hover:cursor-pointer"
-                >
-                  <BiSortDown className="w-6 h-6 ml-2" />
-                  <p className="text-xs font-Yekan-bold hover:cursor">
-                    مرتب سازی:
-                  </p>
-                </div>
-                <div className="items-center justify-between hidden grow Laptop-L:flex">
-                  <div className="flex items-center gap-4 pr-4">
-                    <span
-                      onClick={handleRemoveSorting}
-                      className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
-                    >
-                      پرفروش‌ترین‌
-                    </span>
-                    <span
-                      onClick={handleRemoveSorting}
-                      className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
-                    >
-                      مرتبط‌ترین
-                    </span>
-                    <span
-                      onClick={handleRemoveSorting}
-                      className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
-                    >
-                      پربازدیدترین‌
-                    </span>
-                    <span
-                      onClick={handleNewest}
-                      className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
-                    >
-                      جدیدترین‌
-                    </span>
-                    <span
-                      onClick={handleCheapest}
-                      className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
-                    >
-                      ارزان‌ترین‌
-                    </span>
-                    <span
-                      onClick={handleMostExpensive}
-                      className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
-                    >
-                      گران‌ترین‌
-                    </span>
+              {filteredPhones.length > 0 && (
+                <div className="flex border-b">
+                  <div
+                    onClick={handleIsFilterOpen}
+                    className="flex items-center py-3 ml-6 Laptop-L:hidden hover:cursor-pointer"
+                  >
+                    <RiListSettingsFill className="w-6 h-6 ml-2" />
+                    <p className="text-xs font-Yekan-bold">فیلتر</p>
                   </div>
-                  <div className="text-xs text-[#767790]">{'۱۲۴۵ کالا'}</div>
+                  <div
+                    onClick={handleIsSortingOpen}
+                    className="flex items-center py-3 hover:cursor-pointer"
+                  >
+                    <BiSortDown className="w-6 h-6 ml-2" />
+                    <p className="text-xs font-Yekan-bold hover:cursor">
+                      مرتب سازی:
+                    </p>
+                  </div>
+                  <div className="items-center justify-between hidden grow Laptop-L:flex">
+                    <div className="flex items-center gap-4 pr-4">
+                      <span
+                        onClick={handleRemoveSorting}
+                        className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
+                      >
+                        پرفروش‌ترین‌
+                      </span>
+                      <span
+                        onClick={handleRemoveSorting}
+                        className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
+                      >
+                        مرتبط‌ترین
+                      </span>
+                      <span
+                        onClick={handleRemoveSorting}
+                        className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
+                      >
+                        پربازدیدترین‌
+                      </span>
+                      <span
+                        onClick={handleNewest}
+                        className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
+                      >
+                        جدیدترین‌
+                      </span>
+                      <span
+                        onClick={handleCheapest}
+                        className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
+                      >
+                        ارزان‌ترین‌
+                      </span>
+                      <span
+                        onClick={handleMostExpensive}
+                        className="text-xs hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#767790]"
+                      >
+                        گران‌ترین‌
+                      </span>
+                    </div>
+                    <div className="text-xs text-[#767790]">
+                      {convertToPersian(filteredPhones.length)}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
               <ShowPhoneCards phones={filteredPhones} />
             </div>
           </section>
@@ -344,7 +557,10 @@ function ProductListPage() {
               className="w-6 h-6 ml-5 hover:cursor-pointer"
             />
             <div className="w-full text-sm font-Yekan-bold">فیلتر</div>
-            <div className="text-[#19bfd3] text-xs font-Yekan-bold min-w-max">
+            <div
+              onClick={handleRemoveFilters}
+              className="text-[#19bfd3] text-xs font-Yekan-bold min-w-max"
+            >
               حذف فیلترها
             </div>
           </div>
@@ -364,7 +580,18 @@ function ProductListPage() {
                     className={`${whichDropdownIsOpen !== 1 && 'hidden'} pt-2`}
                   >
                     <SearchFilter placeholder={'جستوجو در برند'} />
-                    <CheckBox text={{ main: 'Samsung', sub: 'سامسونگ' }} />
+                    <CheckBox
+                      text={{ main: 'apple', sub: 'اپل' }}
+                      handleChecked={setIsApple}
+                    />
+                    <CheckBox
+                      text={{ main: 'samsung', sub: 'سامسونگ' }}
+                      handleChecked={setIsSamsung}
+                    />
+                    <CheckBox
+                      text={{ main: 'pgone-nokia', sub: 'نوکیا' }}
+                      handleChecked={setIsNokia}
+                    />
                   </div>
                 </div>
                 {/* just discount products filter */}
@@ -409,9 +636,18 @@ function ProductListPage() {
                   <div
                     className={`${whichDropdownIsOpen !== 2 && 'hidden'} pt-2`}
                   >
-                    <CheckBox text={{ main: 'یک عدد' }} />
-                    <CheckBox text={{ main: 'دو عدد' }} />
-                    <CheckBox text={{ main: 'سه عدد' }} />
+                    <CheckBox
+                      handleChecked={setIsOneSIMcard}
+                      text={{ main: 'یک عدد' }}
+                    />
+                    <CheckBox
+                      handleChecked={setIsTwoSIMcard}
+                      text={{ main: 'دو عدد' }}
+                    />
+                    <CheckBox
+                      handleChecked={setIsThreeSIMcard}
+                      text={{ main: 'سه عدد' }}
+                    />
                   </div>
                 </div>
 
@@ -427,10 +663,10 @@ function ProductListPage() {
                   <div
                     className={`${whichDropdownIsOpen !== 3 && 'hidden'} pt-2`}
                   >
-                    <CheckBox text={{ main: '۲G' }} />
-                    <CheckBox text={{ main: '۳G' }} />
-                    <CheckBox text={{ main: '۴G' }} />
-                    <CheckBox text={{ main: '۵G' }} />
+                    <CheckBox handleChecked={setIs2G} text={{ main: '۲G' }} />
+                    <CheckBox handleChecked={setIs3G} text={{ main: '۳G' }} />
+                    <CheckBox handleChecked={setIs4G} text={{ main: '۴G' }} />
+                    <CheckBox handleChecked={setIs5G} text={{ main: '۵G' }} />
                   </div>
                 </div>
 
@@ -447,35 +683,18 @@ function ProductListPage() {
                     className={`${whichDropdownIsOpen !== 4 && 'hidden'} pt-2`}
                   >
                     <SearchFilter placeholder={'جستوجو مقدار RAM'} />
-                    <CheckBox text={{ main: 'چهار گیگابایت' }} />
-                    <CheckBox text={{ main: 'دو گیگابایت' }} />
-                    <CheckBox text={{ main: 'یک گیگابایت' }} />
-                    <CheckBox text={{ main: 'شش گیگابایت' }} />
-                    <CheckBox text={{ main: 'سه گیگابایت' }} />
-                    <CheckBox text={{ main: 'هشت گیگابایت' }} />
-                    <CheckBox text={{ main: '۱۲ گیگابایت' }} />
-                    <CheckBox text={{ main: '۱۶ گیگابایت' }} />
-                  </div>
-                </div>
-
-                {/* RAM memory filter */}
-                <div className="py-5 border-b border-b-[#f1f2f4] hover:cursor-pointer">
-                  <div
-                    onClick={() => handleWhichDropdownIsOpen(5)}
-                    className="flex items-center justify-between"
-                  >
-                    <p>{'حافظه داخلی'}</p>
-                    <MdKeyboardArrowDown className="w-6 h-6 text-[#9e9fb1]" />
-                  </div>
-                  <div
-                    className={`${whichDropdownIsOpen !== 5 && 'hidden'} pt-2`}
-                  >
-                    <SearchFilter placeholder={'جستوجو حافظه داخلی...'} />
-                    <CheckBox text={{ main: '۶۴ گیگابایت' }} />
-                    <CheckBox text={{ main: '۱۶ گیگابایت' }} />
-                    <CheckBox text={{ main: '۳۲ گیگابایت' }} />
-                    <CheckBox text={{ main: 'هشت گیگابایت' }} />
-                    <CheckBox text={{ main: 'چهار گیگابایت' }} />
+                    <CheckBox
+                      handleChecked={setIsRAM4}
+                      text={{ main: 'چهار گیگابایت' }}
+                    />
+                    <CheckBox
+                      handleChecked={setIsRAM2}
+                      text={{ main: 'دو گیگابایت' }}
+                    />
+                    <CheckBox
+                      handleChecked={setIsRAM16}
+                      text={{ main: '۱۶ گیگابایت' }}
+                    />
                   </div>
                 </div>
               </div>
@@ -491,53 +710,55 @@ function ProductListPage() {
           !isSortingOpen ? 'translate-y-[100%] hidden' : ''
         }`}
       >
-        <div className="absolute bottom-0 left-0 right-0 z-50 w-full p-5 bg-white h-max rounded-t-3xl">
-          <div className="flex items-center pb-4">
-            <IoClose
-              onClick={handleIsSortingOpen}
-              className="w-6 h-6 ml-5 hover:cursor-pointer"
-            />
-            <div className="w-full font-Yekan-bold">مرتب سازی بر اساس</div>
+        {filteredPhones && (
+          <div className="absolute bottom-0 left-0 right-0 z-50 w-full p-5 bg-white h-max rounded-t-3xl">
+            <div className="flex items-center pb-4">
+              <IoClose
+                onClick={handleIsSortingOpen}
+                className="w-6 h-6 ml-5 hover:cursor-pointer"
+              />
+              <div className="w-full font-Yekan-bold">مرتب سازی بر اساس</div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <span
+                onClick={handleRemoveSorting}
+                className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
+              >
+                پرفروش‌ترین‌
+              </span>
+              <span
+                onClick={handleRemoveSorting}
+                className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
+              >
+                مرتبط‌ترین
+              </span>
+              <span
+                onClick={handleRemoveSorting}
+                className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
+              >
+                پربازدیدترین‌
+              </span>
+              <span
+                onClick={handleNewest}
+                className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
+              >
+                جدیدترین‌
+              </span>
+              <span
+                onClick={handleCheapest}
+                className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
+              >
+                ارزان‌ترین‌
+              </span>
+              <span
+                onClick={handleMostExpensive}
+                className="text-[13px] pt-2 pb-4 font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
+              >
+                گران‌ترین‌
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <span
-              onClick={handleRemoveSorting}
-              className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
-            >
-              پرفروش‌ترین‌
-            </span>
-            <span
-              onClick={handleRemoveSorting}
-              className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
-            >
-              مرتبط‌ترین
-            </span>
-            <span
-              onClick={handleRemoveSorting}
-              className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
-            >
-              پربازدیدترین‌
-            </span>
-            <span
-              onClick={handleNewest}
-              className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
-            >
-              جدیدترین‌
-            </span>
-            <span
-              onClick={handleCheapest}
-              className="text-[13px] pt-2 pb-4 border-b border-b-[#f1f2f4] font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
-            >
-              ارزان‌ترین‌
-            </span>
-            <span
-              onClick={handleMostExpensive}
-              className="text-[13px] pt-2 pb-4 font-Yekan-bold hover:cursor-pointer hover:font-Yekan-bold hover:text-[#ef394e] text-[#3f4064]"
-            >
-              گران‌ترین‌
-            </span>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

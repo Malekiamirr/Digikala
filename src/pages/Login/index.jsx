@@ -20,9 +20,7 @@ function LoginPage() {
   const [createUser] = useCreateUserMutation();
 
   const navigate = useNavigate();
-  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
 
-  const [isNewUser, setisNewUser] = useState({ create: true, password: '' });
   const [showPasswordPage, setShowPasswordPage] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -30,21 +28,17 @@ function LoginPage() {
 
   const onSubmit = (values, actions) => {
     actions.resetForm();
-    users.map((user) => {
-      if (user.email === values.email) {
-        setisNewUser({ create: false, password: user.password });
-      }
-    });
   };
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
-    // if (isNewUser) {
+
     dispatch(loginUser());
 
     passwordFormik.resetForm();
+
     createUser({
       id: users.length + 1,
-      name: '',
+      name: values.name,
       email: values.email,
       password: passwordFormik.values.password,
       createdAt: new Date(),
@@ -52,16 +46,8 @@ function LoginPage() {
       favoriteProducts: [],
       cart: [],
     });
+
     navigate('/');
-    // }
-    // BUG
-    // else {
-    //   if (passwordFormik.values.password === isNewUser.password) {
-    //     passwordFormik.resetForm();
-    //   } else {
-    //     alert('incorrect');
-    //   }
-    // }
   };
 
   const {
@@ -75,6 +61,7 @@ function LoginPage() {
   } = useFormik({
     initialValues: {
       email: '',
+      name: '',
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -119,11 +106,11 @@ function LoginPage() {
             <p className="text-[11px] Laptop-L:text-xs text-[#3f4064] mt-5">
               سلام!
             </p>
-            <p className="mb-5 text-[11px] Laptop-L:text-xs text-[#3f4064] mt-2">
-              لطفا ایمیل خود را وارد کنید
-            </p>
 
             <form onSubmit={handleSubmit} autoComplete="false">
+              <p className="mb-5 text-[11px] Laptop-L:text-xs text-[#3f4064] mt-2">
+                لطفا ایمیل خود را وارد کنید
+              </p>
               <input
                 value={values.email}
                 onChange={handleChange}
@@ -139,6 +126,27 @@ function LoginPage() {
               {errors.email && touched.email && (
                 <p className="text-xs text-[#b2001a] mt-2">{errors.email}</p>
               )}
+
+              <p className="my-5 پ text-[11px] Laptop-L:text-xs text-[#3f4064]">
+                لطفا نام خود را وارد کنید
+              </p>
+
+              <input
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                type="text"
+                id="name"
+                className={`Laptop-L:border bg-[#f1f2f4] Laptop-L:bg-white border-b-2 border-b-[#d32f2f] rounded-lg outline-none text-[15px] Laptop-L:border-[#c3c3ce] w-full py-3 px-4 text-[#3f4064] caret-[#19bfd3] focus:border-[#19bfd3] transition-colors ${
+                  errors.name &&
+                  touched.name &&
+                  'border-[#d32f2f] Laptop-L:border-[#d32f2f] focus:border-[#d32f2f]'
+                }`}
+              />
+              {errors.name && touched.name && (
+                <p className="text-xs text-[#b2001a] mt-2">{errors.name}</p>
+              )}
+
               <button
                 onClick={toggleShowPasswordPage}
                 type="submit"

@@ -39,6 +39,7 @@ export { default as QuestionCard } from './QuestionCard/index';
 export { default as PriceChart } from './PriceChart/index';
 export { default as RegisterComment } from './RegisterComment/index';
 export { default as RegisterQuestion } from './RegisterQuestion/index';
+export { default as ProfileMenu } from './ProfileMenu/index';
 import { default as ImageMagnify } from './ImageMagnify/index';
 import { default as OtfficialImages } from './OfficialImages/index';
 import { default as ProductCardSkeleton } from './ProductCardSkeleton/index';

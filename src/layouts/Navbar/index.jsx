@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useScroll } from '../../hooks/useScroll';
 import { useSelector } from 'react-redux';
 
-import { Category, SearchBox } from '../../components/index';
+import { Category, ProfileMenu, SearchBox } from '../../components/index';
 import { NavLink } from 'react-router-dom';
 
 // Icons
@@ -28,7 +28,9 @@ import { AiOutlineFire } from 'react-icons/ai';
 function Navbar() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const [openSearchBox, setOpenSearchBox] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
+  const toggleShowProfileMenu = () => setShowProfileMenu(!showProfileMenu);
   const { y, x, scrollDirection } = useScroll();
 
   return (
@@ -73,12 +75,22 @@ function Navbar() {
             />
             {/* Shoping && Account */}
             <div className="flex items-center justify-center gap-4 Laptop-L:gap-2 Laptop-L:-mt-2">
-              <div className="flex items-center justify-center gap-1 p-2 transition-all rounded-md cursor-pointer">
+              <div
+                onClick={toggleShowProfileMenu}
+                className="flex items-center justify-center gap-1 p-2 transition-all rounded-md cursor-pointer relative"
+              >
                 {isLoggedIn ? (
                   // Account Icons
                   <>
                     <HiOutlineUser className="w-6 h-6 text-[#3f4064] stroke-2" />
                     <BiCaretRight className="hidden Laptop-L:block w-4 h-4 rotate-90 text-[#3f4064]" />
+                    <div
+                      className={`${
+                        showProfileMenu && 'Laptop-L:block'
+                      } hidden absolute top-[100%] left-0 pb-2 rounded-lg bg-white w-[256px] profile-menu-box-shadow z-10`}
+                    >
+                      <ProfileMenu />
+                    </div>
                   </>
                 ) : (
                   // Login icons

@@ -182,3 +182,7 @@
 .custom-box-shadow {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 4px 4px rgba(0, 0, 0, 0.1);
 }
+
+.profile-menu-box-shadow {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.3);
+}

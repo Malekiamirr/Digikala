@@ -60,33 +60,48 @@
   "swiper": [
     {
       "id": 1,
-      "title": "باشگاه 90 درصدی ها",
-      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/9fd370f2d50b54b3325b33dc86e9b9429101bd16_1688218520.jpg?x-oss-process=image/quality,q_95/format,webp"
+      "title": "کمپین Big Prize - تیرماه 1402",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/267751b47ae3c1128df4cb2d2ccf19188f2ff2bf_1689436059.jpg?x-oss-process=image/quality,q_95/format,webp"
     },
     {
       "id": 2,
-      "title": "لباس خواب و راحتی زنانه",
-      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/1a82115c440f7baa3e94c5d03bcd86caebdce36d_1684309047.jpg?x-oss-process=image/quality,q_95/format,webp"
+      "title": "کمپین - HW - HE - جهیزیه - تیر 1402",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/d84d1a5d0037f23e3cf8421db4cb72a021649fdb_1688359565.jpg?x-oss-process=image/quality,q_95"
     },
     {
       "id": 3,
-      "title": "کولر و پنکه",
-      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/9e9f264b38af101fe1a27312b63e97942ee1e766_1688202606.jpg?x-oss-process=image/quality,q_95/format,webp"
+      "title": "وسوسه‌انگیزها",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/09f9d5d268b09a77072496b2dd3b9e2ba8524889_1689504618.jpg?x-oss-process=image/quality,q_95"
     },
     {
       "id": 4,
-      "title": "خرید اقساطی",
-      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/748a21c87cac05cc1d876a7b5a9f6f4c8f740222_1687964990.gif?x-oss-process=image?x-oss-process=image/format,webp"
+      "title": "موشن دیزاینر",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/a56e125d4f5df8262bb7ee6d1321821d775e8ea2_1689504442.jpg?x-oss-process=image/quality,q_95"
     },
     {
       "id": 5,
-      "title": "بیشترین تخفیف ساعت",
-      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/c0cabfba852b8e781f0a187399d9148b9aead122_1682838535.jpg?x-oss-process=image/quality,q_95/format,webp"
+      "title": "با دیجی پلاس ارسال به هر آدرسی رایگانه!",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/3c4dfd9304016111ecbb35ec2eaa33f6ba9cba41_1689170779.gif?x-oss-process=image"
     },
     {
       "id": 6,
-      "title": "پارتنرشیپ - اکتیو",
-      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/007db2fdf5077f1206a02a6bcf8910d79194e87b_1687865437.jpg?x-oss-process=image/quality,q_95/format,webp"
+      "title": "کمپین - MA - کتابخانه کودک و نوجوان - تیرماه 1402",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/a76db1f8ecbf815c1ce7ed2fdc5cddbc1db50f0f_1689402171.jpg?x-oss-process=image/quality,q_95"
+    },
+    {
+      "id": 7,
+      "title": "رویداد بر خط",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/b71a2f13f3e624b2ed49f1fe2c3d5223fea5e71e_1689496339.jpg?x-oss-process=image/quality,q_95"
+    },
+    {
+      "id": 8,
+      "title": "فروش ویژه دوچرخه",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/44c90cc79704ef5989686284aebd2a1ae7ead49a_1689363048.jpg?x-oss-process=image/quality,q_95"
+    },
+    {
+      "id": 9,
+      "title": "لحظه‌های موبایل",
+      "image": "https://dkstatics-public.digikala.com/digikala-adservice-banners/782f2ab12a8870470dbe6876448e2e00bc544f51_1688802576.jpg?x-oss-process=image/quality,q_95"
     }
   ],
   "features": [
@@ -253,101 +268,11 @@
     },
     {
       "id": 4,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "realAmir123",
-      "createdAt": "2023-07-14T13:29:05.316Z",
-      "updatedAt": "2023-07-14T13:29:05.316Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 5,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Aqwedfsdsa212",
-      "createdAt": "2023-07-14T13:33:03.460Z",
-      "updatedAt": "2023-07-14T13:33:03.460Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 6,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir1234",
-      "createdAt": "2023-07-14T13:36:07.617Z",
-      "updatedAt": "2023-07-14T13:36:07.617Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 7,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir12344",
-      "createdAt": "2023-07-14T13:38:38.740Z",
-      "updatedAt": "2023-07-14T13:38:38.740Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 8,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir1234",
-      "createdAt": "2023-07-14T13:54:32.309Z",
-      "updatedAt": "2023-07-14T13:54:32.309Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 9,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir12345",
-      "createdAt": "2023-07-14T13:57:16.900Z",
-      "updatedAt": "2023-07-14T13:57:16.900Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 10,
-      "name": "",
-      "email": "shaya@gmail.com",
-      "password": "realmalei123A",
-      "createdAt": "2023-07-14T13:58:44.963Z",
-      "updatedAt": "2023-07-14T13:58:44.963Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 11,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir369753",
-      "createdAt": "2023-07-15T03:50:25.230Z",
-      "updatedAt": "2023-07-15T03:50:25.230Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 12,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "reamasds!223",
-      "createdAt": "2023-07-15T03:52:43.874Z",
-      "updatedAt": "2023-07-15T03:52:43.874Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 13,
-      "name": "",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir369852147",
-      "createdAt": "2023-07-15T04:00:36.448Z",
-      "updatedAt": "2023-07-15T04:00:36.448Z",
+      "name": "ماهان عبدالمالکی",
+      "email": "abbaszade@gmail.com",
+      "password": "Amier54",
+      "createdAt": "2023-07-16T14:00:25.017Z",
+      "updatedAt": "2023-07-16T14:00:25.017Z",
       "favoriteProducts": [],
       "cart": []
     }
@@ -7572,7 +7497,6 @@
   "popularPhones": [
     {
       "id": 1,
-
       "categoryName": "گوشی های دکمه ای",
       "products": [
         {
@@ -8289,7 +8213,6 @@
           "sellCount": "20",
           "description": "سری FE گوشی‌های هوشمند سامسونگ با توجه به بهره بردن از مشخصات فنی مناسب و قدرتمند و البته قیمتی مقرون به‌صرفه‌تر به نسبت پرچمداران این شرکت، طرفداران بسیاری زیادی دازند و توانسته‌اند عملکرد بسیار خوب و قابل قبولی را به‌نمایش بگذارند. سامسونگ Galaxy S21 FE 5G به عنوان جدید‌ترین گوشی‌هوشمند این سری هم به مشخصات فنی قدرتمند و بسیار خوبی مجهز شده است. در نمای رو‌به‌رویی این گوشی از صفحه‌نمایش با ابعاد 6.4 اینچ و رزولوشن 1080×2400 پیکسل از نوع Dynamic AMOLED 2X بهره برده است. تا همینجا هم مشخص است که این گوشی به یکی از قدرتمند‌ترین صفحات‌نمایش مجهز شده است اما وقتی به قدرت واقعی این صفحه‌نمایش پی‌ خواهید برد که بدانید توانایی نمایش 411 پیکسل در هر اینچ و حداکثر نرخ بروزرسانی 120 هرتز را دارد. در قسمت پشتی هم یک سنسور دروبین اصلی با رزولوشن 12 مگاپیکسل و گشودگی دریچه دیافراگم f/1.8 در کنار سنسور 8 مگاپیکسل از نوع تله‌فوتو با قابلیت زوم سه برابری اپتیکال (زوم بدون کم شدن کیفیت) و سنسور 12 مگاپیکسل از نوع فوق عریض (ultrawide) با زاویه دید 123 درجه، سنسور‌های دوربین سه‌گانه سامسونگ Galaxy S21 FE 5G را تشکیل می‌دهند. برای دوربین سلفی هم سنسور با رزولوشن 32 مگاپیکسل از نوع عریض در نظر گرفته شده است. در بخش مشخصات سخت‌افزاری در نظر گرفته شده هم این گوشی دست پر وارد میدان رقابت شده است. حضور پردازنده اگزینوس 2100 5G سبب شده تا سامسونگ Galaxy S21 FE 5G توانایی اجرای بازی‌های سنگین مثل کال‌آف‌دیوتی مویابل و آسفالت 9 را به‌راحتی اجرا کند و عملکرد بسیار خوبی داشته باشد. از طرفی این پردازنده توانایی پشتیبانی از شبکه‌های اینترنتی نسل پنجم یا همان 5G را هم دارد. باتری با میزان ظرفیت 4500 میلی‌آمپر‌ساعت و شارژر 25 وات مجهز به تکنولوژی شارژ سریع هم از دیگر مشخصات در نظر گرفته شده برای این گوشی هوشمند است.",
           "thumbnail": " https://dkstatics-public.digikala.com/digikala-products/6312602e6927f1c209aeac4ac721b1e7d0e92bcc_1656425488.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
-
           "offer": "94",
           "createdAt": "2023-02-23T22:17:08.767Z",
           "updatedAt": "2023-02-23T22:17:08.767Z",

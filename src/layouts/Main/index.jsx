@@ -1,4 +1,8 @@
-import { useGetStoriesQuery, useGetSwipersQuery } from '../../api/apiSlice';
+import {
+  useGetAmazingOfferQuery,
+  useGetStoriesQuery,
+  useGetSwipersQuery,
+} from '../../api/apiSlice';
 import {
   HomeFeatures,
   MainCategory,
@@ -12,6 +16,7 @@ import {
   Blog,
   SuperMarket,
   Swiper,
+  AmazingOffer,
 } from '../../components/index';
 import { BsStars } from 'react-icons/bs';
 import { AiOutlineFire } from 'react-icons/ai';
@@ -26,8 +31,20 @@ function MainLayout() {
     isLoading: swipersIsLoading,
     isError: swipersIsError,
   } = useGetSwipersQuery();
+  const {
+    data: amazingOffer,
+    isLoading: amazingOfferIsLoading,
+    isError: amazingOfferIsError,
+  } = useGetAmazingOfferQuery();
 
-  if (isLoading || isError || swipersIsError) {
+  if (
+    isLoading ||
+    isError ||
+    swipersIsLoading ||
+    swipersIsError ||
+    amazingOfferIsLoading ||
+    amazingOfferIsError
+  ) {
     return;
   } else {
     return (
@@ -37,12 +54,17 @@ function MainLayout() {
             <Story key={story.id} story={story} />
           ))}
         </div>
+
         <div className="my-2">
           <Swiper slides={swipers} isLoading={swipersIsLoading} />
         </div>
+
         <div className="px-4 w-full max-w-[83.5rem] mx-auto">
-          {/* BUG پیشنهاد شگفت انگیز و اینا */}
           <HomeFeatures />
+        </div>
+
+        <div className="px-4 w-full max-w-[83.5rem] mx-auto">
+          <AmazingOffer amazingOffer={amazingOffer} />
         </div>
 
         {/* super market */}

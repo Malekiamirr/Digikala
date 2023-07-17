@@ -41,6 +41,7 @@ export { default as RegisterComment } from './RegisterComment/index';
 export { default as RegisterQuestion } from './RegisterQuestion/index';
 export { default as ProfileMenu } from './ProfileMenu/index';
 export { default as Swiper } from './Swiper/index';
+export { default as AmazingOffer } from './AmazingOffer/index';
 import { default as ImageMagnify } from './ImageMagnify/index';
 import { default as OtfficialImages } from './OfficialImages/index';
 import { default as ProductCardSkeleton } from './ProductCardSkeleton/index';

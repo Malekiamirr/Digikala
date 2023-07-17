@@ -3,7 +3,6 @@ import { useGetMainCategoryQuery } from '../../api/apiSlice';
 
 function MainCategory() {
   const { data, isLoading, isError } = useGetMainCategoryQuery();
-  console.log('mainCategory', data);
   if (isLoading || isError) {
     return;
   }

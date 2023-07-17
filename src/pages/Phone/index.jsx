@@ -3,7 +3,7 @@ import {
   useGetMainCategoryQuery,
   useGetPopularPhonesQuery,
 } from '../../api/apiSlice';
-import { ShowSwiper } from '../../components';
+import { ShowSwiper, Swiper } from '../../components';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { BsQuestion } from 'react-icons/bs';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -37,7 +37,7 @@ function PhonePage() {
   return (
     <div>
       {/* Sliders */}
-      <ShowSwiper sliders={sliders} />
+      <Swiper slides={sliders} />
 
       {/* All phones Photo */}
       <div className="mx-auto my-4 px-2 w-full max-w-[768px] Laptop-L:max-w-[1280px]">

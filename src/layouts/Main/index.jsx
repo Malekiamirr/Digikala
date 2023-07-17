@@ -11,6 +11,7 @@ import {
   SelectionDiscount,
   Blog,
   SuperMarket,
+  Swiper,
 } from '../../components/index';
 import { BsStars } from 'react-icons/bs';
 import { AiOutlineFire } from 'react-icons/ai';
@@ -26,7 +27,7 @@ function MainLayout() {
     isError: swipersIsError,
   } = useGetSwipersQuery();
 
-  if (isLoading || isError || swipersIsLoading || swipersIsError) {
+  if (isLoading || isError || swipersIsError) {
     return;
   } else {
     return (
@@ -37,7 +38,7 @@ function MainLayout() {
           ))}
         </div>
         <div className="my-2">
-          <ShowSwiper sliders={swipers} />
+          <Swiper slides={swipers} isLoading={swipersIsLoading} />
         </div>
         <div className="px-4 w-full max-w-[83.5rem] mx-auto">
           {/* BUG پیشنهاد شگفت انگیز و اینا */}
@@ -113,7 +114,7 @@ function MainLayout() {
 
         {/* Digikala Popular Brands */}
         <div className="w-full max-w-[83.5rem] mx-auto text-center px-4 mt-6">
-          <div className="border border-[#e0e0e0] rounded-2xl">
+          <div className="Laptop-L:border Laptop-L:border-[#e0e0e0] rounded-2xl">
             <div className="flex items-center justify-center gap-3 pt-8">
               <BsStars className="text-[#f9bc00] h-6 w-6" />
               <h3 className="text-lg Laptop-L:text-[21px] font-Yekan-medium">
@@ -219,15 +220,15 @@ function MainLayout() {
         </div>
 
         {/* Best selling products */}
-        <div className="w-full max-w-[83.5rem] mx-auto text-center px-4 mt-6">
-          <div className="border border-[#e0e0e0] rounded-2xl">
-            <div className="relative flex items-center justify-center gap-3 pt-8">
+        <div className="w-full max-w-[83.5rem] mx-auto text-center Laptop-L:px-4 mt-6">
+          <div className="Laptop-L:border Laptop-L:border-[#e0e0e0] rounded-2xl">
+            <div className="relative flex items-center Laptop-L:justify-center gap-3 pt-8 pr-4 Laptop-L:pr-0">
               <AiOutlineFire className="text-[#f9bc00] h-6 w-6" />
               <h3 className="text-lg Laptop-L:text-[21px] font-Yekan-medium">
                 پرفروش‌ترین کالاها
               </h3>
 
-              <button className="absolute left-4 top-8 text-[#19bfd3] text-sm font-Yekan-bold">
+              <button className="absolute left-4 top-8 text-[#19bfd3] text-sm font-Yekan-bold hover:cursor-pointer">
                 مشاهده همه
               </button>
             </div>

@@ -44,7 +44,7 @@ function Navbar() {
         {/* Navbar Image */}
         <div className="hidden w-full Laptop-L:block">
           <img
-            src="https://dkstatics-public.digikala.com/digikala-adservice-banners/f9acfcb34442c69cbcebaf56201c558aaca74914_1688218466.jpg?x-oss-process=image/quality,q_95/format,webp"
+            src="https://dkstatics-public.digikala.com/digikala-adservice-banners/2e7c79bb2031d1a2f5a3530b7c0bf5c342394aee_1689489380.jpg?x-oss-process=image/quality,q_95/format,webp"
             alt="navbar image"
             className="h-[60px] w-full aspect-[3/2] object-cover"
           />

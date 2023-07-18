@@ -8,8 +8,10 @@ import {
   IntroduceProductPage,
   LoginPage,
   CartPage,
+  ErrorPage,
+  SuperMarketPage,
+  IncredibleOfferPage,
 } from './pages';
-import ErrorPage from './pages/Error';
 import { loader as productsLoader } from './pages/IntroduceProduct';
 
 const router = createBrowserRouter([
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'main/food-beverage',
+        element: <SuperMarketPage />,
+      },
+      {
+        path: 'incredible-offers',
+        element: <IncredibleOfferPage />,
       },
       {
         path: 'search/category-mobile-phone',

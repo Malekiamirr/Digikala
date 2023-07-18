@@ -1,7 +1,6 @@
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { useGetBrandsQuery } from '../../api/apiSlice';
 import { useState } from 'react';
-import { transform } from 'framer-motion';
 
 function PopularBrands() {
   const { data: brands, isLoading, isError } = useGetBrandsQuery();
@@ -9,8 +8,6 @@ function PopularBrands() {
   if (isError || isLoading) {
     return;
   }
-
-  console.log(cordinate);
 
   const handleMove = (which) => {
     if (which === 'left') {

@@ -7,3 +7,5 @@ export { default as IntroduceProductPage } from './IntroduceProduct/index';
 export { default as ErrorPage } from './Error/index';
 export { default as LoginPage } from './Login/index';
 export { default as CartPage } from './Cart/index';
+export { default as SuperMarketPage } from './SuperMarket/index';
+export { default as IncredibleOfferPage } from './IncredibleOffer/index';

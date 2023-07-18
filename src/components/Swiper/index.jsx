@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import classNames from 'classnames';
 
 const Swiper = ({ slides, isLoading }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const intervalRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {

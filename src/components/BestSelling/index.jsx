@@ -50,7 +50,10 @@ function BestSelling() {
         style={{ transform: `translateX(${cordinate * 330}px)` }}
       >
         {products.map((product, i) => (
-          <div key={i} className="flex flex-col gap-2 w-[24%] min-w-[24%] py-4">
+          <div
+            key={i}
+            className="flex flex-col gap-2 min-w-[280px] Laptop-L:w-[24%] Laptop-L:min-w-[24%] py-4"
+          >
             {product.map((item) => (
               <div
                 key={item.id}
@@ -65,7 +68,7 @@ function BestSelling() {
                   {item.number}
                 </span>
                 <div className="relative flex flex-col justify-center min-h-[50px] grow text-start">
-                  <p className="text-xs text-[#3f4064] leading-7 line-clamp-2">
+                  <p className="text-[11px] Laptop-L:text-xs text-[#3f4064] leading-7 line-clamp-2">
                     {item.description}
                   </p>
                   <div className="absolute left-0 w-full h-px bg-[#F1F2F4] -bottom-10"></div>

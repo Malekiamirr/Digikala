@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import convertToPersian from '../../utils/convertToPersianNumber';
 import { useState } from 'react';
 
-function AmazingOffer({ amazingOffer }) {
+function AmazingOffer({ amazingOffer, amazingColor, amazingPhoto }) {
   const [cordinate, setCordinate] = useState(0);
+  const gradientStyle = amazingColor?.color1
+    ? {
+        background: `linear-gradient(90deg, ${amazingColor.color1}, ${amazingColor.color2})`,
+      }
+    : { background: `linear-gradient(90deg, ${'#ef4056'}, ${'#ef394e'})` };
 
   const handleMove = (which) => {
     if (which === 'left') {
@@ -17,7 +22,10 @@ function AmazingOffer({ amazingOffer }) {
   };
 
   return (
-    <div className="mt-6 mb-2 px-[2px] py-5 rounded-2xl bg-gradient-to-t from-[#ef4056] to-[#ef394e] overflow-hidden group relative">
+    <div
+      className={`mt-6 mb-2 px-[2px] py-5 Laptop-L:rounded-2xl overflow-hidden group relative`}
+      style={gradientStyle}
+    >
       {/* left button */}
       <button
         onClick={() => {
@@ -42,7 +50,7 @@ function AmazingOffer({ amazingOffer }) {
       >
         <MdKeyboardArrowLeft className="w-6 h-6 text-[#3f4064] opacity-70" />
       </button>
-      <div className="overflow-hidden">
+      <div className="Laptop-L:overflow-hidden overflow-x-scroll box-container">
         <div
           className="flex items-center transform transition-transform duration-300"
           style={{
@@ -66,7 +74,9 @@ function AmazingOffer({ amazingOffer }) {
                     <img
                       className=""
                       src={
-                        'https://www.digikala.com/statics/img/png/specialCarousel/box.png'
+                        amazingPhoto
+                          ? amazingPhoto
+                          : 'https://www.digikala.com/statics/img/png/specialCarousel/box.png'
                       }
                       alt="box"
                     />

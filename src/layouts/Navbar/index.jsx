@@ -158,7 +158,16 @@ function Navbar() {
 
             <div className="flex items-center gap-6">
               <NavLink
-                to="/supermarket"
+                to="incredible-offers"
+                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
+              >
+                <div className="flex items-center gap-1">
+                  <TbDiscount2 className="w-4 h-4 text-[#9e9fb1]" />
+                  <p>شگفت‌انگیزها</p>
+                </div>
+              </NavLink>
+              <NavLink
+                to="main/food-beverage"
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className="flex items-center gap-1">
@@ -182,15 +191,6 @@ function Navbar() {
                 <div className="flex items-center gap-1">
                   <MdOutlineDiscount className="w-4 h-4 text-[#9e9fb1]" />
                   <p>تخفیف‌ها و پیشنهادها</p>
-                </div>
-              </NavLink>
-              <NavLink
-                to="incredibles"
-                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
-              >
-                <div className="flex items-center gap-1">
-                  <TbDiscount2 className="w-4 h-4 text-[#9e9fb1]" />
-                  <p>شگفت‌انگیزها</p>
                 </div>
               </NavLink>
             </div>

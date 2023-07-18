@@ -185,7 +185,7 @@ function Navbar() {
                 </div>
               </NavLink>
               <NavLink
-                to="discounts"
+                to="promotion-center"
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className="flex items-center gap-1">

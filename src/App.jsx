@@ -11,6 +11,8 @@ import {
   ErrorPage,
   SuperMarketPage,
   IncredibleOfferPage,
+  BestSellingPage,
+  PromotionCenterPage,
 } from './pages';
 import { loader as productsLoader } from './pages/IntroduceProduct';
 
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: 'incredible-offers',
         element: <IncredibleOfferPage />,
+      },
+      {
+        path: 'best-selling',
+        element: <BestSellingPage />,
+      },
+      {
+        path: 'promotion-center',
+        element: <PromotionCenterPage />,
       },
       {
         path: 'search/category-mobile-phone',

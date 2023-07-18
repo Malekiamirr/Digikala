@@ -275,6 +275,16 @@
       "updatedAt": "2023-07-16T14:00:25.017Z",
       "favoriteProducts": [],
       "cart": []
+    },
+    {
+      "id": 5,
+      "name": "امیر مالکی",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir123456",
+      "createdAt": "2023-07-18T07:16:54.166Z",
+      "updatedAt": "2023-07-18T07:16:54.166Z",
+      "favoriteProducts": [],
+      "cart": []
     }
   ],
   "digitalGoods": [
@@ -8287,7 +8297,6 @@
       ]
     }
   ],
-
   "amazingOffer": [
     {
       "id": 1,
@@ -9170,6 +9179,5 @@
       "subCategorySlug": "pgone-nokia"
     }
   ],
-
   "filterValue": []
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const ImageMagnify = ({ product }) => {
@@ -25,16 +25,16 @@ const ImageMagnify = ({ product }) => {
         mx > 0 &&
         my > 0
       ) {
-        large.current.style.display = "block";
-        zoomPlace.current.style.display = "block";
-        zoomWrapper.current.style.display = "block";
+        large.current.style.display = 'block';
+        zoomPlace.current.style.display = 'block';
+        zoomWrapper.current.style.display = 'block';
       } else {
-        large.current.style.display = "none";
-        zoomPlace.current.style.display = "none";
-        zoomWrapper.current.style.display = "none";
+        large.current.style.display = 'none';
+        zoomPlace.current.style.display = 'none';
+        zoomWrapper.current.style.display = 'none';
       }
 
-      if (large.current.style.display === "block") {
+      if (large.current.style.display === 'block') {
         const smallMagePositionX =
           Math.round(
             (mx / small.current.offsetWidth) * projectedWidth -
@@ -45,32 +45,32 @@ const ImageMagnify = ({ product }) => {
             (my / small.current.offsetHeight) * projectedHeight -
               zoomPlace.current.offsetHeight / 10
           ) * -1;
-        const bgp = smallMagePositionX + "px" + smallMagePositionY + "px";
+        const bgp = smallMagePositionX + 'px' + smallMagePositionY + 'px';
 
         const px = mx - large.current.offsetWidth / 2;
         const py = my - large.current.offsetHeight / 2;
 
-        large.current.style.top = py + "px";
-        large.current.style.left = px + "px";
-        large.current.style.backgroundPositionX = smallMagePositionX + "px";
-        large.current.style.backgroundPositionY = smallMagePositionY + "px";
-        zoomPlace.current.style.backgroundPositionX = smallMagePositionX + "px";
-        zoomPlace.current.style.backgroundPositionY = smallMagePositionY + "px";
+        large.current.style.top = py + 'px';
+        large.current.style.left = px + 'px';
+        large.current.style.backgroundPositionX = smallMagePositionX + 'px';
+        large.current.style.backgroundPositionY = smallMagePositionY + 'px';
+        zoomPlace.current.style.backgroundPositionX = smallMagePositionX + 'px';
+        zoomPlace.current.style.backgroundPositionY = smallMagePositionY + 'px';
       }
     };
 
     const handleMouseLeave = () => {
-      large.current.style.display = "none";
-      zoomPlace.current.style.display = "none";
-      zoomWrapper.current.style.display = "none";
+      large.current.style.display = 'none';
+      zoomPlace.current.style.display = 'none';
+      zoomWrapper.current.style.display = 'none';
     };
 
-    magnify.current.addEventListener("mousemove", handleMouseMove);
-    magnify.current.addEventListener("mouseleave", handleMouseLeave);
+    magnify.current.addEventListener('mousemove', handleMouseMove);
+    magnify.current.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      magnify.current.removeEventListener("mousemove", handleMouseMove);
-      magnify.current.removeEventListener("mouseleave", handleMouseLeave);
+      magnify.current?.removeEventListener('mousemove', handleMouseMove);
+      magnify.current?.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [projectedWidth, projectedHeight, product?.thumbnail]);
 
@@ -88,7 +88,11 @@ const ImageMagnify = ({ product }) => {
           ></div>
           <div className="aspect-w-12 aspect-h-14">
             <motion.div ref={small}>
-                <img src={product.thumbnail} alt="" className="object-contain w-full h-full" />
+              <img
+                src={product.thumbnail}
+                alt=""
+                className="object-contain w-full h-full"
+              />
             </motion.div>
           </div>
         </div>

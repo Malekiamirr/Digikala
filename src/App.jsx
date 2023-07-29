@@ -49,6 +49,7 @@ const router = createBrowserRouter([
       {
         path: 'product-list',
         element: <ProductListPage />,
+        loader: productsLoader,
       },
       {
         path: 'search/:productId',

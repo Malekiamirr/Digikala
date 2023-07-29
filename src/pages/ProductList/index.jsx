@@ -4,8 +4,8 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { RiListSettingsFill } from 'react-icons/ri';
 import { IoClose } from 'react-icons/io5';
 import { SearchFilter, CheckBox, ShowPhoneCards } from '../../components';
-import { useGetPhoneProductsQuery } from '../../api/apiSlice';
 import convertToPersian from '../../utils/convertToPersianNumber';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 function ProductListPage() {
   const [whichDropdownIsOpen, setWhichDropdownIsOpen] = useState(0);
@@ -29,13 +29,10 @@ function ProductListPage() {
   const [isRAM4, setIsRAM4] = useState(false);
   const [isRAM16, setIsRAM16] = useState(false);
 
-  const { data: phones, isLoading, isError } = useGetPhoneProductsQuery();
-  if (isError || isLoading) {
-    return;
-  }
+  const params = useParams();
+  const phones = useLoaderData();
 
   let filteredPhones = phones;
-  console.log(phones[0].productsValues[2].value === 'شانزده گیگابایت');
   if (isJustDiscount) {
     filteredPhones = filteredPhones.filter((phone) => phone.offer);
   }
@@ -72,22 +69,26 @@ function ProductListPage() {
 
   if (isApple) {
     if (isJustDiscount) {
-      filteredPhones = phones.filter((phone) => phone.brand === 'اپل');
+      filteredPhones = phones.filter(
+        (phone) => phone.brand && phone.brand === 'اپل'
+      );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
-      filteredPhones = phones.filter((phone) => phone.brand === 'اپل');
+      filteredPhones = phones.filter(
+        (phone) => phone.brand && phone.brand === 'اپل'
+      );
     }
   }
 
   if (isSamsung) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.brand === 'سامسونگ'
+        (phone) => phone.brand && phone.brand === 'سامسونگ'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.brand === 'سامسونگ'
+        (phone) => phone.brand && phone.brand === 'سامسونگ'
       );
     }
   }
@@ -95,12 +96,12 @@ function ProductListPage() {
   if (isNokia) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.brand === 'نوکیا'
+        (phone) => phone.brand && phone.brand === 'نوکیا'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.brand === 'نوکیا'
+        (phone) => phone.brand && phone.brand === 'نوکیا'
       );
     }
   }
@@ -108,12 +109,14 @@ function ProductListPage() {
   if (isOneSIMcard) {
     if (isJustDiscount) {
       filteredPhones = phones.filter(
-        (phone) => phone.productsValues[0].value === 'یک عدد'
+        (phone) =>
+          phone.productsValues[0] && phone.productsValues[0].value === 'یک عدد'
       );
       filteredPhones = phones.filter((phone) => phone.offer);
     } else {
       filteredPhones = phones.filter(
-        (phone) => phone.productsValues[0].value === 'یک عدد'
+        (phone) =>
+          phone.productsValues[0] && phone.productsValues[0].value === 'یک عدد'
       );
     }
   }
@@ -121,12 +124,14 @@ function ProductListPage() {
   if (isTwoSIMcard) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[0].value === 'دو عدد'
+        (phone) =>
+          phone.productsValues[0] && phone.productsValues[0].value === 'دو عدد'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[0].value === 'دو عدد'
+        (phone) =>
+          phone.productsValues[0] && phone.productsValues[0].value === 'دو عدد'
       );
     }
   }
@@ -134,12 +139,14 @@ function ProductListPage() {
   if (isThreeSIMcard) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[0].value === 'سه عدد'
+        (phone) =>
+          phone.productsValues[0] && phone.productsValues[0].value === 'سه عدد'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[0].value === 'سه عدد'
+        (phone) =>
+          phone.productsValues[0] && phone.productsValues[0].value === 'سه عدد'
       );
     }
   }
@@ -147,12 +154,14 @@ function ProductListPage() {
   if (is2G) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[1].value === '2G'
+        (phone) =>
+          phone.productsValues[1] && phone.productsValues[1].value === '2G'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[1].value === '2G'
+        (phone) =>
+          phone.productsValues[1] && phone.productsValues[1].value === '2G'
       );
     }
   }
@@ -160,12 +169,14 @@ function ProductListPage() {
   if (is3G) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[1].value === '3G'
+        (phone) =>
+          phone.productsValues[1] && phone.productsValues[1].value === '3G'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[1].value === '3G'
+        (phone) =>
+          phone.productsValues[1] && phone.productsValues[1].value === '3G'
       );
     }
   }
@@ -173,12 +184,14 @@ function ProductListPage() {
   if (is4G) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[1].value === '4G'
+        (phone) =>
+          phone.productsValues[1] && phone.productsValues[1].value === '4G'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[1].value === '4G'
+        (phone) =>
+          phone.productsValues[1] && phone.productsValues[1].value === '4G'
       );
     }
   }
@@ -186,7 +199,8 @@ function ProductListPage() {
   if (is5G) {
     if (isJustDiscount) {
       filteredPhones = filteredPhones.filter(
-        (phone) => phone.productsValues[1].value === '5G'
+        (phone) =>
+          phone.productsValues[1] && phone.productsValues[1].value === '5G'
       );
       filteredPhones = filteredPhones.filter((phone) => phone.offer);
     } else {

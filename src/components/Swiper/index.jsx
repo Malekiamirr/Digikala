@@ -12,7 +12,7 @@ const Swiper = ({ slides, isLoading }) => {
       setCurrentSlide((prevSlide) =>
         prevSlide === slides.length - 1 ? 0 : prevSlide + 1
       );
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [slides]);
@@ -25,7 +25,7 @@ const Swiper = ({ slides, isLoading }) => {
           prevSlide === slides.length - 1 ? 0 : prevSlide + 1
         );
       }
-    }, 5000);
+    }, 7000);
   };
 
   const goToSlide = (index) => {

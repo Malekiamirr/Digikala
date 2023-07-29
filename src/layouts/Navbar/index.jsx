@@ -24,19 +24,30 @@ import {
 import { IoIosArrowBack } from 'react-icons/io';
 import { BiCaretRight } from 'react-icons/bi';
 import { AiOutlineFire } from 'react-icons/ai';
+import { useGetUsersQuery } from '../../api/apiSlice';
+import convertToPersian from '../../utils/convertToPersianNumber';
 
 function Navbar() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const [openSearchBox, setOpenSearchBox] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
-  const toggleShowProfileMenu = () => setShowProfileMenu(!showProfileMenu);
+  const toggleShowProfileMenu = (which) => setShowProfileMenu(which);
   const { y, x, scrollDirection } = useScroll();
+  const { data: users, isLoading, isError } = useGetUsersQuery();
+  if (isError || isLoading) {
+    return;
+  }
+  const activeUser = users[users.length - 1];
 
   return (
     <>
       <div
-        onClick={() => toggleOpenSearchBox(false)}
+        onClick={() => {
+          if (showProfileMenu) {
+            setShowProfileMenu(false);
+          }
+        }}
         className={`pb-3 bg-white ${
           scrollDirection === 'down' ? '' : 'shadow-sm shadow-gray-300'
         }`}
@@ -76,8 +87,8 @@ function Navbar() {
             {/* Shoping && Account */}
             <div className="flex items-center justify-center gap-4 Laptop-L:gap-2 Laptop-L:-mt-2">
               <div
-                onClick={toggleShowProfileMenu}
-                className="flex items-center justify-center gap-1 p-2 transition-all rounded-md cursor-pointer relative"
+                onClick={() => toggleShowProfileMenu(!showProfileMenu)}
+                className="relative flex items-center justify-center gap-1 p-2 transition-all rounded-md cursor-pointer"
               >
                 {isLoggedIn ? (
                   // Account Icons
@@ -125,8 +136,12 @@ function Navbar() {
                   <LuShoppingCart className="w-6 h-6 text-[#3f4064]" />
                 </Link>
                 {isLoggedIn && (
-                  <p className="flex justify-center items-center w-5 h-5 absolute bottom-0 -right-1 bg-[#EF4056] text-white text-xs text-center font-Yekan-medium rounded-md border-2 border-white">
-                    {/* BUG it should be updated with user product buying */}۳
+                  <p
+                    className={`${
+                      activeUser.cart.length > 0 ? '' : 'hidden'
+                    } flex justify-center items-center w-5 h-5 absolute bottom-0 -right-1 bg-[#EF4056] text-white text-xs text-center font-Yekan-medium rounded-md border-2 border-white`}
+                  >
+                    {convertToPersian(activeUser.cart.length)}
                   </p>
                 )}
               </div>
@@ -197,22 +212,22 @@ function Navbar() {
 
             <span className="w-px h-4 bg-[#E0E0E6]"></span>
             <div className="flex items-center gap-6">
-              <NavLink
-                to="questions"
+              <a
+                href="https://www.digikala.com/faq/"
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className="flex items-center">
                   <p>سوالی دارید؟</p>
                 </div>
-              </NavLink>
-              <NavLink
-                to="sell-in-digikala"
+              </a>
+              <a
+                href="https://www.digikala.com/landings/seller-introduction/"
                 className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
               >
                 <div className="flex items-center">
                   <p>در دیجی‌کالا بفروشید!</p>
                 </div>
-              </NavLink>
+              </a>
             </div>
           </nav>
 

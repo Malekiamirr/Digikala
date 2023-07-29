@@ -186,3 +186,11 @@
 .profile-menu-box-shadow {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.category-shadow {
+  box-shadow: 0 1px 1px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 30%);
+}
+
+.group1:hover + .group2 {
+  color: #ef4056 !important;
+}

@@ -1,20 +1,35 @@
+import { useEffect, useState } from 'react';
 import ProductCardSkeleton from '../ProductCardSkeleton';
 import { PhoneCard } from '../index';
 import { MdInfo } from 'react-icons/md';
 
 function ShowPhoneCards({ phones }) {
   if (phones.length) {
+    const [showComponent1, setShowComponent1] = useState(true);
+    const [showComponent2, setShowComponent2] = useState(false);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setShowComponent1(false);
+        setShowComponent2(true);
+      }, 2000);
+
+      // Clear the timer when the component unmounts
+      return () => clearTimeout(timer);
+    }, []);
+
     return (
       <div className="grid gird-cols-1 min-[640px]:grid-cols-2 min-[1280px]:grid-cols-3 min-[1440px]:grid-cols-4 min-[1676px]:grid-cols-5">
-        {phones.map((phone, i) => (
-          //   <ProductCardSkeleton />
-          <PhoneCard key={phone.id} index={i + 1} product={phone} />
-        ))}
+        {showComponent1 && phones.map((phone, i) => <ProductCardSkeleton />)}
+        {showComponent2 &&
+          phones.map((phone, i) => (
+            <PhoneCard key={phone.id} index={i + 1} product={phone} />
+          ))}
       </div>
     );
   } else {
     return (
-      <div className="p-5 pb-3 w-full flex items-center flex-col">
+      <div className="flex flex-col items-center w-full p-5 pb-3">
         <div className="mb-5 h-auto w-[200px] Laptop-L:w-[236px]">
           <img
             className="w-full"

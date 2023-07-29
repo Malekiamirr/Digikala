@@ -19,7 +19,7 @@ function BestSelling() {
   };
 
   return (
-    <div className="Laptop-L:overflow-hidden overflow-x-scroll box-container relative group">
+    <div className="relative overflow-x-scroll Laptop-L:overflow-hidden box-container group">
       {/* left button */}
       <button
         onClick={() => {
@@ -46,13 +46,13 @@ function BestSelling() {
       </button>
 
       <div
-        className="flex justify-between gap-4 px-2 mt-7 transform transition-transform duration-300 w-auto h-auto"
+        className="flex justify-between w-auto h-auto gap-4 px-2 transition-transform duration-300 transform mt-7"
         style={{ transform: `translateX(${cordinate * 330}px)` }}
       >
         {products.map((product, i) => (
           <div
             key={i}
-            className="flex flex-col gap-2 min-w-[280px] Laptop-L:w-[24%] Laptop-L:min-w-[24%] py-4"
+            className="flex flex-col gap-2 min-w-[280px] Laptop-L:w-[24%] Laptop-L:min-w-[24%] py-4 hover:cursor-pointer"
           >
             {product.map((item) => (
               <div

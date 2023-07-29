@@ -7,17 +7,18 @@ import { MdCompare } from 'react-icons/md';
 import { HiListBullet } from 'react-icons/hi2';
 import { useState } from 'react';
 import { PriceChart } from '../index';
-import { useGetUsersQuery } from '../../api/apiSlice';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-function ProductIconsList() {
-  const { data: users, isLoading, isError } = useGetUsersQuery();
-  if (isError || isLoading) {
-    return;
-  }
-  const activeUser = users[users.length - 1];
+import {
+  addFavoriteProduct,
+  removeFavoriteProduct,
+} from '../../app/slices/userSlice';
+
+function ProductIconsList({ product }) {
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const [showPriceChart, setShowPriceChart] = useState(false);
+  const activeUser = useSelector((state) => state.user.lastLoggedInUser);
   const handleShowPriceChart = () => {
     setShowPriceChart(!showPriceChart);
   };
@@ -26,10 +27,19 @@ function ProductIconsList() {
   const navigate = useNavigate();
   const handleAddToFavorive = () => {
     if (isLoggedIn) {
-      setAddToFavorite(!addToFavorite);
       if (addToFavorite) {
-        activeUser.cart.push();
+        dispatch(
+          addFavoriteProduct({ userId: activeUser.id, product: product })
+        );
+      } else {
+        dispatch(
+          removeFavoriteProduct({
+            userId: activeUser.id,
+            productId: product.id,
+          })
+        );
       }
+      setAddToFavorite(!addToFavorite);
     } else {
       navigate('/login');
     }

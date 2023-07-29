@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
 import { useScroll } from '../../hooks/useScroll';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Category, ProfileMenu, SearchBox } from '../../components/index';
 import { NavLink } from 'react-router-dom';
@@ -26,6 +26,7 @@ import { BiCaretRight } from 'react-icons/bi';
 import { AiOutlineFire } from 'react-icons/ai';
 import { useGetUsersQuery } from '../../api/apiSlice';
 import convertToPersian from '../../utils/convertToPersianNumber';
+import { setLastLoggedInUser } from '../../app/slices/userSlice';
 
 function Navbar() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
@@ -39,7 +40,8 @@ function Navbar() {
     return;
   }
   const activeUser = users[users.length - 1];
-
+  const dispatch = useDispatch();
+  dispatch(setLastLoggedInUser(activeUser));
   return (
     <>
       <div

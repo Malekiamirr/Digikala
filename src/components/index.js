@@ -35,6 +35,7 @@ export { default as ProductUsersQuestions } from './ProductUsersQuestions/index'
 export { default as ProductStickyInfoBox } from './ProductStickyInfoBox/index';
 export { default as ProductSeller } from './ProductSeller/index';
 export { default as ProductShareLink } from './ProductShareLink/index';
+export { default as ProductNotice } from './ProductNotice/index';
 export { default as DigikalaBuyingBenefits } from './DigikalaBuyingBenefits/index';
 export { default as QuestionCard } from './QuestionCard/index';
 export { default as PriceChart } from './PriceChart/index';

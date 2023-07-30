@@ -395,6 +395,16 @@
       "updatedAt": "2023-07-29T05:30:51.613Z",
       "favoriteProducts": [],
       "cart": []
+    },
+    {
+      "id": 17,
+      "name": "امیر مالکی",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir369852147",
+      "createdAt": "2023-07-30T02:37:12.764Z",
+      "updatedAt": "2023-07-30T02:37:12.764Z",
+      "favoriteProducts": [],
+      "cart": []
     }
   ],
   "digitalGoods": [

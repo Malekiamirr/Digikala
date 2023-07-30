@@ -6,7 +6,7 @@ import { AiOutlineLineChart } from 'react-icons/ai';
 import { MdCompare } from 'react-icons/md';
 import { HiListBullet } from 'react-icons/hi2';
 import { useState } from 'react';
-import { PriceChart, ProductShareLink } from '../index';
+import { PriceChart, ProductNotice, ProductShareLink } from '../index';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -19,6 +19,7 @@ function ProductIconsList({ product }) {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const [showPriceChart, setShowPriceChart] = useState(false);
   const [isShareLinkOpen, setIsShareLinkOpen] = useState(false);
+  const [isProductNoticeOpen, setIsProductNoticeOpen] = useState(false);
   const activeUser = useSelector((state) => state.user.lastLoggedInUser);
   const handleShowPriceChart = () => {
     setShowPriceChart(!showPriceChart);
@@ -75,7 +76,10 @@ function ProductIconsList({ product }) {
         </div>
       </div>
       <div className="relative group hover:cursor-pointer z-[10]">
-        <TbBellRinging className="text-[#3f4064] w-6 h-6 ml-4" />
+        <TbBellRinging
+          onClick={() => setIsProductNoticeOpen(true)}
+          className="text-[#3f4064] w-6 h-6 ml-4"
+        />
         <div className="hidden Laptop-L:group-hover:block absolute top-[50%] -translate-y-[50%] right-7 w-max bg-[#3f4064] p-2 py-3 rounded-lg text-xs text-white">
           اطلاع‌رسانی شگفت‌انگیز
         </div>
@@ -105,6 +109,10 @@ function ProductIconsList({ product }) {
       <ProductShareLink
         isOpen={isShareLinkOpen}
         handleClose={() => setIsShareLinkOpen(false)}
+      />
+      <ProductNotice
+        isOpen={isProductNoticeOpen}
+        handleClose={() => setIsProductNoticeOpen(false)}
       />
 
       <div

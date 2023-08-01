@@ -10,7 +10,7 @@ function MainCategory() {
   return (
     <div className="grid grid-cols-2 Mobile-S:grid-cols-3 Laptop-L:grid-cols-6 gap-y-10">
       {data.map((category) => (
-        <Link to={`search/category-${category.slug}`}>
+        <Link to={`main/${category.slug}`}>
           <div className="flex flex-col items-center" key={category.id}>
             <img
               className="w-[90px] h-[90px] Laptop-L:w-[170px] Laptop-L:h-[170px] hover:cursor-pointer"

@@ -13,6 +13,7 @@ import {
   IncredibleOfferPage,
   BestSellingPage,
   PromotionCenterPage,
+  MainCategoryPage,
 } from './pages';
 import { loader as productsLoader } from './pages/IntroduceProduct';
 
@@ -43,22 +44,26 @@ const router = createBrowserRouter([
         element: <PromotionCenterPage />,
       },
       {
-        path: 'search/category-mobile-phone',
+        path: 'main/mobile-phone',
         element: <PhonePage />,
       },
       {
-        path: 'product-list',
+        path: 'search',
         element: <ProductListPage />,
         loader: productsLoader,
       },
       {
-        path: 'search/:productId',
+        path: 'product/:productId',
         element: <IntroduceProductPage />,
         loader: productsLoader,
       },
       {
         path: 'checkout/cart',
         element: <CartPage />,
+      },
+      {
+        path: 'main/:mainId',
+        element: <MainCategoryPage />,
       },
       {
         path: 'test',

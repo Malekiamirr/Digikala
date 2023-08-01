@@ -11,3 +11,4 @@ export { default as SuperMarketPage } from './SuperMarket/index';
 export { default as IncredibleOfferPage } from './IncredibleOffer/index';
 export { default as BestSellingPage } from './BestSelling/index';
 export { default as PromotionCenterPage } from './PromotionCenter/index';
+export { default as MainCategoryPage } from './MainCategory/index';

@@ -89,9 +89,9 @@ function AmazingOffer({ amazingOffer, amazingColor, amazingPhoto }) {
               </Link>
             </div>
           </div>
-          {amazingOffer.map((product, i) => (
+          {amazingOffer?.map((product, i) => (
             <div key={i} className="ml-[2px]">
-              <Link to={`/search/${product.id}`}>
+              <Link to={`/product/${product.id}`}>
                 <div
                   className={`${
                     i === 0 && 'rounded-r-lg'

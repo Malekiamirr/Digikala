@@ -5,7 +5,7 @@ import convertToPersianNumber from '../../utils/convertToPersianNumber';
 
 function PhoneCard({ product, index }) {
   return (
-    <Link to={`/search/${product.id}`}>
+    <Link to={`/product/${product.id}`}>
       <div
         className={`${
           index % 5 !== 0 ? 'min-[1676px]:border-l' : 'min-[1676px]:border-l-0'

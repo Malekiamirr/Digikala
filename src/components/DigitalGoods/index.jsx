@@ -2,6 +2,8 @@ import { useGetDigitalGoodsQuery } from '../../api/apiSlice';
 import { IoIosArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
+import { v4 as uuidv4 } from 'uuid';
+
 function DigitalGoods() {
   const { data: products, isLoading, isError } = useGetDigitalGoodsQuery();
 
@@ -14,7 +16,7 @@ function DigitalGoods() {
       <div className="flex flex-col justify-between Laptop-L:divide-x Laptop-L:flex-row">
         {products.map((product) => (
           <>
-            <div key={product.id} className="w-full px-5 py-3 Laptop-L:w-1/4">
+            <div key={uuidv4()} className="w-full px-5 py-3 Laptop-L:w-1/4">
               <div className="mb-2 text-start">
                 <h4 className="text-base font-Yekan-bold text-[#23254e]">
                   {product.name}
@@ -25,16 +27,16 @@ function DigitalGoods() {
               </div>
 
               <div className="grid grid-cols-2">
-                {product.items.map((item, i) => (
+                {product.items.map((item) => (
                   <div
-                    key={i * 10}
+                    key={uuidv4()}
                     className={`${item.id == 1 ? 'border-l border-b' : ''} ${
                       item.id == 2 ? 'border-b' : ''
                     } ${
                       item.id == 3 ? 'border-l' : ''
                     } p-2 Laptop-L:p-3 w-full`}
                   >
-                    <Link to={`search/${product.id}`}>
+                    <Link to={`product/${product.id}`}>
                       <img
                         className="hover:cursor-pointer w-[300px] h-[300px] Laptop-L:w-auto Laptop-L:h-auto mx-auto"
                         src={item.image}

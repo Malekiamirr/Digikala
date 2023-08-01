@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 function Category() {
   const [showSubCategory, setShowSubCategory] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
-  const [currentCategory, setCurrentCategory] = useState('کالای دیجیتال');
+  const [currentCategory, setCurrentCategory] = useState('موبایل');
   const {
     data: category,
     isLoading: catecoryIsLoading,
@@ -93,7 +93,13 @@ function Category() {
               <div className="p-5 overflow-auto grow">
                 <div className="flex w-full h-full">
                   <div className="flex flex-col h-full grow">
-                    <Link to={showSubCategory?.slug}>
+                    <Link
+                      to={
+                        currentCategory === 'موبایل'
+                          ? '/main/mobile-phone'
+                          : currentCategory.slug
+                      }
+                    >
                       <div className="flex items-center gap-1 mb-5">
                         <p className="text-xs font-Yekan-bold text-[#3f4064]">
                           همه محصولات

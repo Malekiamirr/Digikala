@@ -30,8 +30,6 @@ function PhonePage() {
     return;
   }
 
-  console.log(popularPhones[0].products[0].productImage[0].image);
-
   const sliders = data[0].slider;
 
   return (

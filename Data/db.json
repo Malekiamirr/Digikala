@@ -3282,10 +3282,10 @@
   "category": [
     {
       "id": 1,
-      "name": "گوشی موبایل",
+      "name": "برند های مختلف گوشی موبایل",
       "image": "https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
       "slug": "phone",
-      "mainCategory": "کالای دیجیتال",
+      "mainCategory": "موبایل",
       "createdAt": "2023-02-22T15:09:27.093Z",
       "updatedAt": "2023-02-22T15:09:27.093Z",
       "subCategory": [
@@ -3311,10 +3311,102 @@
     },
     {
       "id": 2,
-      "name": "لوازم جانبی گوشی",
+      "name": "گوشی بر اساس حافظه داخلی",
       "image": "https://dkstatics-public.digikala.com/digikala-products/c59fe305749abd18d772b86333f30699fc6fafbe_1674976102.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
       "slug": "phone-accessories",
-      "mainCategory": "کالای دیجیتال",
+      "mainCategory": "موبایل",
+      "createdAt": "2023-02-22T15:03:36.403Z",
+      "updatedAt": "2023-02-22T15:03:36.403Z",
+      "subCategory": [
+        {
+          "name": "گوشی تا ۲ گیگابایت",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۴ گیگابایت",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۱۴ گیگابایت",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۱۶ گیگابایت",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی بالای ۱۶ گیگابایت",
+          "slug": "phone",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "گوشی بر اساس قیمت",
+      "image": "https://dkstatics-public.digikala.com/digikala-products/c59fe305749abd18d772b86333f30699fc6fafbe_1674976102.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+      "slug": "phone-accessories",
+      "mainCategory": "موبایل",
+      "createdAt": "2023-02-22T15:03:36.403Z",
+      "updatedAt": "2023-02-22T15:03:36.403Z",
+      "subCategory": [
+        {
+          "name": "گوشی تا ۲ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۴ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۶ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۸ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۱۰ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۱۲ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۱۴ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی تا ۱۶ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        },
+        {
+          "name": "گوشی بالای ۱۶ میلیون تومان",
+          "slug": "phone",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "لوازم جانبی گوشی موبایل",
+      "image": "https://dkstatics-public.digikala.com/digikala-products/c59fe305749abd18d772b86333f30699fc6fafbe_1674976102.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
+      "slug": "phone-accessories",
+      "mainCategory": "موبایل",
       "createdAt": "2023-02-22T15:03:36.403Z",
       "updatedAt": "2023-02-22T15:03:36.403Z",
       "subCategory": [

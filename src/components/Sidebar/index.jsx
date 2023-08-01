@@ -57,12 +57,12 @@ function Sidebar({ isOpen, toggleOpen }) {
     <>
       <div
         onClick={toggleOpen}
-        className={`fixed right-0 top-0 z-[2] bg-[#080a38] bg-opacity-50 w-[100vw] h-[100vh] duration-300 transition-opacity ${
+        className={`fixed right-0 top-0 z-[2] bg-[#080a38] bg-opacity-50 w-[100vw] h-[100vh] duration-300 transition-opacity Laptop-L:hidden ${
           !isOpen && 'opacity-0 -z-50'
         } ${!isOpen && 'pointer-events-none'}`}
       ></div>
       <div
-        className={`fixed top-0 z-10 h-full overflow-x-hidden overflow-y-auto sidebar-scroolbar bg-white pb-7 right-0 w-[312px] transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 z-10 h-full overflow-x-hidden overflow-y-auto sidebar-scroolbar bg-white pb-7 right-0 w-[312px] transform transition-transform duration-300 ease-in-out Laptop-L:hidden ${
           !isOpen ? 'translate-x-[400px]' : 'translate-x-0'
         }`}
       >

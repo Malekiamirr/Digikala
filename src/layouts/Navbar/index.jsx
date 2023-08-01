@@ -7,7 +7,12 @@ import { useState } from 'react';
 import { useScroll } from '../../hooks/useScroll';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Category, ProfileMenu, SearchBox } from '../../components/index';
+import {
+  Category,
+  ProfileMenu,
+  SearchBox,
+  Sidebar,
+} from '../../components/index';
 import { NavLink } from 'react-router-dom';
 
 // Icons
@@ -32,8 +37,12 @@ function Navbar() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const [openSearchBox, setOpenSearchBox] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+
   const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
   const toggleShowProfileMenu = (which) => setShowProfileMenu(which);
+  const toggleShowSidebar = () => setShowSidebar(!showSidebar);
+
   const { y, x, scrollDirection } = useScroll();
   const { data: users, isLoading, isError } = useGetUsersQuery();
   if (isError || isLoading) {
@@ -67,7 +76,10 @@ function Navbar() {
 
         <div className="container flex flex-col items-start px-1 Laptop-L:gap-5 Laptop-L:pt-3 Laptop-L:flex-row">
           <div className="flex items-center justify-between w-full px-3 pt-2 pb-3 Laptop-L:hidden border-b border-b-[#f1f2f4]">
-            <HiOutlineMenu className="w-5 h-5 text-black Laptop-L:hidden" />
+            <HiOutlineMenu
+              onClick={toggleShowSidebar}
+              className="w-5 h-5 text-black Laptop-L:hidden hover:cursor-pointer"
+            />
             <img src={logo} alt="logo" className="mt-2 w-[5.75rem] h-6" />
             <GrCircleQuestion className="w-6 h-6 text-black Laptop-L:hidden" />
           </div>
@@ -243,6 +255,9 @@ function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Sidebar menu */}
+      <Sidebar isOpen={showSidebar} toggleOpen={toggleShowSidebar} />
     </>
   );
 }

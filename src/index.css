@@ -199,15 +199,15 @@
   box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
 }
 
-/* Add custom scrollbar styles for left-sided scrollbar */
-@layer utilities {
-  .scrollbar-left::-webkit-scrollbar {
-    width: 10px; /* Adjust the width of the scrollbar as needed */
-    background-color: #f1f1f1; /* Adjust the background color of the scrollbar track */
-  }
+.sidebar-scroolbar::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+  height: 50px; /* Height of the scrollbar */
+}
 
-  .scrollbar-left::-webkit-scrollbar-thumb {
-    background-color: #888; /* Adjust the thumb color as needed */
-    border-radius: 10px; /* Adjust the border-radius of the thumb as needed */
-  }
+.sidebar-scroolbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.sidebar-scroolbar::-webkit-scrollbar-thumb {
+  @apply bg-[#bbb] rounded h-12;
 }

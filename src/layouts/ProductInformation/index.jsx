@@ -141,7 +141,7 @@ function ProductInformation({ product }) {
                       <p className="text-[15px] font-Yekan-bold text-[#3f4064]">
                         ویژه اعضای دیجی‌پلاس
                       </p>
-                      <div className="flex items-center">
+                      <div className="flex items-center hover:cursor-pointer">
                         <p className="text-xs font-Yekan-bold text-[#19bfd3]">
                           خرید اشتراک
                         </p>
@@ -172,7 +172,7 @@ function ProductInformation({ product }) {
                         به اعتبار دیجی پی قسطی بخرید
                       </p>
                       <div className="flex items-center">
-                        <MdKeyboardArrowLeft className="w-6 h-6 text-[#9e9fb1]" />
+                        <MdKeyboardArrowLeft className="w-6 h-6 text-[#9e9fb1] hover:cursor-pointer" />
                       </div>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ function ProductInformation({ product }) {
         </div>
 
         {/* Product Sellers */}
-        <ProductSeller price={product.price} />
+        <ProductSeller price={product.price} product={product} />
       </div>
     </>
   );

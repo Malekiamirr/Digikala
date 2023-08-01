@@ -16,6 +16,8 @@ function CartPage() {
   };
 
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const activeUser = useSelector((state) => state.user.isLoggedInUser);
+  console.log(activeUser);
 
   return (
     <div className="Laptop-L:p-6 w-full max-w-[1280px] mx-auto">

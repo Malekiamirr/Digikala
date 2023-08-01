@@ -194,3 +194,20 @@
 .group1:hover + .group2 {
   color: #ef4056 !important;
 }
+
+.addToCartButton-shadow {
+  box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+}
+
+/* Add custom scrollbar styles for left-sided scrollbar */
+@layer utilities {
+  .scrollbar-left::-webkit-scrollbar {
+    width: 10px; /* Adjust the width of the scrollbar as needed */
+    background-color: #f1f1f1; /* Adjust the background color of the scrollbar track */
+  }
+
+  .scrollbar-left::-webkit-scrollbar-thumb {
+    background-color: #888; /* Adjust the thumb color as needed */
+    border-radius: 10px; /* Adjust the border-radius of the thumb as needed */
+  }
+}

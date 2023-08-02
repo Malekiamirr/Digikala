@@ -34,23 +34,27 @@ import convertToPersian from '../../utils/convertToPersianNumber';
 import { setLastLoggedInUser } from '../../app/slices/userSlice';
 
 function Navbar() {
-  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const [openSearchBox, setOpenSearchBox] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
 
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
   const toggleShowProfileMenu = (which) => setShowProfileMenu(which);
   const toggleShowSidebar = () => setShowSidebar(!showSidebar);
 
   const { y, x, scrollDirection } = useScroll();
   const { data: users, isLoading, isError } = useGetUsersQuery();
+
   if (isError || isLoading) {
-    return;
+    // Return some loading indicator or null
+    return null;
   }
+
   const activeUser = users[users.length - 1];
   const dispatch = useDispatch();
   dispatch(setLastLoggedInUser(activeUser));
+
   return (
     <>
       <div
@@ -64,7 +68,10 @@ function Navbar() {
         }`}
       >
         {/* Navbar Image */}
-        <div className="hidden w-full Laptop-L:block">
+        <div
+          onClick={() => toggleOpenSearchBox(false)}
+          className="hidden w-full Laptop-L:block"
+        >
           <img
             src="https://dkstatics-public.digikala.com/digikala-adservice-banners/2e7c79bb2031d1a2f5a3530b7c0bf5c342394aee_1689489380.jpg?x-oss-process=image/quality,q_95/format,webp"
             alt="navbar image"
@@ -77,7 +84,10 @@ function Navbar() {
         <div className="container flex flex-col items-start px-1 Laptop-L:gap-5 Laptop-L:pt-3 Laptop-L:flex-row">
           <div className="flex items-center justify-between w-full px-3 pt-2 pb-3 Laptop-L:hidden border-b border-b-[#f1f2f4]">
             <HiOutlineMenu
-              onClick={toggleShowSidebar}
+              onClick={() => {
+                toggleShowSidebar();
+                toggleOpenSearchBox(false);
+              }}
               className="w-5 h-5 text-black Laptop-L:hidden hover:cursor-pointer"
             />
             <img src={logo} alt="logo" className="mt-2 w-[5.75rem] h-6" />
@@ -99,7 +109,10 @@ function Navbar() {
               openSearchBox={openSearchBox}
             />
             {/* Shoping && Account */}
-            <div className="flex items-center justify-center gap-4 Laptop-L:gap-2 Laptop-L:-mt-2">
+            <div
+              onClick={() => toggleOpenSearchBox(false)}
+              className="flex items-center justify-center gap-4 Laptop-L:gap-2 Laptop-L:-mt-2"
+            >
               <div
                 onClick={() => toggleShowProfileMenu(!showProfileMenu)}
                 className="relative flex items-center justify-center gap-1 p-2 transition-all rounded-md cursor-pointer"
@@ -164,7 +177,10 @@ function Navbar() {
         </div>
 
         {/* Location */}
-        <div className="flex items-center justify-between w-full px-4 mt-2 Laptop-L:hidden">
+        <div
+          onClick={() => toggleOpenSearchBox(false)}
+          className="flex items-center justify-between w-full px-4 mt-2 Laptop-L:hidden"
+        >
           <div className=" flex items-center text-[#3f4064] text-[11px] cursor-pointer ">
             <HiOutlineLocationMarker className="w-5 h-5 ml-2 text-[#f9a828]" />
             <p>لطفا شهر خود را انتخاب کنید</p>
@@ -175,6 +191,7 @@ function Navbar() {
 
       {/* Categories */}
       <div
+        onClick={() => toggleOpenSearchBox(false)}
         className={`hidden Laptop-L:block transition-all duration-500 shadow-sm shadow-gray-300 bg-white ${
           scrollDirection === 'down' ? 'visible' : 'invisible -translate-y-full'
         }`}

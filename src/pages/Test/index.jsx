@@ -1,21 +1,42 @@
-import React from 'react';
 import { useState } from 'react';
-// images
-// icons
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { AiOutlineFire } from 'react-icons/ai';
-import { MdOutlineDiscount } from 'react-icons/md';
-import { CiDiscount1 } from 'react-icons/ci';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
-import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
-import { BsQuestionCircle } from 'react-icons/bs';
-import { MdOutlineStorefront } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-const Test = () => {
-  const [showSide, setShowSide] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+import { loginUser } from '../../app/slices/loginSlice';
 
-  return <div>test</div>;
-};
+import RegisterEmail from '../../components/RegisterEmail';
+
+import { useGetUsersQuery, useCreateUserMutation } from '../../api/apiSlice';
+import { useSelector } from 'react-redux';
+import RegisterPassword from '../../components/RegisterPassword';
+
+function Test() {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPasswordPage, setShowPasswordPage] = useState(false);
+  const toggleShowPasswordPage = () => {
+    setShowPasswordPage(!showPasswordPage);
+  };
+
+  return (
+    <div className="flex items-center justify-center w-full h-screen gap-4">
+      {!showPasswordPage ? (
+        <RegisterEmail
+          setEmail={setEmail}
+          setName={setName}
+          togglePage={() => setShowPasswordPage(true)}
+        />
+      ) : (
+        <RegisterPassword
+          setPassword={setPassword}
+          togglePage={() => toggleShowPasswordPage(false)}
+          name={name}
+          email={email}
+        />
+      )}
+    </div>
+  );
+}
 
 export default Test;

@@ -267,82 +267,12 @@
       "cart": []
     },
     {
-      "id": 4,
-      "name": "ماهان عبدالمالکی",
+      "id": 13,
+      "name": "Amir",
       "email": "abbaszade@gmail.com",
-      "password": "Amier54",
-      "createdAt": "2023-07-16T14:00:25.017Z",
-      "updatedAt": "2023-07-16T14:00:25.017Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 5,
-      "name": "",
-      "email": "",
-      "password": "",
-      "createdAt": "2023-07-30T03:58:33.754Z",
-      "updatedAt": "2023-07-30T03:58:33.754Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 6,
-      "name": "امیر مالکی",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Adf12244",
-      "createdAt": "2023-07-30T04:03:52.432Z",
-      "updatedAt": "2023-07-30T04:03:52.432Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 7,
-      "name": "امیر مالکی",
-      "email": "realmalekiamir@gmail.com",
-      "password": "ؤپهقف۲۳۱۳",
-      "createdAt": "2023-07-30T04:39:22.658Z",
-      "updatedAt": "2023-07-30T04:39:22.658Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 8,
-      "name": "امیر",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir1234",
-      "createdAt": "2023-07-30T05:06:44.408Z",
-      "updatedAt": "2023-07-30T05:06:44.408Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 9,
-      "name": "امیر",
-      "email": "abbaszade@gmail.com",
-      "password": "amirA23214",
-      "createdAt": "2023-07-30T05:08:24.456Z",
-      "updatedAt": "2023-07-30T05:08:24.456Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 10,
-      "name": "امیر مالکییی",
-      "email": "realmalekiamir@gmail.com",
-      "password": "ؤپهق۱۲۳۴۵۶۷",
-      "createdAt": "2023-08-01T14:38:08.498Z",
-      "updatedAt": "2023-08-01T14:38:08.498Z",
-      "favoriteProducts": [],
-      "cart": []
-    },
-    {
-      "id": 11,
-      "name": "امیر عبدالمالکی",
-      "email": "realmalekiamir@gmail.com",
-      "password": "Amir1234",
-      "createdAt": "2023-08-02T02:31:51.717Z",
-      "updatedAt": "2023-08-02T02:31:51.717Z",
+      "password": "AmierM123",
+      "createdAt": "2023-08-02T15:57:26.657Z",
+      "updatedAt": "2023-08-02T15:57:26.657Z",
       "favoriteProducts": [],
       "cart": []
     }

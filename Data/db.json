@@ -335,6 +335,16 @@
       "updatedAt": "2023-08-01T14:38:08.498Z",
       "favoriteProducts": [],
       "cart": []
+    },
+    {
+      "id": 11,
+      "name": "امیر عبدالمالکی",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir1234",
+      "createdAt": "2023-08-02T02:31:51.717Z",
+      "updatedAt": "2023-08-02T02:31:51.717Z",
+      "favoriteProducts": [],
+      "cart": []
     }
   ],
   "digitalGoods": [

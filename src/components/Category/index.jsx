@@ -49,7 +49,7 @@ function Category() {
         setShowMenu(true);
         document.body.classList.add('overflow-hidden');
       }}
-      className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#e6123d] after:transition-all after:duration-300 after:hover:w-full py-2'
+      className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#e6123d] after:hover:w-full py-2'
     >
       {showMenu && (
         <div className="absolute bg-[#080a38] opacity-50 h-screen w-full top-[11rem] left-0"></div>

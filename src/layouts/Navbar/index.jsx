@@ -188,7 +188,7 @@ function Navbar() {
             <div className="flex items-center gap-6">
               <NavLink
                 to="incredible-offers"
-                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
+                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#ef394e] after:hover:w-full'
               >
                 <div className="flex items-center gap-1">
                   <TbDiscount2 className="w-4 h-4 text-[#9e9fb1]" />
@@ -197,7 +197,7 @@ function Navbar() {
               </NavLink>
               <NavLink
                 to="main/food-beverage"
-                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
+                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#ef394e] after:hover:w-full'
               >
                 <div className="flex items-center gap-1">
                   <MdOutlineNoFood className="w-4 h-4 text-[#9e9fb1]" />
@@ -206,7 +206,7 @@ function Navbar() {
               </NavLink>
               <NavLink
                 to="best-selling"
-                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
+                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#ef394e] after:hover:w-full'
               >
                 <div className="flex items-center gap-1">
                   <AiOutlineFire className="w-4 h-4 text-[#9e9fb1]" />
@@ -215,7 +215,7 @@ function Navbar() {
               </NavLink>
               <NavLink
                 to="promotion-center"
-                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
+                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#ef394e] after:hover:w-full'
               >
                 <div className="flex items-center gap-1">
                   <MdOutlineDiscount className="w-4 h-4 text-[#9e9fb1]" />
@@ -228,7 +228,7 @@ function Navbar() {
             <div className="flex items-center gap-6">
               <a
                 href="https://www.digikala.com/faq/"
-                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
+                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#ef394e] after:hover:w-full'
               >
                 <div className="flex items-center">
                   <p>سوالی دارید؟</p>
@@ -236,7 +236,7 @@ function Navbar() {
               </a>
               <a
                 href="https://www.digikala.com/landings/seller-introduction/"
-                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-red-600 after:transition-all after:duration-300 after:hover:w-full'
+                className='after:content-[" "] after:block after:w-0 after:h-[2px] after:mt-1 after:bg-[#ef394e] after:hover:w-full'
               >
                 <div className="flex items-center">
                   <p>در دیجی‌کالا بفروشید!</p>

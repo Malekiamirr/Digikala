@@ -14,6 +14,7 @@ import {
   BestSellingPage,
   PromotionCenterPage,
   MainCategoryPage,
+  DynamicProductListPage,
 } from './pages';
 import { loader as productsLoader } from './pages/IntroduceProduct';
 
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {
         path: 'search',
         element: <ProductListPage />,
+        loader: productsLoader,
+      },
+      {
+        path: 'search/:searchId',
+        element: <DynamicProductListPage />,
         loader: productsLoader,
       },
       {

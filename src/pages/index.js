@@ -12,3 +12,4 @@ export { default as IncredibleOfferPage } from './IncredibleOffer/index';
 export { default as BestSellingPage } from './BestSelling/index';
 export { default as PromotionCenterPage } from './PromotionCenter/index';
 export { default as MainCategoryPage } from './MainCategory/index';
+export { default as DynamicProductListPage } from './DynamicProductList/index';

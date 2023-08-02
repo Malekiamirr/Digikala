@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ProductCardSkeleton from '../ProductCardSkeleton';
 import { PhoneCard } from '../index';
 import { MdInfo } from 'react-icons/md';
+import { v4 as uuidv4 } from 'uuid';
 
 function ShowPhoneCards({ phones }) {
   if (phones.length) {
@@ -20,7 +21,8 @@ function ShowPhoneCards({ phones }) {
 
     return (
       <div className="grid gird-cols-1 min-[640px]:grid-cols-2 min-[1280px]:grid-cols-3 min-[1440px]:grid-cols-4 min-[1676px]:grid-cols-5">
-        {showComponent1 && phones.map((phone, i) => <ProductCardSkeleton />)}
+        {showComponent1 &&
+          phones.map((phone, i) => <ProductCardSkeleton key={uuidv4()} />)}
         {showComponent2 &&
           phones.map((phone, i) => (
             <PhoneCard key={phone.id} index={i + 1} product={phone} />

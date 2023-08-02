@@ -1,9 +1,6 @@
 import { IntroductionHeader, ProductInformation } from '../../layouts';
 
-import {
-  useGetCustomersCommentQuery,
-  useGetPhoneProductsQuery,
-} from '../../api/apiSlice';
+import { useGetCustomersCommentQuery } from '../../api/apiSlice';
 
 import {
   ShowPindo,
@@ -17,7 +14,6 @@ import {
   ProductUsersScoresAndOpinions,
   ProductUsersQuestions,
   ProductStickyInfoBox,
-  PriceChart,
 } from '../../components/index';
 
 import { useParams, useLoaderData } from 'react-router-dom';

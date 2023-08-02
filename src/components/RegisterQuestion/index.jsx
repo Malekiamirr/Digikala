@@ -33,7 +33,7 @@ function RegisterQuestion({ onClose }) {
         {/* Textarea */}
         <div className="bg-white">
           <div className="px-5 py-4">
-            <div className="border border-[#e0e0e6] rounded-lg flex items-center justify-center">
+            <div className="border border-[#e0e0e6] rounded-lg flex items-center justify-center overflow-hidden">
               <div className="w-full">
                 <textarea
                   name="question"

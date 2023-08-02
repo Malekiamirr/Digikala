@@ -49,7 +49,7 @@ const Swiper = ({ slides, isLoading }) => {
 
   if (isLoading) {
     return (
-      <div className="relative h-[268px] Laptop-L:h-[350px] bg-gray-200 animate-pulse"></div>
+      <div className="relative h-[268px] Laptop-L:h-[350px] bg-gray-300 animate-pulse"></div>
     );
   }
 

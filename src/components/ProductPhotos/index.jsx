@@ -17,6 +17,11 @@ function ProductPhotos({ product }) {
   };
   const handleIsClose = () => {
     setIsClose(!isClose);
+    if (isClose) {
+      document.body.classList.remove('overflow-hidden');
+    } else {
+      document.body.classList.add('overflow-hidden');
+    }
   };
 
   return (
@@ -38,7 +43,8 @@ function ProductPhotos({ product }) {
                   key={index}
                   src={image.image}
                   alt={`Image ${index + 1}`}
-                  className="w-full h-auto mix-blend-multiply"
+                  onClick={handleIsClose}
+                  className="w-full h-auto mix-blend-multiply hover:cursor-pointer"
                 />
               ))}
             </div>
@@ -80,6 +86,7 @@ function ProductPhotos({ product }) {
         {product.productImage.map((image, i) => (
           <div
             key={i}
+            onClick={handleIsClose}
             className=" p-1 ml-2 border border-[#e0e0e6] rounded-lg hover:cursor-pointer"
           >
             <img src={image.image} alt="photo" className="w-[72px] h-[72px]" />
@@ -111,7 +118,13 @@ function ProductPhotos({ product }) {
       </div>
 
       {/* Official images */}
-      {!isClose && <OfficialImages product={product} onClose={handleIsClose} />}
+      <div
+        className={`${
+          isClose ? 'opacity-0 -z-50 pointer-events-none' : 'opacity-100 z-50'
+        } transition-opacity duration-200`}
+      >
+        <OfficialImages product={product} onClose={handleIsClose} />
+      </div>
     </div>
   );
 }

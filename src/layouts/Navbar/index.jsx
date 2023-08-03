@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { useState } from 'react';
 import { useScroll } from '../../hooks/useScroll';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   Category,
@@ -36,25 +36,49 @@ import {
   HiOutlineLocationMarker,
 } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
-import { BiCaretRight, BiSave } from 'react-icons/bi';
+import { BiCaretRight, BiPlus, BiSave, BiTrash, BiMinus } from 'react-icons/bi';
 import { AiOutlineFire } from 'react-icons/ai';
 import { TbTruck } from 'react-icons/tb';
 import convertToPersian from '../../utils/convertToPersianNumber';
+import { useGetProductsQuery } from '../../api/apiSlice';
+import { addProduct, removeProduct } from '../../app/slices/userSlice';
 
 function Navbar() {
   const [openSearchBox, setOpenSearchBox] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [showMiniBasket, setShowMiniBasket] = useState(false);
 
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const activeUser = useSelector((state) => state.user.lastLoggedInUser);
 
+  const productCountMap = activeUser?.cart.reduce((countMap, product) => {
+    countMap[product.id] = (countMap[product.id] || 0) + 1;
+    return countMap;
+  }, {});
+
   const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
   const toggleShowProfileMenu = (which) => setShowProfileMenu(which);
   const toggleShowSidebar = () => setShowSidebar(!showSidebar);
+  const handleAddProduct = (product) => {
+    if (!isLoggedIn) {
+      navigate('/login');
+    } else {
+      dispatch(addProduct({ userId: activeUser.id, product: product }));
+      console.log(activeUser);
+    }
+  };
+
+  const handleRemoveProduct = (product) => {
+    dispatch(removeProduct({ userId: activeUser.id, productId: product.id }));
+    console.log(activeUser);
+  };
 
   const { y, x, scrollDirection } = useScroll();
+  const dispatch = useDispatch();
+  const { data: products, isLoading, isError } = useGetProductsQuery();
+  if (isLoading || isError) {
+    return null;
+  }
 
   return (
     <>
@@ -76,7 +100,7 @@ function Navbar() {
           <img
             src="https://dkstatics-public.digikala.com/digikala-adservice-banners/2e7c79bb2031d1a2f5a3530b7c0bf5c342394aee_1689489380.jpg?x-oss-process=image/quality,q_95/format,webp"
             alt="navbar image"
-            className="h-[60px] w-full aspect-[3/2] object-cover"
+            className="h-[60px] w-full aspect-[3/2] object-cover hover:cursor-pointer"
           />
         </div>
 
@@ -192,95 +216,144 @@ function Navbar() {
                     </div>
                     {/* Show Products */}
                     <div className="overflow-auto max-h-[360px]">
-                      {activeUser.cart.map((p) => (
-                        <div
-                          key={uuidv4()}
-                          className="mx-3 py-4 border-b border-[#f1f2f4]"
-                        >
-                          <div className="grid grid-cols-116px-1fr gap-6">
-                            {/* Product Image */}
-                            <div className="flex flex-col items-center">
-                              <Link to={`product/${p.id}`}>
-                                <div className="w-[114px] h-[114px]">
-                                  <img
-                                    src={p.thumbnail}
-                                    alt="product"
-                                    className="w-full h-full"
-                                  />
-                                </div>
-                              </Link>
-                              <div className="flex items-center py-2 mt-2 flex-col"></div>
-                            </div>
-                            {/* Product Description */}
-                            <div className="overflow-hidden">
-                              <div>
-                                <h3 className="mb-2 text-sm font-Yekan-bold leading-7 text-[#23254e]">
-                                  {p.name}
-                                </h3>
-                                <div>
-                                  <div className="flex items-center">
-                                    <BiSave className="w-[18px] h-[18px] text-[#19bfd3] ml-2" />
-                                    <p className="text-xs text-[#5a5c7a] mr-2 my-1">
-                                      موجود در انبار فروشنده و دیجی‌کالا
-                                    </p>
+                      {activeUser &&
+                        Object.keys(productCountMap).map((productId) => {
+                          const product = products.find(
+                            (item) => item.id === parseInt(productId)
+                          );
+                          if (product) {
+                            return (
+                              <div
+                                key={uuidv4()}
+                                className="mx-3 py-4 border-b border-[#f1f2f4]"
+                              >
+                                <div className="grid grid-cols-116px-1fr gap-6">
+                                  {/* Product Image */}
+                                  <div className="flex flex-col items-center">
+                                    <Link to={`product/${product.id}`}>
+                                      <div className="w-[114px] h-[114px]">
+                                        <img
+                                          src={product.thumbnail}
+                                          alt="product"
+                                          className="w-full h-full"
+                                        />
+                                      </div>
+                                    </Link>
+                                    <div className="flex items-center py-2 mt-2 flex-col"></div>
                                   </div>
-                                  <div className="flex items-center mt-2">
-                                    <div className="relative flex flex-col items-center">
-                                      <span className="w-[2px] h-2 bg-[#e0e0e6] absolute bottom-[15px]"></span>
-                                      <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                  {/* Product Description */}
+                                  <div className="overflow-hidden">
+                                    <div>
+                                      <h3 className="mb-2 text-sm font-Yekan-bold leading-7 text-[#23254e]">
+                                        {product.name}
+                                      </h3>
+                                      <div>
+                                        <div className="flex items-center">
+                                          <BiSave className="w-[18px] h-[18px] text-[#19bfd3] ml-2" />
+                                          <p className="text-xs text-[#5a5c7a] mr-2 my-1">
+                                            موجود در انبار فروشنده و دیجی‌کالا
+                                          </p>
+                                        </div>
+                                        <div className="flex items-center mt-2">
+                                          <div className="relative flex flex-col items-center">
+                                            <span className="w-[2px] h-2 bg-[#e0e0e6] absolute bottom-[15px]"></span>
+                                            <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                          </div>
+                                          <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
+                                            <TbTruck className="text-[#e6123d] w-4 h-4" />
+                                            ارسال دیجی‌کالا
+                                          </p>
+                                        </div>
+
+                                        <div className="flex items-center">
+                                          <div className="relative flex flex-col items-center">
+                                            <span className="w-[2px] h-4 bg-[#e0e0e6] absolute bottom-[15px]"></span>
+                                            <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                          </div>
+                                          <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
+                                            <FaUserNurse className="text-[#d86b00] w-4 h-4" />
+                                            ارسال فروشنده
+                                          </p>
+                                        </div>
+
+                                        <div className="flex items-center">
+                                          <div className="relative flex flex-col items-center">
+                                            <span className="w-[2px] h-4 bg-[#e0e0e6] absolute bottom-[15px]"></span>
+                                            <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                          </div>
+                                          <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
+                                            <MdOutlineShutterSpeed className="text-[#1028ff] w-4 h-4" />
+                                            ارسال فوری (شهر تهران)
+                                          </p>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
-                                      <TbTruck className="text-[#e6123d] w-4 h-4" />
-                                      ارسال دیجی‌کالا
-                                    </p>
+                                  </div>
+                                  {/* Add & Remove button */}
+                                  <div>
+                                    <div className="flex items-center gap-4 mt-2">
+                                      <div className="w-[102px] min-w-[102px] min-h-[44px] max-h-[44px] px-2 bg-white bg-opacity-40 addToCartButton-shadow font-Yekan-bold text-[#ef4056] rounded-lg flex gap-2 items-center justify-between">
+                                        <BiPlus
+                                          onClick={() =>
+                                            handleAddProduct(product)
+                                          }
+                                          className={`${
+                                            productCountMap[productId] === 2 &&
+                                            'opacity-30 hover:cursor-auto pointer-events-none'
+                                          } w-[18px] h-[18px] hover:cursor-pointer`}
+                                        />
+                                        <div className="flex flex-col items-center">
+                                          <span>
+                                            {convertToPersian(
+                                              productCountMap[productId]
+                                            )}
+                                          </span>
+                                          {productCountMap[productId] === 2 && (
+                                            <span className="text-[11px] text-[#c3c3ce]">
+                                              حداکثر
+                                            </span>
+                                          )}
+                                        </div>
+                                        {productCountMap[productId] > 1 ? (
+                                          <BiMinus
+                                            onClick={() =>
+                                              handleRemoveProduct(product)
+                                            }
+                                            className={`w-[18px] h-[18px] hover:cursor-pointer`}
+                                          />
+                                        ) : (
+                                          <BiTrash
+                                            onClick={() =>
+                                              handleRemoveProduct(product)
+                                            }
+                                            className="w-[18px] h-[18px] hover:cursor-pointer"
+                                          />
+                                        )}
+                                      </div>
+                                    </div>
                                   </div>
 
-                                  <div className="flex items-center">
-                                    <div className="relative flex flex-col items-center">
-                                      <span className="w-[2px] h-4 bg-[#e0e0e6] absolute bottom-[15px]"></span>
-                                      <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                  {/* price */}
+                                  <div>
+                                    <div className="flex items-center justify-between">
+                                      <div>
+                                        <div className="flex items-center justify-start ml-4 gap-1">
+                                          <span className="text-[19px] font-Yekan-bold text-[#23254e]">
+                                            {convertToPersian(product.price)}
+                                          </span>
+                                          <span className="font-Yekan-bold text-xs text-[#23254e]">
+                                            تومان
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div className="flex items-center flex-row-reverse"></div>
                                     </div>
-                                    <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
-                                      <FaUserNurse className="text-[#d86b00] w-4 h-4" />
-                                      ارسال فروشنده
-                                    </p>
-                                  </div>
-
-                                  <div className="flex items-center">
-                                    <div className="relative flex flex-col items-center">
-                                      <span className="w-[2px] h-4 bg-[#e0e0e6] absolute bottom-[15px]"></span>
-                                      <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
-                                    </div>
-                                    <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
-                                      <MdOutlineShutterSpeed className="text-[#1028ff] w-4 h-4" />
-                                      ارسال فوری (شهر تهران)
-                                    </p>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            {/* Add & Remove button */}
-                            <div></div>
-
-                            {/* price */}
-                            <div>
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <div className="flex items-center justify-start ml-4 gap-1">
-                                    <span className="text-[19px] font-Yekan-bold text-[#23254e]">
-                                      {convertToPersian(p.price)}
-                                    </span>
-                                    <span className="font-Yekan-bold text-xs text-[#23254e]">
-                                      تومان
-                                    </span>
-                                  </div>
-                                </div>
-                                <div className="flex items-center flex-row-reverse"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                            );
+                          } else return null;
+                        })}
                     </div>
 
                     {/* Total Price */}

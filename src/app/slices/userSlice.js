@@ -27,7 +27,7 @@ const userSlice = createSlice({
           (product) => product.id === productId
         );
         if (index !== -1) {
-          user.cart = user.cart.splice(index, 1);
+          user.cart.splice(index, 1); // Remove the item from the array
         }
       }
     },

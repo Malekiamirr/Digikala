@@ -223,3 +223,19 @@
 .shadow-1-top {
   box-shadow: 0 -1px 1px rgb(0 0 0 / 14%), 0 -2px 2px rgb(0 0 0 / 5%);
 }
+
+@keyframes story {
+  0% {
+    background-color: #f00; /* Start with red background */
+  }
+  50% {
+    background-color: #0f0; /* Transition to green background */
+  }
+  100% {
+    background-color: #00f; /* Transition to blue background */
+  }
+}
+
+.animation-story {
+  animation: story 6s infinite;
+}

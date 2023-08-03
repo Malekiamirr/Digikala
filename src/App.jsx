@@ -15,6 +15,7 @@ import {
   PromotionCenterPage,
   MainCategoryPage,
   DynamicProductListPage,
+  FavoriteListPage,
 } from './pages';
 import { loader as productsLoader } from './pages/IntroduceProduct';
 
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: 'checkout/cart',
         element: <CartPage />,
+      },
+      {
+        path: 'profile/lists',
+        element: <FavoriteListPage />,
       },
       {
         path: 'main/:mainId',

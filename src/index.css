@@ -239,3 +239,7 @@
 .animation-story {
   animation: story 6s infinite;
 }
+
+.favorite-backdrop {
+  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.2));
+}

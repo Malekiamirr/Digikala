@@ -55,6 +55,11 @@ export const apiSlice = createApi({
     getAmazingOffer: builder.query({
       query: () => '/amazingOffer',
     }),
+
+    getProducts: builder.query({
+      query: () => '/products',
+    }),
+
     createUser: builder.mutation({
       query: (newUser) => ({
         url: '/users',
@@ -67,6 +72,7 @@ export const apiSlice = createApi({
 
 export const {
   useGetStoriesQuery,
+  useGetProductsQuery,
   useGetSwipersQuery,
   useGetFeaturesQuery,
   useGetFeaturesDetailsQuery,

@@ -2,8 +2,38 @@ import { RiHomeSmileLine } from 'react-icons/ri';
 import { LuShieldCheck } from 'react-icons/lu';
 import { FiSave } from 'react-icons/fi';
 import convertToPersian from '../../utils/convertToPersianNumber';
+import { useState } from 'react';
+import { BiMinus, BiPlus } from 'react-icons/bi';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addProduct, removeProduct } from '../../app/slices/userSlice';
+import { BiTrash } from 'react-icons/bi';
 
 function ProductStickyInfoBox({ product }) {
+  const [addToProduct, setAddToProduct] = useState(0);
+  const activeUser = useSelector((state) => state.user.lastLoggedInUser);
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleAddProduct = () => {
+    if (!isLoggedIn) {
+      navigate('/login');
+    } else {
+      dispatch(addProduct({ userId: activeUser.id, product: product }));
+      console.log(activeUser);
+      setAddToProduct(addToProduct + 1);
+      console.log(`product ${addToProduct}`);
+    }
+  };
+
+  const handleRemoveProduct = () => {
+    dispatch(removeProduct({ userId: activeUser.id, productId: product.id }));
+    setAddToProduct(addToProduct - 1);
+    console.log(`product ${addToProduct}`);
+    console.log(activeUser);
+  };
+
   return (
     <div className="relative hidden mr-10 Laptop-L:block">
       <div className="sticky top-[230px]">
@@ -68,9 +98,51 @@ function ProductStickyInfoBox({ product }) {
           </div>
 
           {/* Add to Cart button */}
-          <div className="flex items-center justify-center px-4 py-2 border rounded-lg bg-[#ef4056] border-[#ef4056] text-xs text-white font-Yekan-bold hover:cursor-pointer">
-            افزودن به سبد
-          </div>
+          {addToProduct === 0 && (
+            <button
+              onClick={handleAddProduct}
+              className="py-3 px-4 border border-[#ef4056] bg-[#ef4056] font-Yekan-bold text-white text-xs w-full rounded-lg mt-2 order-first"
+            >
+              افزودن به سبد
+            </button>
+          )}
+          {addToProduct > 0 && (
+            <div className="flex items-center gap-4 mt-2">
+              <div className="w-[102px] min-w-[102px] min-h-[44px] max-h-[44px] px-2 bg-white bg-opacity-40 addToCartButton-shadow font-Yekan-bold text-[#ef4056] rounded-lg flex gap-2 items-center justify-between">
+                <BiPlus
+                  onClick={handleAddProduct}
+                  className={`${
+                    addToProduct === 2 &&
+                    'opacity-30 hover:cursor-auto pointer-events-none'
+                  } w-[18px] h-[18px] hover:cursor-pointer`}
+                />
+                <div className="flex flex-col items-center">
+                  <span>{convertToPersian(addToProduct)}</span>
+                  {addToProduct === 2 && (
+                    <span className="text-[11px] text-[#c3c3ce]">حداکثر</span>
+                  )}
+                </div>
+                {addToProduct > 1 ? (
+                  <BiMinus
+                    onClick={handleRemoveProduct}
+                    className={`w-[18px] h-[18px] hover:cursor-pointer`}
+                  />
+                ) : (
+                  <BiTrash
+                    onClick={handleRemoveProduct}
+                    className="w-[18px] h-[18px] hover:cursor-pointer"
+                  />
+                )}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm text-[#3f4064]">در سبد شما</span>
+                <div className="flex items-center gap-1">
+                  <span className="text-[10px]">مشاهده</span>
+                  <span className="text-xs text-[#19bfd3]">سبد خرید</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

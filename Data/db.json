@@ -515,6 +515,26 @@
       "updatedAt": 1691064254556,
       "favoriteProducts": [],
       "cart": []
+    },
+    {
+      "id": 29,
+      "name": "what-book",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amie1234",
+      "createdAt": 1691066375313,
+      "updatedAt": 1691066375313,
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 30,
+      "name": "امیر",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir12345",
+      "createdAt": 1691066458348,
+      "updatedAt": 1691066458348,
+      "favoriteProducts": [],
+      "cart": []
     }
   ],
   "digitalGoods": [
@@ -3492,7 +3512,6 @@
     {
       "id": 2,
       "name": "گوشی بر اساس حافظه داخلی",
-      "image": "https://dkstatics-public.digikala.com/digikala-products/c59fe305749abd18d772b86333f30699fc6fafbe_1674976102.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
       "slug": "phone-accessories",
       "mainCategory": "موبایل",
       "createdAt": "2023-02-22T15:03:36.403Z",
@@ -3528,7 +3547,6 @@
     {
       "id": 3,
       "name": "گوشی بر اساس قیمت",
-      "image": "https://dkstatics-public.digikala.com/digikala-products/c59fe305749abd18d772b86333f30699fc6fafbe_1674976102.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60",
       "slug": "phone-accessories",
       "mainCategory": "موبایل",
       "createdAt": "2023-02-22T15:03:36.403Z",

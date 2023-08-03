@@ -211,3 +211,15 @@
 .sidebar-scroolbar::-webkit-scrollbar-thumb {
   @apply bg-[#bbb] rounded h-12;
 }
+
+.mini-cart-shadow {
+  box-shadow: 0 1px 1px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 30%);
+}
+
+.grid-cols-116px-1fr {
+  grid-template-columns: 116px 1fr;
+}
+
+.shadow-1-top {
+  box-shadow: 0 -1px 1px rgb(0 0 0 / 14%), 0 -2px 2px rgb(0 0 0 / 5%);
+}

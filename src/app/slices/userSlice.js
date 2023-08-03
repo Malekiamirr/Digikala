@@ -10,6 +10,27 @@ const userSlice = createSlice({
     setLastLoggedInUser: (state, action) => {
       state.lastLoggedInUser = action.payload;
     },
+    addProduct: (state, action) => {
+      const { userId, product } = action.payload;
+      const user = state.lastLoggedInUser;
+
+      if (user && user.id === userId) {
+        user.cart.push(product);
+      }
+    },
+    removeProduct: (state, action) => {
+      const { userId, productId } = action.payload;
+      const user = state.lastLoggedInUser;
+
+      if (user && user.id === userId) {
+        const index = user.cart.findIndex(
+          (product) => product.id === productId
+        );
+        if (index !== -1) {
+          user.cart = user.cart.splice(index, 1);
+        }
+      }
+    },
     addFavoriteProduct: (state, action) => {
       const { userId, product } = action.payload;
       const user = state.lastLoggedInUser;
@@ -33,6 +54,8 @@ const userSlice = createSlice({
 
 export const {
   setLastLoggedInUser,
+  addProduct,
+  removeProduct,
   addFavoriteProduct,
   removeFavoriteProduct,
 } = userSlice.actions;

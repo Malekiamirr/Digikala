@@ -12,37 +12,35 @@ import convertToPersian from '../../utils/convertToPersianNumber';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setLastLoggedInUser } from '../../app/slices/userSlice';
+import {
+  setLastLoggedInUser,
+  addProduct,
+  removeProduct,
+} from '../../app/slices/userSlice';
 
 function ProductSeller({ price, product }) {
-  const [addProduct, setAddProduct] = useState(0);
+  const [addToProduct, setAddToProduct] = useState(0);
   const activeUser = useSelector((state) => state.user.lastLoggedInUser);
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleAddProduct = (howMuch) => {
+  const handleAddProduct = () => {
     if (!isLoggedIn) {
       navigate('/login');
+    } else {
+      dispatch(addProduct({ userId: activeUser.id, product: product }));
+      console.log(activeUser);
+      setAddToProduct(addToProduct + 1);
+      console.log(`product ${addToProduct}`);
     }
-    howMuch === 1
-      ? setAddProduct(addProduct + 1)
-      : setAddProduct(addProduct - 1);
-    if (addProduct === 1) {
-      activeUser.cart.filter((p) => p.id !== product.id);
-      activeUser.cart.push(product);
-      dispatch(setLastLoggedInUser(activeUser));
-    }
-    if (addProduct === 2) {
-      activeUser.cart.filter((p) => p.id !== product.id);
-      activeUser.cart.push(product);
-      activeUser.cart.push(product);
-      dispatch(setLastLoggedInUser(activeUser));
-    }
-    if (addProduct === 0) {
-      activeUser.cart.filter((p) => p.id !== product.id);
-      dispatch(setLastLoggedInUser(activeUser));
-    }
+  };
+
+  const handleRemoveProduct = () => {
+    dispatch(removeProduct({ userId: activeUser.id, productId: product.id }));
+    setAddToProduct(addToProduct - 1);
+    console.log(`product ${addToProduct}`);
+    console.log(activeUser);
   };
 
   return (
@@ -136,7 +134,7 @@ function ProductSeller({ price, product }) {
             </p>
             <div className="relative mr-2 hover:cursor-pointer group">
               <FiInfo className="w-4 h-4 text-[#9e9fb1]" />
-              <div className="hidden px-3 py-3 m-4 Laptop-L:group-hover:block absolute w-max min-w-max left-[50%] -translate-x-[50%] bg-[#23254e] text-white text-xs leading-6 rounded">
+              <div className="hidden px-3 py-3 m-4 Laptop-L:group-hover:block absolute w-max min-w-max left-[50%] -translate-x-[50%] bg-[#23254e] text-white text-xs leading-6 rounded z-50">
                 بعد از پایان مهلت مرجوعی، برای دریافت امتیاز به صفحه
                 <br /> ماموریت‌های کلابی سر بزنید.
               </div>
@@ -162,39 +160,40 @@ function ProductSeller({ price, product }) {
                 </div>
               </div>
 
-              {addProduct === 0 && (
+              {addToProduct === 0 && (
                 <button
-                  onClick={() => handleAddProduct(1)}
+                  onClick={handleAddProduct}
                   className="py-3 px-4 border border-[#ef4056] bg-[#ef4056] font-Yekan-bold text-white text-xs w-full rounded-lg mt-2 order-first"
                 >
                   افزودن به سبد
                 </button>
               )}
-              {addProduct > 0 && (
+              {addToProduct > 0 && (
                 <div className="flex items-center gap-4 mt-2">
                   <div className="w-[102px] min-w-[102px] min-h-[44px] max-h-[44px] px-2 bg-white bg-opacity-40 addToCartButton-shadow font-Yekan-bold text-[#ef4056] rounded-lg flex gap-2 items-center justify-between">
                     <BiPlus
-                      onClick={() => addProduct < 2 && handleAddProduct(1)}
+                      onClick={handleAddProduct}
                       className={`${
-                        addProduct === 2 && 'opacity-30 hover:cursor-auto'
+                        addToProduct === 2 &&
+                        'opacity-30 hover:cursor-auto pointer-events-none'
                       } w-[18px] h-[18px] hover:cursor-pointer`}
                     />
                     <div className="flex flex-col items-center">
-                      <span>{convertToPersian(addProduct)}</span>
-                      {addProduct === 2 && (
+                      <span>{convertToPersian(addToProduct)}</span>
+                      {addToProduct === 2 && (
                         <span className="text-[11px] text-[#c3c3ce]">
                           حداکثر
                         </span>
                       )}
                     </div>
-                    {addProduct > 1 ? (
+                    {addToProduct > 1 ? (
                       <BiMinus
-                        onClick={() => handleAddProduct(-1)}
-                        className="w-[18px] h-[18px] hover:cursor-pointer"
+                        onClick={handleRemoveProduct}
+                        className={`w-[18px] h-[18px] hover:cursor-pointer`}
                       />
                     ) : (
                       <BiTrash
-                        onClick={() => handleAddProduct(-1)}
+                        onClick={handleRemoveProduct}
                         className="w-[18px] h-[18px] hover:cursor-pointer"
                       />
                     )}

@@ -17,19 +17,20 @@ import {
 function ProductIconsList({ product }) {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+
   const [showPriceChart, setShowPriceChart] = useState(false);
   const [isShareLinkOpen, setIsShareLinkOpen] = useState(false);
   const [isProductNoticeOpen, setIsProductNoticeOpen] = useState(false);
+  const [addToFavorite, setAddToFavorite] = useState(false);
+
   const activeUser = useSelector((state) => state.user.lastLoggedInUser);
+
   const handleShowPriceChart = () => {
     setShowPriceChart(!showPriceChart);
   };
-
-  const [addToFavorite, setAddToFavorite] = useState(false);
-  const navigate = useNavigate();
   const handleAddToFavorive = () => {
     if (isLoggedIn) {
-      if (addToFavorite) {
+      if (!addToFavorite) {
         dispatch(
           addFavoriteProduct({ userId: activeUser.id, product: product })
         );
@@ -46,6 +47,8 @@ function ProductIconsList({ product }) {
       navigate('/login');
     }
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="flex gap-4 Laptop-L:flex-col">

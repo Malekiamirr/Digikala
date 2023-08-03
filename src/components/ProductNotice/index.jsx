@@ -7,7 +7,6 @@ function ProductNotice({ isOpen, handleClose }) {
   const [isChecked, setIsChecked] = useState(false);
   const handleChange = () => {
     setIsChecked(!isChecked);
-    handleChecked(!isChecked);
   };
 
   return (
@@ -41,7 +40,7 @@ function ProductNotice({ isOpen, handleClose }) {
               />
 
               <span className="text-xs font-Yekan-bold text-[#3f4064]">
-                ارسال ایمیل به {activeUser.email}
+                ارسال ایمیل به {activeUser?.email}
               </span>
             </div>
             <div className="flex w-full mt-6 Laptop-L:justify-end">

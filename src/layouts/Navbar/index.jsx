@@ -3,6 +3,8 @@ import logo from '../../assets/imgs/logo.svg';
 
 import { Link } from 'react-router-dom';
 
+import { v4 as uuidv4 } from 'uuid';
+
 import { useState } from 'react';
 import { useScroll } from '../../hooks/useScroll';
 import { useSelector } from 'react-redux';
@@ -18,8 +20,15 @@ import { NavLink } from 'react-router-dom';
 // Icons
 import { LuShoppingCart } from 'react-icons/lu';
 import { GrLocation, GrCircleQuestion } from 'react-icons/gr';
+import { FaUserNurse } from 'react-icons/fa';
 import { TbDiscount2 } from 'react-icons/tb';
-import { MdOutlineDiscount, MdOutlineNoFood } from 'react-icons/md';
+import { RxDotFilled } from 'react-icons/rx';
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineDiscount,
+  MdOutlineNoFood,
+  MdOutlineShutterSpeed,
+} from 'react-icons/md';
 import {
   HiOutlineUser,
   HiOutlineLogin,
@@ -27,14 +36,16 @@ import {
   HiOutlineLocationMarker,
 } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
-import { BiCaretRight } from 'react-icons/bi';
+import { BiCaretRight, BiSave } from 'react-icons/bi';
 import { AiOutlineFire } from 'react-icons/ai';
+import { TbTruck } from 'react-icons/tb';
 import convertToPersian from '../../utils/convertToPersianNumber';
 
 function Navbar() {
   const [openSearchBox, setOpenSearchBox] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showMiniBasket, setShowMiniBasket] = useState(false);
 
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const activeUser = useSelector((state) => state.user.lastLoggedInUser);
@@ -148,7 +159,7 @@ function Navbar() {
               <span className="hidden Laptop-L:block h-6 w-px bg-[#E0E0E6] mx-1"></span>
 
               {/* Shop Basket icons */}
-              <div className="relative p-3 rounded-md Laptop-L:hover:bg-[#FDEBED] transition-all cursor-pointer">
+              <div className="relative p-3 rounded-md Laptop-L:hover:bg-[#FDEBED] transition-all cursor-pointer group">
                 <Link to="checkout/cart">
                   <LuShoppingCart className="w-6 h-6 text-[#3f4064]" />
                 </Link>
@@ -160,6 +171,147 @@ function Navbar() {
                   >
                     {activeUser && convertToPersian(activeUser.cart.length)}
                   </p>
+                )}
+
+                {/* Mini basket */}
+                {isLoggedIn && activeUser.cart.length > 0 && (
+                  <div
+                    className={`group-hover:opacity-100 group-hover:z-50 -z-50 opacity-0 pointer-events-none group-hover:pointer-events-auto rounded-lg absolute left-0 top-full w-[400px] mini-cart-shadow bg-white transition-opacity duration-300`}
+                  >
+                    {/* Header */}
+                    <div className="px-3 py-2 flex items-center justify-between">
+                      <span className="text-xs text-[#5a5c7a]">
+                        {convertToPersian(activeUser.cart.length)} کالا
+                      </span>
+                      <Link to={'/checkout/cart'}>
+                        <div className="flex items-center mr-auto text-xs font-Yekan-bold text-[#19bfd3]">
+                          <span>مشاهده‌ی سبد خرید</span>
+                          <MdKeyboardArrowLeft className="w-5 h-5 text-[#19bfd3]" />
+                        </div>
+                      </Link>
+                    </div>
+                    {/* Show Products */}
+                    <div className="overflow-auto max-h-[360px]">
+                      {activeUser.cart.map((p) => (
+                        <div
+                          key={uuidv4()}
+                          className="mx-3 py-4 border-b border-[#f1f2f4]"
+                        >
+                          <div className="grid grid-cols-116px-1fr gap-6">
+                            {/* Product Image */}
+                            <div className="flex flex-col items-center">
+                              <Link to={`product/${p.id}`}>
+                                <div className="w-[114px] h-[114px]">
+                                  <img
+                                    src={p.thumbnail}
+                                    alt="product"
+                                    className="w-full h-full"
+                                  />
+                                </div>
+                              </Link>
+                              <div className="flex items-center py-2 mt-2 flex-col"></div>
+                            </div>
+                            {/* Product Description */}
+                            <div className="overflow-hidden">
+                              <div>
+                                <h3 className="mb-2 text-sm font-Yekan-bold leading-7 text-[#23254e]">
+                                  {p.name}
+                                </h3>
+                                <div>
+                                  <div className="flex items-center">
+                                    <BiSave className="w-[18px] h-[18px] text-[#19bfd3] ml-2" />
+                                    <p className="text-xs text-[#5a5c7a] mr-2 my-1">
+                                      موجود در انبار فروشنده و دیجی‌کالا
+                                    </p>
+                                  </div>
+                                  <div className="flex items-center mt-2">
+                                    <div className="relative flex flex-col items-center">
+                                      <span className="w-[2px] h-2 bg-[#e0e0e6] absolute bottom-[15px]"></span>
+                                      <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                    </div>
+                                    <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
+                                      <TbTruck className="text-[#e6123d] w-4 h-4" />
+                                      ارسال دیجی‌کالا
+                                    </p>
+                                  </div>
+
+                                  <div className="flex items-center">
+                                    <div className="relative flex flex-col items-center">
+                                      <span className="w-[2px] h-4 bg-[#e0e0e6] absolute bottom-[15px]"></span>
+                                      <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                    </div>
+                                    <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
+                                      <FaUserNurse className="text-[#d86b00] w-4 h-4" />
+                                      ارسال فروشنده
+                                    </p>
+                                  </div>
+
+                                  <div className="flex items-center">
+                                    <div className="relative flex flex-col items-center">
+                                      <span className="w-[2px] h-4 bg-[#e0e0e6] absolute bottom-[15px]"></span>
+                                      <RxDotFilled className="w-5 h-5 text-[#19bfd3]" />
+                                    </div>
+                                    <p className="text-xs text-[#5a5c7a] mr-2 my-2 flex items-center gap-2">
+                                      <MdOutlineShutterSpeed className="text-[#1028ff] w-4 h-4" />
+                                      ارسال فوری (شهر تهران)
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            {/* Add & Remove button */}
+                            <div></div>
+
+                            {/* price */}
+                            <div>
+                              <div className="flex items-center justify-between">
+                                <div>
+                                  <div className="flex items-center justify-start ml-4 gap-1">
+                                    <span className="text-[19px] font-Yekan-bold text-[#23254e]">
+                                      {convertToPersian(p.price)}
+                                    </span>
+                                    <span className="font-Yekan-bold text-xs text-[#23254e]">
+                                      تومان
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="flex items-center flex-row-reverse"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Total Price */}
+                    <div className="flex items-center py-2 px-3 border-t border-t-[#f1f2f4]">
+                      <div className="flex flex-col h-full justify-between ml-auto">
+                        <p className="text-[11px] text-[#767790] my-2">
+                          مبلغ قابل پرداخت
+                        </p>
+                        <div>
+                          <div className="flex items-center justify-start gap-2">
+                            <span>
+                              {convertToPersian(
+                                activeUser.cart.reduce(
+                                  (acc, curr) => acc + parseFloat(curr.price),
+                                  0
+                                )
+                              )}
+                            </span>
+                            <span className="font-Yekan-bold text-xs text-[#23254e]">
+                              تومان
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <Link to="checkout/cart">
+                        <button className="rounded-lg px-4 py-3 h-12 text-white bg-[#ef4056] text-sm font-Yekan-bold">
+                          ثبت سفارش
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
                 )}
               </div>
             </div>

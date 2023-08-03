@@ -35,7 +35,6 @@ function DynamicProductListPage() {
   let filteredProducts = products.filter(
     (product) => product.subCategorySlug === params.searchId
   );
-  console.log(products);
 
   if (filteredProducts.length === 0) {
     filteredProducts = products.filter(

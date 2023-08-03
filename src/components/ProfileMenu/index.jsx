@@ -8,9 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../../app/slices/loginSlice';
 import { useDispatch } from 'react-redux';
 
-function ProfileMenu() {
-  const { data: users, isLoading, isError } = useGetUsersQuery();
-  const activeUser = users[users.length - 1];
+function ProfileMenu({ activeUser }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

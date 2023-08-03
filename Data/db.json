@@ -267,12 +267,32 @@
       "cart": []
     },
     {
-      "id": 13,
-      "name": "Amir",
-      "email": "abbaszade@gmail.com",
-      "password": "AmierM123",
-      "createdAt": "2023-08-02T15:57:26.657Z",
-      "updatedAt": "2023-08-02T15:57:26.657Z",
+      "id": 4,
+      "name": "ماهان",
+      "email": "realmalekiAmir@gmail.com",
+      "password": "Amir12345",
+      "createdAt": "2023-08-03T02:48:54.026Z",
+      "updatedAt": "2023-08-03T02:48:54.026Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 5,
+      "name": "شاهان",
+      "email": "mahan@gmail.com",
+      "password": "Amir12345",
+      "createdAt": "2023-08-03T02:53:51.061Z",
+      "updatedAt": "2023-08-03T02:53:51.061Z",
+      "favoriteProducts": [],
+      "cart": []
+    },
+    {
+      "id": 6,
+      "name": "امیر مالکی",
+      "email": "realmalekiamir@gmail.com",
+      "password": "Amir1234567",
+      "createdAt": 1691031749156,
+      "updatedAt": 1691031749156,
       "favoriteProducts": [],
       "cart": []
     }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
 import { useScroll } from '../../hooks/useScroll';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import {
   Category,
@@ -29,9 +29,7 @@ import {
 import { IoIosArrowBack } from 'react-icons/io';
 import { BiCaretRight } from 'react-icons/bi';
 import { AiOutlineFire } from 'react-icons/ai';
-import { useGetUsersQuery } from '../../api/apiSlice';
 import convertToPersian from '../../utils/convertToPersianNumber';
-import { setLastLoggedInUser } from '../../app/slices/userSlice';
 
 function Navbar() {
   const [openSearchBox, setOpenSearchBox] = useState(false);
@@ -39,21 +37,13 @@ function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false);
 
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const activeUser = useSelector((state) => state.user.lastLoggedInUser);
+
   const toggleOpenSearchBox = (what) => setOpenSearchBox(what);
   const toggleShowProfileMenu = (which) => setShowProfileMenu(which);
   const toggleShowSidebar = () => setShowSidebar(!showSidebar);
 
   const { y, x, scrollDirection } = useScroll();
-  const { data: users, isLoading, isError } = useGetUsersQuery();
-
-  if (isError || isLoading) {
-    // Return some loading indicator or null
-    return null;
-  }
-
-  const activeUser = users[users.length - 1];
-  const dispatch = useDispatch();
-  dispatch(setLastLoggedInUser(activeUser));
 
   return (
     <>
@@ -127,7 +117,7 @@ function Navbar() {
                         showProfileMenu && 'Laptop-L:block'
                       } hidden absolute top-[100%] left-0 pb-2 rounded-lg bg-white w-[256px] profile-menu-box-shadow z-10`}
                     >
-                      <ProfileMenu />
+                      <ProfileMenu activeUser={activeUser} />
                     </div>
                   </>
                 ) : (
@@ -165,10 +155,10 @@ function Navbar() {
                 {isLoggedIn && (
                   <p
                     className={`${
-                      activeUser.cart.length > 0 ? '' : 'hidden'
+                      activeUser?.cart.length > 0 ? '' : 'hidden'
                     } flex justify-center items-center w-5 h-5 absolute bottom-0 -right-1 bg-[#EF4056] text-white text-xs text-center font-Yekan-medium rounded-md border-2 border-white`}
                   >
-                    {convertToPersian(activeUser.cart.length)}
+                    {activeUser && convertToPersian(activeUser.cart.length)}
                   </p>
                 )}
               </div>

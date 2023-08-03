@@ -6,36 +6,39 @@ import { RiEyeCloseLine } from 'react-icons/ri';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { loginUser } from '../../app/slices/loginSlice';
 import { useCreateUserMutation, useGetUsersQuery } from '../../api/apiSlice';
+import { useDispatch } from 'react-redux';
+import { setLastLoggedInUser } from '../../app/slices/userSlice';
 
 function RegisterPassword({ setPassword, togglePage, name, email }) {
   const onSubmit = (values, actions) => {
-    console.log('submitted');
     setPassword(values.password);
+
     actions.resetForm();
 
-    createUser({
+    const newUser = {
       id: users.length + 1,
       name: name,
       email: email,
       password: values.password,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: new Date().getTime(),
+      updatedAt: new Date().getTime(),
       favoriteProducts: [],
       cart: [],
-    });
+    };
+
+    createUser(newUser);
+    dispatch(loginUser());
+    dispatch(setLastLoggedInUser(newUser));
 
     navigate('/');
-    dispatch(loginUser());
   };
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {
@@ -53,6 +56,8 @@ function RegisterPassword({ setPassword, togglePage, name, email }) {
     validationSchema: passwordSchema,
     onSubmit,
   });
+
+  const dispatch = useDispatch();
 
   const [createUser] = useCreateUserMutation();
   const { data: users, isLoading, isError } = useGetUsersQuery();

@@ -19,7 +19,7 @@ function ProfileMenu({ activeUser }) {
 
   return (
     <>
-      <Link to="profile">
+      <Link to="/">
         <div className="py-4 mx-4 flex items-center border-b border-b-[#f1f2f4]">
           <div className="w-8 h-8">
             <img
@@ -90,7 +90,7 @@ function ProfileMenu({ activeUser }) {
         </li>
 
         <li className="px-4 w-full">
-          <Link to="profile/orders">
+          <Link to="/">
             <div className="flex items-center gap-2">
               <div className="pr-1 pl-5">
                 <RiShoppingBasketLine className=" w-6 h-6 text-[#3f4064]" />
@@ -116,7 +116,7 @@ function ProfileMenu({ activeUser }) {
         </li>
 
         <li className="px-4 w-full">
-          <Link to="profile/lists">
+          <Link to="/">
             <div className="flex items-center gap-2">
               <div className="pr-1 pl-5">
                 <AiOutlineComment className=" w-6 h-6 text-[#3f4064]" />

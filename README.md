@@ -98,7 +98,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions or want to get in touch, you can reach me at your@email.com.
+If you have any questions or want to get in touch, you can reach me at realmalekiamir@gmail.com.
 
 ## Acknowledgments
 

@@ -49,7 +49,7 @@ function DigitalGoods() {
                 ))}
               </div>
               <div className="flex justify-center mt-2 mb-3">
-                <Link to="/product-list">
+                <Link to="/search">
                   <button className="flex items-center justify-center text-[#19bfd3] text-xs font-Yekan-bold">
                     مشاهده
                     <IoIosArrowBack />
